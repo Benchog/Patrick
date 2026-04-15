@@ -1031,6 +1031,8 @@ function openProjectModal(slug) {
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('modal-open');
+    const scrollEl = document.querySelector('#projectModal .project-modal-scroll');
+    if (scrollEl) scrollEl.scrollTop = 0;
     bindImgFallbackChain(body);
 }
 
