@@ -703,7 +703,7 @@ const PROJECT_CATALOG = {
         subtitle: 'Personal Finance Intelligence System',
         liveUrl: 'https://theoptimist.pages.dev/',
         liveLabel: 'Open live app ↗',
-        tags: ['PWA + APK', 'Flutter', 'Android Studio', 'Supabase'],
+        tags: ['Cross-platform', 'Cloud backend', 'Supabase', 'AI-assisted'],
         detailSections: [
             { title: 'Summary', body: 'A full-featured personal finance system designed to help users track, manage, and grow their money with complete clarity and control.' },
             { title: 'The Problem', body: 'Many people struggle with managing their finances, not because they don\'t earn enough, but because they lack visibility into where their money goes. This leads to overspending, poor savings habits, and financial stress.' },
@@ -719,7 +719,7 @@ const PROJECT_CATALOG = {
                 'Cross-device data synchronization'
             ]},
             { title: 'Impact', body: 'This system transforms financial confusion into structured, trackable insights, helping users make better financial decisions and stay in control of their money.' },
-            { title: 'Tech Stack', body: 'Flutter / Android Studio (PWA + real APK build) · Supabase / Firebase · AI-assisted development (Cursor, Claude)' },
+            { title: 'Tech Stack', body: 'Cross-platform product stack · Supabase / Firebase · AI-assisted development (Cursor, Claude)' },
             { title: 'My Role', body: 'Designed the system structure, guided AI tools in development, implemented core features, and handled testing and improvements.' },
             { title: 'What I Learned', body: 'Improved my ability to design complex systems, manage multiple financial features, and effectively use AI tools to accelerate development.' }
         ],
@@ -737,7 +737,7 @@ const PROJECT_CATALOG = {
         subtitle: 'Intelligent Inventory Tracker',
         liveUrl: 'https://stockpulse-pb.pages.dev/',
         liveLabel: 'Open live app ↗',
-        tags: ['PWA + APK', 'Flutter', 'Android Studio', 'Automation'],
+        tags: ['Cross-platform', 'Automation', 'Inventory systems', 'Reports'],
         detailSections: [
             { title: 'Summary', body: 'A smart inventory management system built to eliminate repetitive manual stock counting and streamline reporting.' },
             { title: 'The Problem', body: 'Manual stock counting is time-consuming, stressful, and prone to human error, especially when dealing with large quantities of items weekly.' },
@@ -751,7 +751,7 @@ const PROJECT_CATALOG = {
                 'PDF report generation'
             ]},
             { title: 'Impact', body: 'Reduces hours of manual work, improves accuracy, and simplifies the entire stock management process.' },
-            { title: 'Tech Stack', body: 'Android Studio / Flutter (PWA + real APK build) · Backend integration · AI-assisted development (Cursor, Claude)' },
+            { title: 'Tech Stack', body: 'Cross-platform product stack · Backend integration · AI-assisted development (Cursor, Claude)' },
             { title: 'My Role', body: 'Designed the workflow, built the system using AI tools, and implemented automation for stock tracking and reporting.' },
             { title: 'What I Learned', body: 'Learned how to design efficient tracking systems and automate repetitive real-world tasks.' }
         ],
@@ -771,7 +771,7 @@ const PROJECT_CATALOG = {
         subtitle: 'Smart Client Payment System',
         liveUrl: 'https://nia-fees.pages.dev/',
         liveLabel: 'Open live app ↗',
-        tags: ['PWA + APK', 'Flutter', 'Android Studio', 'Non-citizens Ghana'],
+        tags: ['Cross-platform', 'Non-citizens Ghana', 'Live fees', 'Client operations'],
         detailSections: [
             { title: 'Summary', body: 'A dynamic fee management system that helps clients know exactly what to pay before visiting the office.' },
             { title: 'The Problem', body: 'Clients often travel long distances without knowing the exact fees or requirements, leading to wasted time, money, and frustration.' },
@@ -783,7 +783,7 @@ const PROJECT_CATALOG = {
                 'Simple and user-friendly interface'
             ]},
             { title: 'Impact', body: 'Eliminates confusion, reduces unnecessary travel, and improves overall client experience and operational efficiency.' },
-            { title: 'Tech Stack', body: 'Android Studio / Flutter (PWA + real APK build) · Backend logic integration · AI-assisted development (Cursor, Claude)' },
+            { title: 'Tech Stack', body: 'Cross-platform product stack · Backend logic integration · AI-assisted development (Cursor, Claude)' },
             { title: 'My Role', body: 'Identified the problem, designed the solution, and built the system using AI-assisted tools.' },
             { title: 'What I Learned', body: 'Improved my ability to build solutions that directly impact real users and solve operational challenges.' }
         ],

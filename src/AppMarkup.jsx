@@ -77,7 +77,7 @@ export function AppMarkup() {
               <div className="particles" id="particles"></div>
               <div className="hero-content">
                   <h1>Patrick Benchog</h1>
-                  <p className="tagline">I Build Real Apps That Solve Real Problems — With AI, Speed, and Purpose.</p>
+                  <p className="tagline">I Build Real Systems That Solve Real Problems — With AI, Speed, and Purpose.</p>
                   <p className="caption">
                       <span className="rotating-text" id="rotatingText">App Builder</span> • Problem Solver • Fast Executor
                   </p>
@@ -99,7 +99,7 @@ export function AppMarkup() {
                   </div>
                   <div className="about-text">
                       <p>I am <strong>Patrick Benchog</strong> — a <strong>Mechanical Engineer</strong>, a <strong>tech-forward builder</strong>, and a product-focused executor. I design and ship practical apps, websites, and dashboards that solve real operational problems.</p>
-                      <p>My focus is simple: identify friction, build fast, and deliver solutions people can actually use. I work across Flutter/Android, web development, analytics dashboards, and AI-assisted product execution.</p>
+                      <p>My focus is simple: identify friction, build fast, and deliver solutions people can actually use. I work across cross-platform product engineering, web development, analytics dashboards, and AI-assisted execution.</p>
                   </div>
               </div>
           </section>
@@ -184,7 +184,7 @@ export function AppMarkup() {
                   <div className="service-card">
                       <div className="service-icon"><Smartphone {...iconProps} size={48} aria-hidden="true" /></div>
                       <h3>App Development</h3>
-                      <p>Building real, fully functional web apps and Android PWAs that solve genuine problems — connected to backends, synced across devices, and ready for real users.</p>
+                      <p>Building real, fully functional cross-platform systems and web platforms that solve genuine problems — connected to backends, synced across devices, and ready for real users.</p>
                   </div>
                   <div className="service-card">
                       <div className="service-icon"><Code2 {...iconProps} size={48} aria-hidden="true" /></div>
@@ -247,8 +247,8 @@ export function AppMarkup() {
                               <li>AI-powered financial guidance</li>
                           </ul>
                           <div className="project-tags">
-                              <span className="tag">PWA</span>
-                              <span className="tag">Flutter</span>
+                              <span className="tag">Cross-platform</span>
+                              <span className="tag">Cloud backend</span>
                               <span className="tag">Supabase</span>
                               <span className="tag">AI-assisted</span>
                           </div>
@@ -274,10 +274,10 @@ export function AppMarkup() {
                               <li>Instant report generation and sharing</li>
                           </ul>
                           <div className="project-tags">
-                              <span className="tag">PWA</span>
-                              <span className="tag">Flutter</span>
+                              <span className="tag">Cross-platform</span>
                               <span className="tag">Automation</span>
                               <span className="tag">Reports</span>
+                              <span className="tag">Inventory systems</span>
                           </div>
                           <div className="project-card-actions">
                               <button type="button" className="btn-view-project" data-project="stockpulse">View Project</button>
@@ -301,10 +301,10 @@ export function AppMarkup() {
                               <li>Eliminates client uncertainty and wasted trips</li>
                           </ul>
                           <div className="project-tags">
-                              <span className="tag">PWA</span>
-                              <span className="tag">Flutter</span>
+                              <span className="tag">Cross-platform</span>
                               <span className="tag">Non-citizens Ghana</span>
                               <span className="tag">Live fees</span>
+                              <span className="tag">Client operations</span>
                           </div>
                           <div className="project-card-actions">
                               <button type="button" className="btn-view-project" data-project="ims">View Project</button>
