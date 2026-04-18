@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { AppMarkup } from './AppMarkup.jsx';
+import { PortfolioAssistant } from './PortfolioAssistant.jsx';
 import { initPortfolioRuntime } from './portfolio.js';
 
 export default function App() {
@@ -7,5 +8,10 @@ export default function App() {
     initPortfolioRuntime();
   }, []);
 
-  return <AppMarkup />;
+  return (
+    <>
+      <AppMarkup />
+      <PortfolioAssistant />
+    </>
+  );
 }

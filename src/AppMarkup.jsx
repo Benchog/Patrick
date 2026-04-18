@@ -27,7 +27,7 @@ export function AppMarkup() {
           
           <nav id="navbar">
               <div className="nav-container">
-                  <a href="#" className="logo">PB</a>
+                  <a href="#hero" className="logo logo-wordmark">Patrick</a>
                   <div className="nav-right">
                       <ul className="nav-links" id="primaryNavLinks">
                           <li><a href="#hero">Home</a></li>
@@ -220,21 +220,25 @@ export function AppMarkup() {
           </section>
       
               
-          <section id="projects" className="fade-in">
-              <h2 className="section-title">Proof of Impact</h2>
-              <div className="projects-filter">
-                  <button className="filter-btn active" data-filter="all">All Projects</button>
-                  <button className="filter-btn" data-filter="app">Apps</button>
-                  <button className="filter-btn" data-filter="web">Websites</button>
-                  <button className="filter-btn" data-filter="data">Data Analytics</button>
-                  <button className="filter-btn" data-filter="design">Design</button>
-                  <button className="filter-btn" data-filter="photography">Photography</button>
+          <section id="projects" className="fade-in projects-section">
+              <div className="projects-section-head">
+                  <h2 className="section-title projects-section-title">Selected Work</h2>
+                  <p className="projects-section-lead">Production apps, analytics, web experiences, and creative portfolios — scan the mosaic, filter by craft, then open any piece for the full story.</p>
               </div>
-              <div className="projects-grid">
+              <div className="projects-filter" role="group" aria-label="Filter projects">
+                  <button type="button" className="filter-btn active" data-filter="all">All</button>
+                  <button type="button" className="filter-btn" data-filter="app">Apps</button>
+                  <button type="button" className="filter-btn" data-filter="web">Websites</button>
+                  <button type="button" className="filter-btn" data-filter="data">Data</button>
+                  <button type="button" className="filter-btn" data-filter="design">Design</button>
+                  <button type="button" className="filter-btn" data-filter="photography">Photo</button>
+              </div>
+              <div className="projects-showcase">
       
                   
-                  <div className="project-card" data-category="app">
+                  <div className="project-card project-card--lead project-card--span-8" data-category="app">
                       <div className="project-card-cover">
+                          <span className="project-card-kicker">Flagship build</span>
                           <img src="Dashboard.png" alt="The Optimist — main dashboard" />
                       </div>
                       <div className="project-card-body">
@@ -260,7 +264,7 @@ export function AppMarkup() {
                   </div>
       
                   
-                  <div className="project-card" data-category="app">
+                  <div className="project-card project-card--span-4" data-category="app">
                       <div className="project-card-cover">
                           <img src="SP-Dashboard.png" alt="StockPulse — supervisor dashboard" />
                       </div>
@@ -287,7 +291,7 @@ export function AppMarkup() {
                   </div>
       
                   
-                  <div className="project-card" data-category="app">
+                  <div className="project-card project-card--span-4" data-category="app">
                       <div className="project-card-cover">
                           <img src="IMS-Dash.png" alt="IMS Fee App — main dashboard" />
                       </div>
@@ -314,7 +318,7 @@ export function AppMarkup() {
                   </div>
       
                   
-                  <div className="project-card" data-category="data">
+                  <div className="project-card project-card--span-4" data-category="data">
                       <div className="project-card-cover project-card-cover--contain">
                           <img src="Furniture_Sales_Dashboard-.png" alt="Furniture sales dashboard preview" className="img-fallback-chain" data-fallback-srcs="Furniture_Sales_Dashboard.png,Furniture_Sales_Dashboard.svg" />
                       </div>
@@ -339,7 +343,7 @@ export function AppMarkup() {
                   </div>
       
                   
-                  <div className="project-card" data-category="data">
+                  <div className="project-card project-card--span-4" data-category="data">
                       <div className="project-card-cover project-card-cover--contain">
                           <img src="Marketing_Performance_Dashboard%20.png" alt="Marketing performance dashboard preview" className="img-fallback-chain" data-fallback-srcs="Marketing_Performance_Dashboard.png,Marketing_Performance_Dashboard_.png,Marketing_Performance_Dashboard.svg" />
                       </div>
@@ -364,7 +368,7 @@ export function AppMarkup() {
                   </div>
       
                   
-                  <div className="project-card" data-category="web">
+                  <div className="project-card project-card--span-6" data-category="web">
                       <div className="project-card-cover">
                           <img src="PrimeDraft-Home.png" alt="PrimeDraft Services — site preview" className="img-fallback-chain" data-fallback-srcs="Primed.png" />
                       </div>
@@ -390,7 +394,7 @@ export function AppMarkup() {
                   </div>
       
                   
-                  <div className="project-card" data-category="web">
+                  <div className="project-card project-card--span-6" data-category="web">
                       <div className="project-card-cover">
                           <img src="BenchTech-Dashboard.png" alt="BenchTech Support — site preview" className="img-fallback-chain" data-fallback-srcs="BenchTech.png" />
                       </div>
@@ -416,7 +420,7 @@ export function AppMarkup() {
                   </div>
       
                   
-                  <div className="project-card" data-category="design">
+                  <div className="project-card project-card--span-6" data-category="design">
                       <div className="project-card-cover project-card-cover--tight">
                           <img src="Fast%20Food.png" alt="Design gallery preview" className="img-fallback-chain" data-fallback-srcs="Opti%20Deco%201.png,Social%20Media%20Shoe%20poster.png,WEB.png" />
                       </div>
@@ -441,7 +445,7 @@ export function AppMarkup() {
                   </div>
       
                   
-                  <div className="project-card" data-category="photography">
+                  <div className="project-card project-card--span-6" data-category="photography">
                       <div className="project-card-cover">
                           <img src="file_000000000234722f9a7e16dd667d455d.png" alt="Photography gallery preview" className="img-fallback-chain" data-fallback-srcs="file_00000000989471fda7bae3382546014a.png,wmremove-transformed.jpeg" />
                       </div>
@@ -469,7 +473,7 @@ export function AppMarkup() {
           </section>
       
               
-          <section id="contact" className="fade-in">
+          <section id="contact" className="fade-in" tabIndex={-1} aria-label="Contact">
               <h2 className="section-title">Let's Build the Future</h2>
               <div className="contact-content">
                   <div className="contact-card">

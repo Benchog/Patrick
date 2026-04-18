@@ -180,7 +180,7 @@ function initProjectFiltering() {
 
             projectCards.forEach(card => {
                 if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                    card.style.display = 'block';
+                    card.style.display = '';
                     card.style.animation = 'fadeInUp 0.5s ease forwards';
                 } else {
                     card.style.display = 'none';
