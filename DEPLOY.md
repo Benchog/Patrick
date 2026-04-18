@@ -95,7 +95,23 @@ The first deployment may take a few minutes. When it finishes, Vercel shows a **
 
 ---
 
-## 6. Enable the AI assistant (OpenAI)
+## 6. Pricing (Supabase)
+
+The **Pricing** section reads from a `pricing_plans` table so you can change GHS amounts without redeploying.
+
+1. Create a project at [supabase.com](https://supabase.com).
+2. Open **SQL Editor**, paste the contents of **`supabase/pricing_plans.sql`** from this repository, and run it.
+3. In **Project Settings → API**, copy the **Project URL** and the **`anon` `public`** key.
+4. In Vercel: **Settings → Environment Variables** → add:
+   - **`VITE_SUPABASE_URL`** — the Project URL  
+   - **`VITE_SUPABASE_ANON_KEY`** — the `anon` public key  
+5. **Redeploy** so the new variables are available at build time.
+
+Edit or add rows in Supabase **Table Editor** (`pricing_plans`, keep **`is_active`** true for visible cards). USD amounts on the site are estimates from a public FX feed, shown next to your GHS prices.
+
+---
+
+## 7. Enable the AI assistant (OpenAI)
 
 The assistant calls **`/api/chat`**, implemented as **`api/chat.js`** (Vercel serverless).
 
@@ -111,7 +127,7 @@ Never commit API keys into the repository. The app only reads the key on the ser
 
 ---
 
-## 7. Optional: test API + frontend together locally
+## 8. Optional: test API + frontend together locally
 
 Plain `npm run dev` serves Vite only; **`/api/chat` will not exist** unless you run Vercel’s dev server.
 
@@ -125,13 +141,13 @@ Follow the prompts to link the folder to your Vercel project. This runs Vite and
 
 ---
 
-## 8. Optional: custom domain
+## 9. Optional: custom domain
 
 In Vercel: **Project** → **Settings** → **Domains** → add your domain and follow DNS instructions from Vercel.
 
 ---
 
-## 9. After every future change
+## 10. After every future change
 
 ```powershell
 cd "C:\Users\PATRICK\Downloads\My Portfolio Website"
@@ -151,6 +167,7 @@ Vercel will **automatically rebuild and deploy** from `main` if the Git integrat
 | 1 | `npm install` and `npm run build` succeed |
 | 2 | Code committed and pushed to `main` on GitHub |
 | 3 | Vercel project imports that repo with **Output:** `dist`, **Build:** `npm run build` |
-| 4 | `OPENAI_API_KEY` set in Vercel and project redeployed (for full AI) |
+| 4 | `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` set and redeployed (for Pricing) |
+| 5 | `OPENAI_API_KEY` set in Vercel and redeployed (for full AI) |
 
 If something fails, copy the **exact error message** from the terminal or Vercel’s build log — that pinpoints the fix.

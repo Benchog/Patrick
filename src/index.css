@@ -878,67 +878,23 @@
         }
 
         /* Projects Section */
-        .projects-section {
-            position: relative;
-        }
-
-        .projects-section-head {
-            text-align: center;
-            max-width: 760px;
-            margin: 0 auto 1.75rem;
-        }
-
-        .projects-section-title {
-            margin-bottom: 0.65rem;
-        }
-
-        .projects-section-lead {
-            margin: 0;
-            font-size: 1.05rem;
-            line-height: 1.65;
-            color: var(--text-light);
-        }
-
         .projects-filter {
             display: flex;
             justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 0 auto 2.25rem;
-            max-width: 920px;
-            padding: 0.5rem;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.35);
-            border: 1px solid rgba(10, 17, 40, 0.08);
-            backdrop-filter: blur(12px) saturate(140%);
-        }
-
-        body.dark-mode .projects-filter {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: rgba(255, 255, 255, 0.12);
-        }
-
-        body.dark-mode .filter-btn {
-            color: rgba(255, 255, 255, 0.88);
-        }
-
-        body.dark-mode .filter-btn.active,
-        body.dark-mode .filter-btn:hover {
-            background: rgba(255, 255, 255, 0.16);
-            color: #fff;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
         }
 
         .filter-btn {
             background: transparent;
-            border: none;
+            border: 2px solid var(--primary-blue);
             color: var(--primary-blue);
-            padding: 0.45rem 1.15rem;
-            border-radius: 999px;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
             cursor: pointer;
-            transition: background 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
-            font-weight: 600;
-            font-size: 0.88rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
             font-family: inherit;
         }
 
@@ -946,91 +902,253 @@
         .filter-btn:hover {
             background: var(--primary-blue);
             color: white;
-            box-shadow: 0 6px 20px rgba(10, 17, 40, 0.18);
         }
 
-        .projects-showcase {
-            display: grid;
-            grid-template-columns: repeat(12, minmax(0, 1fr));
-            gap: 1.35rem;
-            align-items: stretch;
-            max-width: 1220px;
-            margin: 0 auto;
+        body.dark-mode .filter-btn {
+            border-color: rgba(255, 255, 255, 0.28);
+            color: #fafafa;
         }
 
-        @media (min-width: 1100px) {
-            .project-card--span-8 {
-                grid-column: span 8;
-            }
-
-            .project-card--span-4 {
-                grid-column: span 4;
-            }
-
-            .project-card--span-6 {
-                grid-column: span 6;
-            }
-
-            .project-card--lead .project-card-cover {
-                height: min(320px, 34vw);
-            }
-
-            .project-card--lead {
-                position: relative;
-                border-radius: 24px;
-                box-shadow:
-                    0 0 0 1px rgba(255, 215, 0, 0.35),
-                    0 24px 55px rgba(10, 17, 40, 0.14);
-            }
-
-            .project-card--lead::after {
-                content: '';
-                position: absolute;
-                inset: 0;
-                border-radius: inherit;
-                pointer-events: none;
-                background: radial-gradient(120% 80% at 10% 0%, rgba(255, 215, 0, 0.14), transparent 55%);
-            }
-
-            .project-card--lead:hover {
-                box-shadow:
-                    0 0 0 1px rgba(255, 215, 0, 0.5),
-                    0 28px 60px rgba(10, 17, 40, 0.18);
-            }
-        }
-
-        @media (max-width: 1099px) {
-            .projects-showcase {
-                grid-template-columns: 1fr;
-            }
-
-            .project-card--span-8,
-            .project-card--span-4,
-            .project-card--span-6 {
-                grid-column: 1 / -1;
-            }
-        }
-
-        .project-card-kicker {
-            position: absolute;
-            top: 0.85rem;
-            left: 0.85rem;
-            z-index: 2;
-            font-size: 0.68rem;
-            font-weight: 800;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            padding: 0.35rem 0.6rem;
-            border-radius: 999px;
-            background: linear-gradient(135deg, rgba(255, 234, 163, 0.95), var(--accent-gold));
-            color: var(--primary-blue);
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        body.dark-mode .filter-btn.active,
+        body.dark-mode .filter-btn:hover {
+            background: rgba(255, 255, 255, 0.14);
+            color: #fafafa;
+            border-color: rgba(255, 255, 255, 0.35);
         }
 
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
             gap: 2rem;
+        }
+
+        /* Pricing (Supabase-driven) */
+        #pricing {
+            scroll-margin-top: 5.5rem;
+        }
+
+        .pricing-intro {
+            max-width: 720px;
+            margin: -0.5rem auto 2rem;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.02rem;
+            line-height: 1.65;
+        }
+
+        .pricing-rate-line {
+            text-align: center;
+            font-size: 0.82rem;
+            color: var(--text-light);
+            margin: -1rem auto 2rem;
+            max-width: 640px;
+        }
+
+        .pricing-rate-line code {
+            font-size: 0.78em;
+            background: rgba(10, 17, 40, 0.06);
+            padding: 0.12rem 0.35rem;
+            border-radius: 6px;
+        }
+
+        body.dark-mode .pricing-rate-line code {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            position: relative;
+            padding: 1.65rem 1.5rem 1.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(10, 17, 40, 0.1);
+            background: rgba(255, 255, 255, 0.55);
+            box-shadow: 0 14px 40px rgba(10, 17, 40, 0.08);
+            backdrop-filter: blur(14px) saturate(140%);
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 48px rgba(10, 17, 40, 0.12);
+        }
+
+        .pricing-card--highlight {
+            border-color: rgba(255, 215, 0, 0.55);
+            box-shadow:
+                0 0 0 1px rgba(255, 215, 0, 0.35),
+                0 18px 50px rgba(10, 17, 40, 0.12);
+            background: linear-gradient(165deg, rgba(255, 248, 220, 0.45) 0%, rgba(255, 255, 255, 0.55) 48%);
+        }
+
+        body.dark-mode .pricing-card {
+            background: rgba(21, 32, 57, 0.55);
+            border-color: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        body.dark-mode .pricing-card--highlight {
+            background: linear-gradient(165deg, rgba(255, 215, 0, 0.12) 0%, rgba(21, 32, 57, 0.65) 45%);
+            border-color: rgba(255, 215, 0, 0.4);
+        }
+
+        .pricing-card-badge {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.3rem 0.55rem;
+            border-radius: 999px;
+            background: var(--gold-gradient);
+            color: var(--primary-blue);
+        }
+
+        .pricing-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.35rem;
+            margin: 0;
+            color: var(--primary-blue);
+            line-height: 1.2;
+        }
+
+        body.dark-mode .pricing-card h3 {
+            color: #fafafa;
+        }
+
+        .pricing-card-sub {
+            margin: 0;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .pricing-card-desc {
+            margin: 0;
+            font-size: 0.92rem;
+            line-height: 1.55;
+            color: var(--text-light);
+            flex: 1;
+        }
+
+        .pricing-price-block {
+            padding: 0.85rem 0;
+            border-top: 1px solid rgba(10, 17, 40, 0.08);
+            border-bottom: 1px solid rgba(10, 17, 40, 0.08);
+        }
+
+        body.dark-mode .pricing-price-block {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .pricing-ghs {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            letter-spacing: -0.02em;
+        }
+
+        body.dark-mode .pricing-ghs {
+            color: #fff;
+        }
+
+        .pricing-billing {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-top: 0.2rem;
+        }
+
+        .pricing-usd {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-top: 0.35rem;
+        }
+
+        .pricing-features {
+            margin: 0;
+            padding-left: 1.15rem;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            color: var(--text-dark);
+        }
+
+        body.dark-mode .pricing-features {
+            color: #e2e2e2;
+        }
+
+        .pricing-features li {
+            margin-bottom: 0.35rem;
+        }
+
+        .pricing-cta {
+            margin-top: auto;
+            padding-top: 0.5rem;
+        }
+
+        .pricing-cta a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.55rem 1rem;
+            border-radius: 999px;
+            background: var(--gold-gradient);
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .pricing-cta a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(255, 215, 0, 0.35);
+        }
+
+        .pricing-empty {
+            text-align: center;
+            max-width: 520px;
+            margin: 0 auto;
+            padding: 2rem 1.25rem;
+            border-radius: 16px;
+            background: rgba(10, 17, 40, 0.06);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .pricing-error {
+            text-align: center;
+            max-width: 520px;
+            margin: 0 auto;
+            padding: 2rem 1.25rem;
+            border-radius: 16px;
+            background: rgba(239, 68, 40, 0.08);
+            border: 1px solid rgba(239, 68, 68, 0.35);
+            color: #b91c1c;
+            line-height: 1.6;
+        }
+
+        body.dark-mode .pricing-empty {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        body.dark-mode .pricing-error {
+            background: rgba(239, 68, 68, 0.12);
+            color: #fca5a5;
         }
 
         /* Gallery (Design + Photography) */
@@ -2340,10 +2458,6 @@
                 padding: 0.55rem 1.1rem;
                 min-height: 44px;
                 touch-action: manipulation;
-            }
-
-            .projects-showcase {
-                gap: 1.35rem;
             }
 
             .projects-grid {

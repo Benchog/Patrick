@@ -1,6 +1,6 @@
 # Patrick Benchog — Portfolio
 
-React + Vite single-page portfolio with galleries, project modals, theme controls, and an optional AI assistant (OpenAI via Vercel serverless).
+React + Vite single-page portfolio with galleries, project modals, theme controls, a **Pricing** section (GHS + live USD via Supabase + public FX), and an optional AI assistant (OpenAI via Vercel serverless).
 
 ## Scripts
 
