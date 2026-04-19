@@ -32,18 +32,18 @@ export function AppMarkup() {
                       <Code2 {...iconProps} size={26} className="logo-nav-icon" aria-hidden="true" />
                       <span className="logo-wordmark">Patrick</span>
                   </a>
-                  <div className="nav-right">
-                      <ul className="nav-links" id="primaryNavLinks">
-                          <li><a href="#hero">Home</a></li>
-                          <li><a href="#about">About</a></li>
-                          <li><a href="#skills">Skills</a></li>
-                          <li><a href="#services">Services</a></li>
-                          <li><a href="#projects">Projects</a></li>
-                          <li><a href="#pricing">Pricing</a></li>
-                          <li className="nav-hire-item"><a href="#contact" className="nav-hire-mobile">Hire Patrick</a></li>
-                          <li><a href="#contact">Contact</a></li>
-                          <li><button type="button" className="nav-theme-trigger" id="themePanelOpen">Theme</button></li>
-                      </ul>
+                  <ul className="nav-links" id="primaryNavLinks">
+                      <li><a href="#hero">Home</a></li>
+                      <li><a href="#about">About</a></li>
+                      <li><a href="#skills">Skills</a></li>
+                      <li><a href="#services">Services</a></li>
+                      <li><a href="#projects">Projects</a></li>
+                      <li><a href="#pricing">Pricing</a></li>
+                      <li className="nav-hire-item"><a href="#contact" className="nav-hire-mobile">Hire Patrick</a></li>
+                      <li><a href="#contact">Contact</a></li>
+                      <li><button type="button" className="nav-theme-trigger" id="themePanelOpen">Theme</button></li>
+                  </ul>
+                  <div className="nav-trailing">
                       <a href="#contact" className="hire-now-btn">Hire Patrick</a>
                       <button type="button" className="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-controls="primaryNavLinks" aria-expanded="false">
                           <Menu {...iconProps} size={22} aria-hidden="true" />
