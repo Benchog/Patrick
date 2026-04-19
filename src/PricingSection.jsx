@@ -132,7 +132,7 @@ export function PricingSection() {
 
   if (error === 'missing_env') {
     return (
-      <section id="pricing" className="fade-in" tabIndex={-1} aria-label="Pricing">
+      <section id="pricing" className="fade-in pricing-section-premium" tabIndex={-1} aria-label="Pricing">
         <h2 className="section-title">Pricing</h2>
         <div className="pricing-error">
           The app cannot see Supabase settings. For <strong>local dev</strong>: create <code>.env.local</code> next to <code>package.json</code> with{' '}
@@ -146,7 +146,7 @@ export function PricingSection() {
 
   if (loading) {
     return (
-      <section id="pricing" className="fade-in" aria-label="Pricing">
+      <section id="pricing" className="fade-in pricing-section-premium" aria-label="Pricing">
         <h2 className="section-title">Pricing</h2>
         <p className="pricing-intro">Loading packages…</p>
       </section>
@@ -155,7 +155,7 @@ export function PricingSection() {
 
   if (error) {
     return (
-      <section id="pricing" className="fade-in" tabIndex={-1} aria-label="Pricing">
+      <section id="pricing" className="fade-in pricing-section-premium" tabIndex={-1} aria-label="Pricing">
         <h2 className="section-title">Pricing</h2>
         <div className="pricing-error">
           Could not load pricing: {error}. Confirm the <code>pricing_plans</code> table exists and public read is allowed (see{' '}
@@ -166,7 +166,7 @@ export function PricingSection() {
   }
 
   return (
-    <section id="pricing" className="fade-in" tabIndex={-1} aria-label="Pricing">
+    <section id="pricing" className="fade-in pricing-section-premium" tabIndex={-1} aria-label="Pricing">
       <h2 className="section-title">Pricing</h2>
       <p className="pricing-intro">
         Explore starting prices for each service below — figures are in Ghana cedis (GHS). USD beside each card is a rough live conversion for anyone paying or thinking in dollars.

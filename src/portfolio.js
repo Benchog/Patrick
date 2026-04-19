@@ -70,6 +70,10 @@ function toggleDarkMode() {
 // Load dark mode preference
 function loadDarkMode() {
     const darkMode = localStorage.getItem('darkMode');
+    if (darkMode === null || darkMode === '') {
+        setTheme('dark');
+        return;
+    }
     setTheme(darkMode === 'enabled' ? 'dark' : 'light');
 }
 
@@ -1297,33 +1301,41 @@ function injectPortfolioExtraStyles() {
         outline: 2px solid var(--accent-gold);
         outline-offset: 2px;
     }
-    /* Dark mode card and button consistency */
+    /* Dark mode cards — glass + cyan edge (matches premium theme in index.css) */
     .dark-mode .project-card,
-    .dark-mode .service-card,
-    .dark-mode .skill-category,
     .dark-mode .contact-card {
-    background: #152039;
+    background: rgba(15, 23, 42, 0.58);
     color: #FAFAFA;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(56, 189, 248, 0.14);
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.42);
+    backdrop-filter: blur(14px) saturate(145%);
     }
-    /* Dark mode CTA button */
-    .dark-mode .cta-button {
-    background: var(--accent-gold);
-    color: var(--primary-blue);
+    .dark-mode .cta-button:not(.cta-button--ghost) {
+    background: linear-gradient(135deg, #22d4ee 0%, #3b82f6 48%, #6366f1 100%);
+    color: #020617 !important;
+    border: none;
+    box-shadow: 0 10px 34px rgba(34, 212, 238, 0.28);
     }
-    .dark-mode .cta-button:hover {
-    background: #f5d742;
-    color: var(--primary-blue);
+    .dark-mode .cta-button:not(.cta-button--ghost):hover {
+    filter: brightness(1.06);
+    box-shadow: 0 14px 42px rgba(56, 189, 248, 0.38);
+    }
+    .dark-mode .cta-button--ghost {
+    background: transparent !important;
+    color: #e2e8f0 !important;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    box-shadow: none !important;
     }
     /* Dark mode project filter buttons */
     .dark-mode .filter-btn {
-    background: #1f2a48;
-    color: #FAFAFA;
-    border: none;
+    background: rgba(15, 23, 42, 0.65);
+    color: #e2e8f0;
+    border: 1px solid rgba(56, 189, 248, 0.2);
     }
     .dark-mode .filter-btn.active {
-    background: var(--accent-gold);
-    color: var(--primary-blue);
+    background: linear-gradient(135deg, rgba(34, 212, 238, 0.95), rgba(59, 130, 246, 0.9));
+    color: #020617;
+    border-color: transparent;
     }
 `;
     document.head.appendChild(style);

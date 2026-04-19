@@ -76,22 +76,54 @@ export function AppMarkup() {
       
           <main id="mainContent">
           
-          <section id="hero" className="hero">
+          <section id="hero" className="hero hero--premium">
               <div className="hero-portrait-bg" aria-hidden="true"></div>
+              <div className="hero-grid-glow" aria-hidden="true"></div>
               <div className="hero-vignette" aria-hidden="true"></div>
               <div className="particles" id="particles"></div>
-              <div className="hero-content">
-                  <h1>Patrick Benchog</h1>
-                  <p className="tagline">I Build Real Systems That Solve Real Problems — With AI, Speed, and Purpose.</p>
-                  <p className="caption">
-                      <span className="rotating-text" id="rotatingText">App Builder</span> • Problem Solver • Fast Executor
-                  </p>
-                  
-                  <div className="hero-cta-row" style={{"display":"flex","justifyContent":"center","gap":"1rem","flexWrap":"wrap"}}>
-                      <a href="#about" className="cta-button">Explore My World</a>
-                      <a href="Benchog Patrick_CV.pdf" className="glass-button slide-in-up" target="_blank" rel="noopener">Download CV</a>
+              <div className="hero-inner">
+                  <div className="hero-copy">
+                      <p className="hero-kicker">
+                          <span className="hero-kicker-pulse" aria-hidden="true"></span>
+                          Mechanical Engineer · Product builder · Techiman, Ghana
+                      </p>
+                      <h1>Patrick Benchog</h1>
+                      <p className="hero-lead tagline">I Build Real Systems That Solve Real Problems — With AI, Speed, and Purpose.</p>
+                      <div className="hero-stats" aria-label="Highlights">
+                          <div className="hero-stat">
+                              <span className="hero-stat-value">Full stack</span>
+                              <span className="hero-stat-label">Apps, sites &amp; dashboards</span>
+                          </div>
+                          <div className="hero-stat">
+                              <span className="hero-stat-value">Ops-first</span>
+                              <span className="hero-stat-label">Built for real workflows</span>
+                          </div>
+                          <div className="hero-stat">
+                              <span className="hero-stat-value">AI-assisted</span>
+                              <span className="hero-stat-label">Speed without shortcuts</span>
+                          </div>
+                          <div className="hero-stat">
+                              <span className="hero-stat-value">Discipline</span>
+                              <span className="hero-stat-label">Engineering + craft</span>
+                          </div>
+                      </div>
+                      <p className="caption hero-caption-tight">
+                          <span className="rotating-text" id="rotatingText">App Builder</span> • Problem Solver • Fast Executor
+                      </p>
+                      <div className="hero-cta-row">
+                          <a href="#contact" className="cta-button cta-button--primary">Get in Touch</a>
+                          <a href="#projects" className="cta-button cta-button--ghost">View work</a>
+                          <a href="Benchog Patrick_CV.pdf" className="glass-button slide-in-up hero-cv-btn" target="_blank" rel="noopener">Download CV</a>
+                      </div>
                   </div>
-      
+                  <div className="hero-visual" aria-hidden="false">
+                      <div className="hero-portrait-ring">
+                          <div className="hero-portrait-ring-inner">
+                              <img src="1750806398142.jpeg" alt="Patrick Benchog" />
+                          </div>
+                          <div className="hero-portrait-orbit" aria-hidden="true"></div>
+                      </div>
+                  </div>
               </div>
           </section>
       
