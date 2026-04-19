@@ -28,7 +28,10 @@ export function AppMarkup() {
           
           <nav id="navbar">
               <div className="nav-container">
-                  <a href="#hero" className="logo logo-wordmark">Patrick</a>
+                  <a href="#hero" className="logo logo-with-icon" aria-label="Patrick — Home">
+                      <Code2 {...iconProps} size={26} className="logo-nav-icon" aria-hidden="true" />
+                      <span className="logo-wordmark">Patrick</span>
+                  </a>
                   <div className="nav-right">
                       <ul className="nav-links" id="primaryNavLinks">
                           <li><a href="#hero">Home</a></li>

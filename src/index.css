@@ -331,6 +331,25 @@
             text-decoration: none;
         }
 
+        .logo-with-icon {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.42rem;
+            text-decoration: none;
+        }
+
+        .logo-nav-icon {
+            flex-shrink: 0;
+            color: var(--accent-gold);
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.35));
+            transition: transform 0.25s ease, filter 0.25s ease;
+        }
+
+        .logo-with-icon:hover .logo-nav-icon {
+            transform: rotate(-8deg) scale(1.05);
+            filter: drop-shadow(0 0 14px rgba(255, 215, 0, 0.5));
+        }
+
         .logo-wordmark {
             font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
             font-weight: 600;

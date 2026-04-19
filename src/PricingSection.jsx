@@ -135,8 +135,10 @@ export function PricingSection() {
       <section id="pricing" className="fade-in" tabIndex={-1} aria-label="Pricing">
         <h2 className="section-title">Pricing</h2>
         <div className="pricing-error">
-          Set <code>VITE_SUPABASE_URL</code> and <code>VITE_SUPABASE_ANON_KEY</code> in your environment (e.g. Vercel → Settings → Environment Variables), then redeploy. Run the SQL in{' '}
-          <code>supabase/pricing_plans.sql</code> in the Supabase SQL editor to create the table and sample rows.
+          The app cannot see Supabase settings. For <strong>local dev</strong>: create <code>.env.local</code> next to <code>package.json</code> with{' '}
+          <code>VITE_SUPABASE_URL</code> and <code>VITE_SUPABASE_ANON_KEY</code> on their own lines — <strong>no</strong> leading <code>#</code> — then restart{' '}
+          <code>npm run dev</code>. For the <strong>live site</strong> (Vercel): add the same two variables under Project → Settings → Environment Variables and{' '}
+          <strong>Redeploy</strong> (<code>.env.local</code> is never uploaded). Also run <code>supabase/pricing_plans.sql</code> in the Supabase SQL editor if you have not already.
         </div>
       </section>
     );
@@ -167,20 +169,19 @@ export function PricingSection() {
     <section id="pricing" className="fade-in" tabIndex={-1} aria-label="Pricing">
       <h2 className="section-title">Pricing</h2>
       <p className="pricing-intro">
-        Starting points in Ghana cedis (GHS), with a live USD estimate for clients outside Ghana. Update amounts anytime in your Supabase{' '}
-        <code>pricing_plans</code> table — no redeploy required.
+        Explore starting prices for each service below — figures are in Ghana cedis (GHS). USD beside each card is a rough live conversion for anyone paying or thinking in dollars.
       </p>
       <p className="pricing-rate-line">
         {usdPerGhs != null ? (
           <>
-            Live rate:{' '}
+            Rate used:{' '}
             <code>
               1 GHS {'\u2248'} {usdPerGhs.toFixed(4)} USD
             </code>
-            {rateMeta ? ` · ${new Date(rateMeta).toLocaleString()}` : ''}. USD is indicative (mid-market), not a bank quote.
+            {rateMeta ? ` · ${new Date(rateMeta).toLocaleString()}` : ''} (indicative, not a bank rate).
           </>
         ) : (
-          <>USD estimate is offline right now; GHS prices below come straight from your database.</>
+          <>USD estimate is offline; GHS amounts still come from your Supabase table.</>
         )}
       </p>
 
