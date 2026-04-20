@@ -12,7 +12,6 @@ import {
   FileText,
   Github,
   Linkedin,
-  Video,
   MessageCircle,
   Mail,
 } from 'lucide-react';
@@ -33,7 +32,7 @@ export function AppMarkup() {
                       <span className="logo-wordmark">Patrick</span>
                   </a>
                   <ul className="nav-links" id="primaryNavLinks">
-                      <li><a href="#hero">About</a></li>
+                      <li><a href="#hero">Profile</a></li>
                       
                       <li><a href="#skills">Skills</a></li>
                       <li><a href="#services">Services</a></li>
@@ -41,10 +40,12 @@ export function AppMarkup() {
                       <li><a href="#pricing">Pricing</a></li>
                       <li className="nav-hire-item"><a href="#contact" className="nav-hire-mobile">Hire Patrick</a></li>
                       <li><a href="#contact">Contact</a></li>
-                      <li><button type="button" className="nav-theme-trigger" id="themePanelOpen">Theme</button></li>
                   </ul>
                   <div className="nav-trailing">
                       <a href="#contact" className="hire-now-btn">Hire Patrick</a>
+                      <button type="button" className="nav-theme-icon" id="themePanelOpen" aria-label="Open appearance settings">
+                          <Palette {...iconProps} size={18} aria-hidden="true" />
+                      </button>
                       <button type="button" className="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-controls="primaryNavLinks" aria-expanded="false">
                           <Menu {...iconProps} size={22} aria-hidden="true" />
                       </button>
@@ -85,9 +86,9 @@ export function AppMarkup() {
                   <div className="hero-copy">
                       <p className="hero-kicker">
                           <span className="hero-kicker-pulse" aria-hidden="true"></span>
-                          About me · Mechanical Engineer · Product builder · Techiman, Ghana
+                          Mechanical Engineer · Product builder · Techiman, Ghana
                       </p>
-                      <h1>About Patrick Benchog</h1>
+                      <h1>Patrick Benchog</h1>
                       <p className="hero-lead tagline">Mechanical Engineer and digital systems builder focused on creating premium apps, dashboards, and web platforms that solve real business friction.</p>
                       <div className="hero-stats" aria-label="Highlights">
                           <div className="hero-stat">
@@ -115,20 +116,6 @@ export function AppMarkup() {
                           <a href="#projects" className="cta-button cta-button--ghost">View work</a>
                           <a href="Benchog Patrick_CV.pdf" className="glass-button slide-in-up hero-cv-btn" target="_blank" rel="noopener">Download CV</a>
                       </div>
-                      <div className="hero-command-strip" aria-label="Command center summary">
-                          <article className="hero-command-card">
-                              <p className="hero-command-label">Primary focus</p>
-                              <p className="hero-command-value">Apps + dashboards that drive decisions</p>
-                          </article>
-                          <article className="hero-command-card">
-                              <p className="hero-command-label">Build tempo</p>
-                              <p className="hero-command-value">Fast iterations, clean handoff</p>
-                          </article>
-                          <article className="hero-command-card">
-                              <p className="hero-command-label">Execution mode</p>
-                              <p className="hero-command-value">AI-assisted, engineering disciplined</p>
-                          </article>
-                      </div>
                   </div>
                   <div className="hero-visual" aria-hidden="false">
                       <div className="hero-portrait-ring">
@@ -137,20 +124,6 @@ export function AppMarkup() {
                           </div>
                           <div className="hero-portrait-orbit" aria-hidden="true"></div>
                       </div>
-                  </div>
-              </div>
-          </section>
-      
-          
-          <section id="about" className="fade-in">
-              <h2 className="section-title">Core Story</h2>
-              <div className="about-content">
-                  <div className="about-image">
-                      <img src="1750806398142.jpeg" alt="Benchog Patrick" />
-                  </div>
-                  <div className="about-text">
-                      <p>I am <strong>Patrick Benchog</strong> — a <strong>Mechanical Engineer</strong>, a <strong>tech-forward builder</strong>, and a product-focused executor. I design and ship practical apps, websites, and dashboards that solve real operational problems.</p>
-                      <p>My focus is simple: identify friction, build fast, and deliver solutions people can actually use. I work across cross-platform product engineering, web development, analytics dashboards, and AI-assisted execution.</p>
                   </div>
               </div>
           </section>
@@ -535,9 +508,6 @@ export function AppMarkup() {
                           </a>
                           <a href="https://www.linkedin.com/in/patrick-benchog" className="social-link" title="LinkedIn" target="_blank" rel="noopener noreferrer">
                               <Linkedin {...iconProps} size={22} aria-hidden="true" />
-                          </a>
-                          <a href="https://www.tiktok.com/@king_optimistic_" className="social-link" title="TikTok" target="_blank" rel="noopener noreferrer">
-                              <Video {...iconProps} size={22} aria-hidden="true" />
                           </a>
                           <a href="https://wa.me/233240025563" className="social-link" title="WhatsApp" target="_blank" rel="noopener noreferrer">
                               <MessageCircle {...iconProps} size={22} aria-hidden="true" />
