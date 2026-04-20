@@ -706,7 +706,7 @@
         }
 
         body:not(.dark-mode) .hero-kicker {
-            color: #0f172a;
+            color: #ffffff;
             border-color: rgba(15, 23, 42, 0.24);
             box-shadow: 0 0 0 1px rgba(255, 102, 214, 0.22), 0 0 20px rgba(255, 102, 214, 0.22);
         }
@@ -1438,29 +1438,19 @@
             position: relative;
         }
 
-        .prompt-samples-showcase {
-            margin-top: 1.25rem;
-            padding: 1rem;
-            border-radius: 18px;
-            border: 1px solid var(--ui-outline-soft);
-            background: rgba(15, 23, 42, 0.4);
-            user-select: none;
-            -webkit-user-select: none;
-        }
-
-        .prompt-samples-showcase h3 {
-            margin: 0 0 0.75rem;
-            font-size: 1.05rem;
-            color: #f8fafc;
-        }
-
-        .prompt-samples-grid {
+        .project-modal-prompt-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
             gap: 0.75rem;
         }
 
-        .prompt-sample-card {
+        .project-modal-prompt-samples {
+            margin-top: 1rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(148, 163, 184, 0.2);
+        }
+
+        .project-modal-prompt-card {
             padding: 0.75rem;
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.12);
@@ -1470,19 +1460,23 @@
             font-size: 0.76rem;
         }
 
-        .prompt-sample-card h4 {
+        .project-modal-prompt-card h4 {
             margin: 0 0 0.35rem;
             color: #f8fafc;
             font-size: 0.82rem;
         }
 
-        .prompt-sample-card p {
+        .project-modal-prompt-card p {
             margin: 0 0 0.2rem;
         }
 
-        .prompt-sample-card .blur-line {
+        .project-modal-prompt-card .blur-line {
             filter: blur(4px);
             opacity: 0.72;
+        }
+
+        .project-modal-prompt-lock {
+            margin-top: 0.75rem;
         }
 
         .project-flow-track {
@@ -1857,22 +1851,13 @@
             color: #f8fafc;
         }
 
-        body:not(.dark-mode) .prompt-samples-showcase {
-            background: rgba(255, 255, 255, 0.86);
-            border-color: rgba(15, 23, 42, 0.14);
-        }
-
-        body:not(.dark-mode) .prompt-samples-showcase h3 {
-            color: #0f172a;
-        }
-
-        body:not(.dark-mode) .prompt-sample-card {
+        body:not(.dark-mode) .project-modal-prompt-card {
             background: rgba(248, 250, 252, 0.98);
             border-color: rgba(15, 23, 42, 0.16);
             color: #1e293b;
         }
 
-        body:not(.dark-mode) .prompt-sample-card h4 {
+        body:not(.dark-mode) .project-modal-prompt-card h4 {
             color: #0f172a;
         }
 
@@ -3397,7 +3382,7 @@
                 width: min(72vw, 230px);
             }
 
-            .prompt-samples-grid {
+            .project-modal-prompt-grid {
                 grid-template-columns: 1fr;
             }
 

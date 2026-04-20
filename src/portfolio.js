@@ -241,7 +241,7 @@ function initSectionCarousel(trackId, prevSelector, nextSelector) {
 }
 
 function initPromptVaultProtection() {
-    const lockedAreas = document.querySelectorAll('.prompt-vault-card, .prompt-samples-showcase');
+    const lockedAreas = document.querySelectorAll('.prompt-vault-card, [data-prompt-protected="1"]');
     if (!lockedAreas.length) return;
 
     ['contextmenu', 'copy', 'cut', 'dragstart', 'selectstart'].forEach(function (evt) {
@@ -987,6 +987,42 @@ function escapeHtml(str) {
     return d.innerHTML;
 }
 
+function isPromptOwnerUnlocked() {
+    return localStorage.getItem('ownerPromptAccess') === 'true';
+}
+
+function buildPromptSamplesHtml(unlocked) {
+    const prompts = [
+        ['1) CFO Copilot Web App', 'You are a senior fintech product architect and CFO operations advisor.', 'Design a full-featured cashflow web app for SMEs, including requirements, architecture, and build plan.', unlocked ? 'SME in Ghana with weekly revenue fluctuations, delayed receivables, and reconciliation overhead from multiple mobile-money wallets.' : 'SME in Ghana with weekly revenue fluctuations and <span class="blur-line">[private cash-cycle assumptions hidden]</span>.', 'Return: user roles, database schema, API contract, UI screens, 4-sprint delivery plan, acceptance criteria.'],
+        ['2) Clinic Queue & Triage App', 'You are a health-tech systems engineer.', 'Generate a mobile + web queue system for walk-in and booked patients.', unlocked ? 'Community clinic with 3 doctors, 2 nurses, mixed emergency/non-emergency load, manual queue failures.' : 'Community clinic with mixed emergency load and <span class="blur-line">[protected triage decision rules hidden]</span>.', 'Return: workflow map, patient states, notifications logic, reporting dashboard, security model.'],
+        ['3) School ERP MVP', 'You are an education platform architect.', 'Create an ERP blueprint for attendance, grading, fees, and parent communication.', unlocked ? 'Multi-campus school using spreadsheets with errors in fee reconciliation and attendance records.' : 'Multi-campus school with legacy sheets and <span class="blur-line">[private migration strategy hidden]</span>.', 'Return: module breakdown, DB entities, parent/student portals, rollout plan, QA checklist.'],
+        ['4) Retail Inventory Forecasting', 'You are a supply-chain AI product lead.', 'Design an inventory app with demand forecasting and reorder automation.', unlocked ? '4 warehouse operation with stockouts and dead stock due to poor forecasting and delayed procurement.' : '4 warehouses with stock instability and <span class="blur-line">[sensitive reorder algorithm hidden]</span>.', 'Return: data model, forecasting pipeline, alerts logic, KPI dashboard, deployment steps.'],
+        ['5) Construction Project Tracker', 'You are a field operations systems architect.', 'Build a construction execution app for milestones, approvals, and incident logging.', unlocked ? 'Multiple project sites suffering from delayed sign-offs, poor visibility, and weak accountability trails.' : 'Multi-site execution with delay issues and <span class="blur-line">[confidential accountability matrix hidden]</span>.', 'Return: role permissions, workflow states, audit logging, file structure, escalation process.'],
+        ['6) Legal Intake Website Funnel', 'You are a conversion-focused web strategist and UX writer.', 'Generate a legal services website structure that increases qualified client inquiries.', unlocked ? 'Small legal practice with low conversion despite traffic; needs trust-first messaging and clear onboarding.' : 'Legal practice requiring trust-first funnel plus <span class="blur-line">[private persuasion framework hidden]</span>.', 'Return: sitemap, page-by-page copy blocks, CTA strategy, FAQ schema, SEO metadata.'],
+        ['7) Logistics Dispatch Platform', 'You are a real-time routing systems engineer.', 'Design a dispatch app with route assignment and proof-of-delivery tracking.', unlocked ? 'Last-mile delivery team with route overlaps, poor ETA accuracy, and missed delivery windows.' : 'Last-mile delivery team with routing inefficiencies and <span class="blur-line">[protected geo-priority formula hidden]</span>.', 'Return: dispatcher UI, courier app flow, route assignment logic, event model, SLA dashboard.'],
+        ['8) Property Management SaaS', 'You are a SaaS systems designer.', 'Create an MVP for property management including rent tracking, tickets, and owner reporting.', unlocked ? '500-unit portfolio with fragmented payment channels and unresolved maintenance backlog.' : '500-unit portfolio with mixed payments and <span class="blur-line">[sensitive owner reporting model hidden]</span>.', 'Return: core entities, billing logic, ticket lifecycle, tenant portal, admin analytics.'],
+        ['9) Manufacturing QA Tracker', 'You are an industrial quality systems engineer.', 'Design a quality tracking app for defects, root causes, and corrective actions.', unlocked ? 'Manufacturing line losing margin due to repeat defects and weak traceability.' : 'Manufacturing defects with traceability gaps and <span class="blur-line">[private defect taxonomy hidden]</span>.', 'Return: defect form schema, RCA workflow, CAPA flow, reporting matrix, implementation roadmap.'],
+        ['10) Government Service Portal', 'You are a public-sector digital transformation architect.', 'Generate a citizen-service portal for applications, tracking, and notifications.', unlocked ? 'High-demand public service with long queues and manual verification bottlenecks.' : 'High-demand service with compliance requirements and <span class="blur-line">[restricted policy mapping hidden]</span>.', 'Return: modules, identity verification workflow, security controls, phased release plan, SLA matrix.']
+    ];
+
+    const cards = prompts.map(function (p) {
+        return '<article class="project-modal-prompt-card">' +
+            '<h4>' + escapeHtml(p[0]) + '</h4>' +
+            '<p><strong>Role:</strong> ' + escapeHtml(p[1]) + '</p>' +
+            '<p><strong>Task:</strong> ' + escapeHtml(p[2]) + '</p>' +
+            '<p><strong>Context:</strong> ' + p[3] + '</p>' +
+            '<p><strong>Format:</strong> ' + escapeHtml(p[4]) + '</p>' +
+            '</article>';
+    }).join('');
+
+    return '<section class="project-modal-prompt-samples ' + (unlocked ? 'is-unlocked' : 'is-locked') + '" data-prompt-protected="' + (unlocked ? '0' : '1') + '">' +
+        '<h3 class="project-modal-section-title">Premium Prompt Samples</h3>' +
+        '<p class="project-modal-lead">' + (unlocked ? 'Owner preview unlocked on this device.' : 'Protected preview only. Full templates unlock after purchase.') + '</p>' +
+        '<div class="project-modal-prompt-grid">' + cards + '</div>' +
+        (unlocked ? '' : '<div class="project-modal-prompt-lock"><a href="#service-request" class="btn-project-live">Unlock full templates</a></div>') +
+        '</section>';
+}
+
 function buildProjectDetailBody(data) {
     if (data.detailSections && data.detailSections.length) {
         var html = '';
@@ -1105,13 +1141,16 @@ function openProjectModal(slug) {
             escapeHtml(data.liveLabel) + '</a></div>';
     }
 
+    const promptSamplesHtml = slug === 'promptvault' ? buildPromptSamplesHtml(isPromptOwnerUnlocked()) : '';
+
     body.innerHTML =
         '<h2 id="projectModalTitle">' + escapeHtml(data.title) + '</h2>' +
         '<div class="project-tags">' + tagsHtml + '</div>' +
         detailHtml +
         actionsHtml +
         '<h3 class="project-modal-gallery-heading">Screens &amp; detail</h3>' +
-        '<div class="project-modal-gallery">' + galleryHtml + '</div>';
+        '<div class="project-modal-gallery">' + galleryHtml + '</div>' +
+        promptSamplesHtml;
 
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
@@ -1156,6 +1195,10 @@ let portfolioRuntimeStarted = false;
 export function initPortfolioRuntime() {
     if (portfolioRuntimeStarted) return;
     portfolioRuntimeStarted = true;
+
+    const ownerMode = new URLSearchParams(window.location.search).get('ownerPrompt');
+    if (ownerMode === '1') localStorage.setItem('ownerPromptAccess', 'true');
+    if (ownerMode === '0') localStorage.removeItem('ownerPromptAccess');
 
     const menuToggle = document.getElementById('menuToggle');
     const navLinksEl = document.querySelector('.nav-links');

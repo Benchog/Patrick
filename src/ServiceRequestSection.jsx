@@ -104,6 +104,8 @@ export function ServiceRequestSection() {
     }
     setSubmitting(true);
     setStatus({ type: 'idle', message: '' });
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 15000);
     try {
       const payload = {
         serviceSlug: selectedPlan.slug,
@@ -116,6 +118,7 @@ export function ServiceRequestSection() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
+        signal: controller.signal,
       });
       const data = await r.json().catch(() => ({}));
       if (!r.ok || !data?.ok) throw new Error(data?.error || 'Unable to submit request.');
@@ -134,9 +137,15 @@ export function ServiceRequestSection() {
     } catch (err) {
       setStatus({
         type: 'error',
-        message: err instanceof Error ? err.message : 'Could not submit request.',
+        message:
+          err instanceof Error && err.name === 'AbortError'
+            ? 'Request timed out. Please try again.'
+            : err instanceof Error
+              ? err.message
+              : 'Could not submit request.',
       });
     } finally {
+      clearTimeout(timeoutId);
       setSubmitting(false);
     }
   };

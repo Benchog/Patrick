@@ -4,40 +4,27 @@ const TO_EMAIL = process.env.SERVICE_REQUEST_TO_EMAIL || 'pat.benchog@gmail.com'
 const FROM_EMAIL = process.env.SERVICE_REQUEST_FROM_EMAIL || 'Portfolio Requests <onboarding@resend.dev>';
 
 function badRequest(message) {
-  return new Response(JSON.stringify({ ok: false, error: message }), {
-    status: 400,
-    headers: { 'content-type': 'application/json' },
-  });
+  return { ok: false, error: message };
 }
 
-export default async function handler(req) {
+export default async function handler(req, res) {
   if (req.method !== 'POST') {
-    return new Response(JSON.stringify({ ok: false, error: 'Method not allowed' }), {
-      status: 405,
-      headers: { 'content-type': 'application/json' },
-    });
+    return res.status(405).json({ ok: false, error: 'Method not allowed' });
   }
 
   if (!process.env.RESEND_API_KEY) {
-    return new Response(
-      JSON.stringify({
-        ok: false,
-        error: 'RESEND_API_KEY is missing. Add it in Vercel environment variables.',
-      }),
-      { status: 500, headers: { 'content-type': 'application/json' } },
-    );
+    return res.status(500).json({
+      ok: false,
+      error: 'RESEND_API_KEY is missing. Add it in Vercel environment variables.',
+    });
   }
 
-  let body = {};
-  try {
-    body = await req.json();
-  } catch {
-    return badRequest('Invalid JSON payload.');
-  }
+  const body = req.body && typeof req.body === 'object' ? req.body : null;
+  if (!body) return res.status(400).json(badRequest('Invalid JSON payload.'));
 
   const required = ['serviceSlug', 'serviceTitle', 'servicePriceGhs', 'fullName', 'email', 'phone', 'message'];
   for (const key of required) {
-    if (!body[key]) return badRequest(`Missing field: ${key}`);
+    if (!body[key]) return res.status(400).json(badRequest(`Missing field: ${key}`));
   }
 
   const resend = new Resend(process.env.RESEND_API_KEY);
@@ -87,17 +74,11 @@ export default async function handler(req) {
       replyTo: body.email,
     });
 
-    return new Response(JSON.stringify({ ok: true }), {
-      status: 200,
-      headers: { 'content-type': 'application/json' },
-    });
+    return res.status(200).json({ ok: true });
   } catch (error) {
-    return new Response(
-      JSON.stringify({
-        ok: false,
-        error: error instanceof Error ? error.message : 'Failed to send email.',
-      }),
-      { status: 500, headers: { 'content-type': 'application/json' } },
-    );
+    return res.status(500).json({
+      ok: false,
+      error: error instanceof Error ? error.message : 'Failed to send email.',
+    });
   }
 }
