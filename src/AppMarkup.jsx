@@ -49,7 +49,7 @@ export function AppMarkup() {
                   </ul>
                   <div className="nav-trailing">
                       <a href="#contact" className="hire-now-btn">Hire Patrick</a>
-                      <button type="button" className="nav-theme-icon" id="themePanelOpen" aria-label="Open appearance settings">
+                      <button type="button" className="nav-theme-icon" id="themePanelOpen" aria-label="Toggle light and dark mode">
                           <Palette {...iconProps} size={18} aria-hidden="true" />
                       </button>
                       <button type="button" className="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-controls="primaryNavLinks" aria-expanded="false">
@@ -126,7 +126,11 @@ export function AppMarkup() {
           
           <section id="skills" className="fade-in">
               <h2 className="section-title">Skills</h2>
-              <div className="skills-grid">
+              <div className="skills-carousel-shell">
+              <button type="button" className="section-carousel-btn section-carousel-btn--prev" data-skills-carousel="prev" aria-label="Previous skill cards">
+                  <ChevronLeft {...iconProps} size={24} aria-hidden="true" />
+              </button>
+              <div className="skills-grid" id="skillsCarouselTrack">
                   <div className="skill-category">
                       <h3><Cpu {...iconProps} size={20} aria-hidden="true" /> Hard Skills</h3>
                       <div className="skill-item">
@@ -165,6 +169,12 @@ export function AppMarkup() {
                               <div className="skill-progress" style={{"width":"88%"}}></div>
                           </div>
                       </div>
+                      <div className="skill-item">
+                          <span>Prompt Engineering</span>
+                          <div className="skill-bar">
+                              <div className="skill-progress" style={{"width":"94%"}}></div>
+                          </div>
+                      </div>
                   </div>
                   <div className="skill-category">
                       <h3><Heart {...iconProps} size={20} aria-hidden="true" /> Soft Skills</h3>
@@ -194,12 +204,20 @@ export function AppMarkup() {
                       </div>
                   </div>
               </div>
+              <button type="button" className="section-carousel-btn section-carousel-btn--next" data-skills-carousel="next" aria-label="Next skill cards">
+                  <ChevronRight {...iconProps} size={24} aria-hidden="true" />
+              </button>
+              </div>
           </section>
       
           
           <section id="services" className="fade-in">
               <h2 className="section-title">How I Change the Game</h2>
-              <div className="services-grid">
+              <div className="services-carousel-shell">
+              <button type="button" className="section-carousel-btn section-carousel-btn--prev" data-services-carousel="prev" aria-label="Previous services cards">
+                  <ChevronLeft {...iconProps} size={24} aria-hidden="true" />
+              </button>
+              <div className="services-grid" id="servicesCarouselTrack">
                   <div className="service-card">
                       <div className="service-icon"><Smartphone {...iconProps} size={48} aria-hidden="true" /></div>
                       <h3>App Development</h3>
@@ -237,9 +255,13 @@ export function AppMarkup() {
                   </div>
                   <div className="service-card">
                       <div className="service-icon"><BrainCircuit {...iconProps} size={48} aria-hidden="true" /></div>
-                      <h3>Prompt Engineering Systems</h3>
+                      <h3>Prompt Engineer Systems</h3>
                       <p>I design robust prompt workflows and reusable AI templates that generate production-ready outputs for content, products, automation, and business operations.</p>
                   </div>
+              </div>
+              <button type="button" className="section-carousel-btn section-carousel-btn--next" data-services-carousel="next" aria-label="Next services cards">
+                  <ChevronRight {...iconProps} size={24} aria-hidden="true" />
+              </button>
               </div>
           </section>
       
@@ -547,6 +569,22 @@ export function AppMarkup() {
                       <img src="PrimeDraft-Home.png" alt="PrimeDraft screenshot duplicate" className="img-fallback-chain" data-fallback-srcs="Primed.png" />
                       <img src="BenchTech-Dashboard.png" alt="BenchTech screenshot duplicate" className="img-fallback-chain" data-fallback-srcs="BenchTech.png" />
                   </div>
+              </div>
+              <div className="prompt-samples-showcase" aria-label="Prompt template previews">
+                  <h3>Premium Prompt Samples (Preview)</h3>
+                  <div className="prompt-samples-grid">
+                      <article className="prompt-sample-card"><h4>1) CFO Copilot</h4><p><strong>Role:</strong> Senior CFO + product analyst.</p><p><strong>Task:</strong> Build finance web app PRD and launch plan.</p><p><strong>Context:</strong> SME in Ghana with cashflow leak in <span className="blur-line">[sensitive cash-cycle model]</span>.</p><p><strong>Format:</strong> milestones, APIs, schema, risk table.</p></article>
+                      <article className="prompt-sample-card"><h4>2) Clinic Queue System</h4><p><strong>Role:</strong> Health-tech architect.</p><p><strong>Task:</strong> Design patient booking + triage app.</p><p><strong>Context:</strong> Rural clinic with <span className="blur-line">[private operational constraints]</span>.</p><p><strong>Format:</strong> UX flow, DB, SLA checklist.</p></article>
+                      <article className="prompt-sample-card"><h4>3) School ERP MVP</h4><p><strong>Role:</strong> Education systems engineer.</p><p><strong>Task:</strong> Generate specs for fees, attendance, reports.</p><p><strong>Context:</strong> Multi-campus school, legacy sheets in <span className="blur-line">[hidden data map]</span>.</p><p><strong>Format:</strong> module matrix, sprint plan, QA tests.</p></article>
+                      <article className="prompt-sample-card"><h4>4) Retail Inventory AI</h4><p><strong>Role:</strong> Supply-chain product lead.</p><p><strong>Task:</strong> Build smart stock forecasting web app.</p><p><strong>Context:</strong> 4 warehouses, noisy sales history <span className="blur-line">[secret scoring logic]</span>.</p><p><strong>Format:</strong> architecture, model loop, KPI board.</p></article>
+                      <article className="prompt-sample-card"><h4>5) Construction Ops Portal</h4><p><strong>Role:</strong> Field operations solution architect.</p><p><strong>Task:</strong> Plan project tracking app with approvals.</p><p><strong>Context:</strong> Delayed milestones due to <span className="blur-line">[confidential workflow bottlenecks]</span>.</p><p><strong>Format:</strong> role permissions, audit trail, rollout.</p></article>
+                      <article className="prompt-sample-card"><h4>6) Legal Intake Website</h4><p><strong>Role:</strong> Conversion-focused web strategist.</p><p><strong>Task:</strong> Create legal client onboarding site copy + structure.</p><p><strong>Context:</strong> Firm needs trust-first funnel with <span className="blur-line">[hidden persuasion triggers]</span>.</p><p><strong>Format:</strong> section copy, CTA map, SEO brief.</p></article>
+                      <article className="prompt-sample-card"><h4>7) Logistics Dispatch App</h4><p><strong>Role:</strong> Real-time systems designer.</p><p><strong>Task:</strong> Build dispatch + route optimization app spec.</p><p><strong>Context:</strong> Last-mile fleet with <span className="blur-line">[private geo-priority rules]</span>.</p><p><strong>Format:</strong> APIs, event model, dashboards.</p></article>
+                      <article className="prompt-sample-card"><h4>8) Property Management SaaS</h4><p><strong>Role:</strong> SaaS founder advisor + engineer.</p><p><strong>Task:</strong> Draft MVP for rent, tickets, and analytics.</p><p><strong>Context:</strong> 500 units and mixed payment channels <span className="blur-line">[sensitive pricing engine]</span>.</p><p><strong>Format:</strong> MVP scope, backlog, metrics.</p></article>
+                      <article className="prompt-sample-card"><h4>9) Manufacturing QA Tracker</h4><p><strong>Role:</strong> Industrial quality systems lead.</p><p><strong>Task:</strong> Generate app blueprint for defect tracking.</p><p><strong>Context:</strong> Plant losses from <span className="blur-line">[confidential defect taxonomy]</span>.</p><p><strong>Format:</strong> forms, QA workflow, reporting matrix.</p></article>
+                      <article className="prompt-sample-card"><h4>10) Government Service Portal</h4><p><strong>Role:</strong> Public digital transformation architect.</p><p><strong>Task:</strong> Design citizen services web app roadmap.</p><p><strong>Context:</strong> High traffic + compliance with <span className="blur-line">[restricted policy mappings]</span>.</p><p><strong>Format:</strong> phased release, security model, SLA.</p></article>
+                  </div>
+                  <p className="prompt-lock-note"><Lock {...iconProps} size={14} aria-hidden="true" /> Core segments are protected. Full templates unlock after purchase.</p>
               </div>
           </section>
       

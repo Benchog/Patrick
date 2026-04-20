@@ -4,6 +4,18 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
+const REQUIRED_PLAN_DEFAULTS = [
+  { slug: 'app-development', title: 'App development', price_ghs: 22000, billing_note: 'from · scoped to requirements', sort_order: 10 },
+  { slug: 'website-simple', title: 'Simple business website', price_ghs: 3800, billing_note: 'from · typical small site', sort_order: 20 },
+  { slug: 'website-larger', title: 'Larger website', price_ghs: 9500, billing_note: 'from · depends on page count', sort_order: 30 },
+  { slug: 'data-dashboards', title: 'Data analytics & dashboards', price_ghs: 6500, billing_note: 'from · per engagement', sort_order: 40 },
+  { slug: 'cad-cam', title: 'CAD / CAM engineering', price_ghs: 5500, billing_note: 'from · per deliverable', sort_order: 50 },
+  { slug: 'graphics-photo', title: 'Graphics & photo editing', price_ghs: 2800, billing_note: 'from · per package', sort_order: 60 },
+  { slug: 'it-support', title: 'IT support & computer help', price_ghs: 400, billing_note: 'from · per session / ticket', sort_order: 70 },
+  { slug: 'document-thesis', title: 'Document & thesis editing', price_ghs: 1200, billing_note: 'from · per document', sort_order: 80 },
+  { slug: 'prompt-engineer-systems', title: 'Prompt Engineer systems', price_ghs: 3200, billing_note: 'from · per access package', sort_order: 90 },
+];
+
 function formatGhs(n) {
   const num = Number(n);
   if (!Number.isFinite(num)) return '';
@@ -62,9 +74,23 @@ export function ServiceRequestSection() {
   }, []);
 
   const selectedPlan = useMemo(
-    () => plans.find((p) => p.slug === selectedSlug) || null,
+    () => {
+      const merged = [...plans];
+      REQUIRED_PLAN_DEFAULTS.forEach((seed) => {
+        if (!merged.some((p) => p.slug === seed.slug)) merged.push(seed);
+      });
+      return merged.find((p) => p.slug === selectedSlug) || null;
+    },
     [plans, selectedSlug],
   );
+
+  const serviceOptions = useMemo(() => {
+    const merged = [...plans];
+    REQUIRED_PLAN_DEFAULTS.forEach((seed) => {
+      if (!merged.some((p) => p.slug === seed.slug)) merged.push(seed);
+    });
+    return merged.sort((a, b) => (a.sort_order ?? 999) - (b.sort_order ?? 999));
+  }, [plans]);
 
   const onChange = (key) => (e) => {
     setForm((prev) => ({ ...prev, [key]: e.target.value }));
@@ -130,7 +156,7 @@ export function ServiceRequestSection() {
             required
           >
             <option value="">Select a service...</option>
-            {plans.map((p) => (
+            {serviceOptions.map((p) => (
               <option key={p.slug} value={p.slug}>
                 {p.title}
               </option>

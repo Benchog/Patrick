@@ -672,16 +672,17 @@
             font-size: 0.82rem;
             font-weight: 600;
             letter-spacing: 0.02em;
-            color: var(--premium-text-muted);
+            color: #e2e8f0;
             margin: 0 0 1rem;
             text-transform: none;
             position: relative;
             padding: 0.42rem 0.78rem;
             border-radius: 999px;
             background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.26);
             overflow: hidden;
             isolation: isolate;
+            box-shadow: 0 0 0 1px rgba(255, 102, 214, 0.18), 0 0 28px rgba(255, 102, 214, 0.22);
         }
 
         .hero-kicker::before {
@@ -690,7 +691,7 @@
             inset: -1px;
             border-radius: inherit;
             padding: 1px;
-            background: linear-gradient(112deg, transparent 18%, rgba(255, 102, 214, 0.2) 38%, rgba(255, 102, 214, 0.95) 50%, rgba(139, 92, 246, 0.42) 62%, transparent 82%);
+            background: linear-gradient(112deg, transparent 16%, rgba(255, 102, 214, 0.25) 34%, rgba(255, 102, 214, 1) 50%, rgba(139, 92, 246, 0.55) 64%, transparent 84%);
             background-size: 230% 100%;
             -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
             -webkit-mask-composite: xor;
@@ -705,8 +706,9 @@
         }
 
         body:not(.dark-mode) .hero-kicker {
-            color: #1f2937;
-            border-color: rgba(15, 23, 42, 0.12);
+            color: #0f172a;
+            border-color: rgba(15, 23, 42, 0.24);
+            box-shadow: 0 0 0 1px rgba(255, 102, 214, 0.22), 0 0 20px rgba(255, 102, 214, 0.22);
         }
 
         .hero-kicker-pulse {
@@ -741,6 +743,32 @@
                 0 0 0 1px rgba(255, 255, 255, 0.08) inset,
                 0 24px 80px rgba(34, 212, 238, 0.15),
                 0 40px 100px rgba(2, 6, 23, 0.65);
+        }
+
+        .hero-portrait-ring::before {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            border-radius: 50%;
+            padding: 3px;
+            background: conic-gradient(
+                from 0deg,
+                rgba(255, 102, 214, 0.08) 0deg,
+                rgba(255, 102, 214, 0.95) 52deg,
+                rgba(139, 92, 246, 0.78) 108deg,
+                rgba(245, 158, 11, 0.5) 146deg,
+                rgba(255, 102, 214, 0.08) 360deg
+            );
+            -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            animation: portraitStrokeSpin 8.2s linear infinite;
+            filter: drop-shadow(0 0 18px rgba(255, 102, 214, 0.38));
+            pointer-events: none;
+        }
+
+        @keyframes portraitStrokeSpin {
+            to { transform: rotate(360deg); }
         }
 
         .hero-portrait-ring-inner {
@@ -1144,6 +1172,36 @@
             margin-top: 3rem;
         }
 
+        .skills-carousel-shell,
+        .services-carousel-shell {
+            position: relative;
+        }
+
+        .section-carousel-btn {
+            display: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            border: 1px solid var(--ui-outline);
+            background: rgba(15, 23, 42, 0.72);
+            color: var(--ui-icon-accent);
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 3;
+        }
+
+        .section-carousel-btn--prev {
+            left: -0.4rem;
+        }
+
+        .section-carousel-btn--next {
+            right: -0.4rem;
+        }
+
         .skill-category {
             background: white;
             padding: 2rem;
@@ -1378,6 +1436,53 @@
             border: 1px solid rgba(255, 255, 255, 0.08);
             background: rgba(15, 23, 42, 0.36);
             position: relative;
+        }
+
+        .prompt-samples-showcase {
+            margin-top: 1.25rem;
+            padding: 1rem;
+            border-radius: 18px;
+            border: 1px solid var(--ui-outline-soft);
+            background: rgba(15, 23, 42, 0.4);
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .prompt-samples-showcase h3 {
+            margin: 0 0 0.75rem;
+            font-size: 1.05rem;
+            color: #f8fafc;
+        }
+
+        .prompt-samples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .prompt-sample-card {
+            padding: 0.75rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(2, 6, 23, 0.76);
+            color: #dbeafe;
+            line-height: 1.35;
+            font-size: 0.76rem;
+        }
+
+        .prompt-sample-card h4 {
+            margin: 0 0 0.35rem;
+            color: #f8fafc;
+            font-size: 0.82rem;
+        }
+
+        .prompt-sample-card p {
+            margin: 0 0 0.2rem;
+        }
+
+        .prompt-sample-card .blur-line {
+            filter: blur(4px);
+            opacity: 0.72;
         }
 
         .project-flow-track {
@@ -1750,6 +1855,25 @@
         body.dark-mode .service-request-price-box input[readonly] {
             background: rgba(30, 41, 59, 0.9);
             color: #f8fafc;
+        }
+
+        body:not(.dark-mode) .prompt-samples-showcase {
+            background: rgba(255, 255, 255, 0.86);
+            border-color: rgba(15, 23, 42, 0.14);
+        }
+
+        body:not(.dark-mode) .prompt-samples-showcase h3 {
+            color: #0f172a;
+        }
+
+        body:not(.dark-mode) .prompt-sample-card {
+            background: rgba(248, 250, 252, 0.98);
+            border-color: rgba(15, 23, 42, 0.16);
+            color: #1e293b;
+        }
+
+        body:not(.dark-mode) .prompt-sample-card h4 {
+            color: #0f172a;
         }
 
         .pricing-empty {
@@ -3074,6 +3198,15 @@
 
             .hero-kicker {
                 justify-content: center;
+                color: #f8fafc;
+                border-color: rgba(255, 255, 255, 0.35);
+                box-shadow: 0 0 0 1px rgba(255, 102, 214, 0.34), 0 0 26px rgba(255, 102, 214, 0.38);
+            }
+
+            body:not(.dark-mode) .hero-kicker {
+                color: #111827;
+                border-color: rgba(15, 23, 42, 0.26);
+                box-shadow: 0 0 0 1px rgba(255, 102, 214, 0.28), 0 0 24px rgba(255, 102, 214, 0.26);
             }
 
             .hero-stats {
@@ -3148,6 +3281,49 @@
                 margin-top: 2rem;
             }
 
+            .skills-carousel-shell,
+            .services-carousel-shell {
+                position: relative;
+                padding-bottom: 3.4rem;
+            }
+
+            .section-carousel-btn {
+                display: inline-flex;
+                top: auto;
+                bottom: 0.1rem;
+                transform: none;
+                width: 46px;
+                height: 46px;
+            }
+
+            .section-carousel-btn--prev {
+                left: calc(50% - 58px);
+            }
+
+            .section-carousel-btn--next {
+                left: calc(50% + 12px);
+                right: auto;
+            }
+
+            #skillsCarouselTrack.skills-grid,
+            #servicesCarouselTrack.services-grid {
+                display: flex;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scroll-snap-type: x mandatory;
+                gap: 0.9rem;
+                width: 100%;
+                padding: 0.25rem 0 0.85rem;
+                scrollbar-width: thin;
+            }
+
+            #skillsCarouselTrack.skills-grid .skill-category,
+            #servicesCarouselTrack.services-grid .service-card {
+                flex: 0 0 100%;
+                max-width: 100%;
+                scroll-snap-align: start;
+            }
+
             .skill-category,
             .service-card {
                 padding: 1.5rem;
@@ -3219,6 +3395,10 @@
 
             .project-flow-track img {
                 width: min(72vw, 230px);
+            }
+
+            .prompt-samples-grid {
+                grid-template-columns: 1fr;
             }
 
             .pricing-carousel-shell {

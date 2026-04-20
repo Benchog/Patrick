@@ -10,6 +10,18 @@ const FX_URLS = [
   'https://latest.currency-api.pages.dev/v1/currencies/ghs.json',
 ];
 
+const REQUIRED_PLAN_DEFAULTS = [
+  { slug: 'app-development', title: 'App development', subtitle: 'Mobile & web products', price_ghs: 22000, billing_note: 'from · scoped to requirements' },
+  { slug: 'website-simple', title: 'Simple business website', subtitle: 'Ideal if you are not technical', price_ghs: 3800, billing_note: 'from · typical small site' },
+  { slug: 'website-larger', title: 'Larger website', subtitle: 'More pages & structure', price_ghs: 9500, billing_note: 'from · depends on page count' },
+  { slug: 'data-dashboards', title: 'Data analytics & dashboards', subtitle: 'Numbers you can act on', price_ghs: 6500, billing_note: 'from · per engagement' },
+  { slug: 'cad-cam', title: 'CAD / CAM engineering', subtitle: 'Drawings you can use', price_ghs: 5500, billing_note: 'from · per deliverable' },
+  { slug: 'graphics-photo', title: 'Graphics & photo editing', subtitle: 'Brand-ready visuals', price_ghs: 2800, billing_note: 'from · per package' },
+  { slug: 'it-support', title: 'IT support & computer help', subtitle: 'Windows, Office, fixes', price_ghs: 400, billing_note: 'from · per session / ticket' },
+  { slug: 'document-thesis', title: 'Document & thesis editing', subtitle: 'Clear, submission-ready work', price_ghs: 1200, billing_note: 'from · per document' },
+  { slug: 'prompt-engineer-systems', title: 'Prompt Engineer systems', subtitle: 'Protected premium templates', price_ghs: 3200, billing_note: 'from · per access package' },
+];
+
 function parseFeatures(raw) {
   if (Array.isArray(raw)) return raw.filter(Boolean).map(String);
   if (raw && typeof raw === 'object') {
@@ -186,7 +198,26 @@ export function PricingSection() {
         )}
       </p>
 
-      {plans.length === 0 ? (
+      {(() => {
+        const merged = [...plans];
+        REQUIRED_PLAN_DEFAULTS.forEach((seed) => {
+          if (!merged.some((p) => p.slug === seed.slug)) {
+            merged.push({
+              ...seed,
+              id: seed.slug,
+              description:
+                seed.slug === 'prompt-engineer-systems'
+                  ? 'Reusable premium prompt systems and execution templates for real business apps, websites, and AI operations.'
+                  : '',
+              features: [],
+              sort_order: 999,
+              is_highlight: false,
+            });
+          }
+        });
+        merged.sort((a, b) => (a.sort_order ?? 999) - (b.sort_order ?? 999));
+        return merged;
+      })().length === 0 ? (
         <div className="pricing-empty">
           No active plans yet. In Supabase, open the <code>pricing_plans</code> table and add rows with <code>is_active = true</code>, or run the seed in{' '}
           <code>supabase/pricing_plans.sql</code>.
@@ -197,7 +228,26 @@ export function PricingSection() {
             <ChevronLeft className="icon-lucide" size={24} aria-hidden="true" />
           </button>
           <div className="pricing-grid" id="pricingCarouselTrack">
-          {plans.map((p) => {
+          {(() => {
+            const merged = [...plans];
+            REQUIRED_PLAN_DEFAULTS.forEach((seed) => {
+              if (!merged.some((p) => p.slug === seed.slug)) {
+                merged.push({
+                  ...seed,
+                  id: seed.slug,
+                  description:
+                    seed.slug === 'prompt-engineer-systems'
+                      ? 'Reusable premium prompt systems and execution templates for real business apps, websites, and AI operations.'
+                      : '',
+                  features: [],
+                  sort_order: 999,
+                  is_highlight: false,
+                });
+              }
+            });
+            merged.sort((a, b) => (a.sort_order ?? 999) - (b.sort_order ?? 999));
+            return merged;
+          })().map((p) => {
             const feats = parseFeatures(p.features);
             const usd = formatUsd(p.price_ghs);
             return (

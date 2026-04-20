@@ -120,6 +120,17 @@ values
     '["Style consistency pass", "Formatting to your guide", "Tracked suggestions where useful"]'::jsonb,
     false,
     80
+  ),
+  (
+    'prompt-engineer-systems',
+    'Prompt Engineer systems',
+    'Protected premium templates',
+    'High-impact prompt systems and reusable templates for real business apps, websites, web apps, automation, and operations.',
+    3200,
+    'from · per access package',
+    '["10+ premium templates", "Role-task-context-format structure", "Business app + web app generation prompts", "Protected private blocks"]'::jsonb,
+    false,
+    90
   )
 on conflict (slug) do update set
   title = excluded.title,

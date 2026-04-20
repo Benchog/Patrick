@@ -127,6 +127,29 @@ export function ToolStackIcons() {
           </div>
           <span className="tool-icon-3d-label">Solid Edge</span>
         </div>
+        <div className="tool-icon-3d" title="AutoCAD">
+          <div className="tool-icon-3d-plate">
+            <div className="tool-icon-3d-face">
+              <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true">
+                <rect width="24" height="24" rx="4" fill="#8b1d1d" />
+                <path d="M12 4l5 15h-2.4l-1-3h-3.3l-1 3H7L12 4zm0 4.3l-1.2 4h2.4l-1.2-4z" fill="#fff1f2" />
+              </svg>
+            </div>
+          </div>
+          <span className="tool-icon-3d-label">AutoCAD</span>
+        </div>
+        <div className="tool-icon-3d" title="Python">
+          <div className="tool-icon-3d-plate">
+            <div className="tool-icon-3d-face">
+              <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true">
+                <rect width="24" height="24" rx="4" fill="#152039" />
+                <path d="M12 4c-3 0-2.8 1.3-2.8 1.3v2h5.5v1.1H7.1s-3.1-.4-3.1 3.1 2.7 3.4 2.7 3.4h1.6v-2.2s-.1-2.7 2.7-2.7h4.7s2.6 0 2.6-2.5V5.8S18.8 4 15.8 4H12zm-1.7 1.5a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6z" fill="#ffd43b" />
+                <path d="M12 20c3 0 2.8-1.3 2.8-1.3v-2H9.3v-1.1h7.6s3.1.4 3.1-3.1-2.7-3.4-2.7-3.4h-1.6v2.2s.1 2.7-2.7 2.7h-4.7S5.7 14 5.7 16.5v1.7S5.2 20 8.2 20H12zm1.7-1.5a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6z" fill="#3776ab" />
+              </svg>
+            </div>
+          </div>
+          <span className="tool-icon-3d-label">Python</span>
+        </div>
       </div>
       <p className="tool-stack-note">
         Expert AI-led execution across these tools — fast delivery without compromising engineering judgment.

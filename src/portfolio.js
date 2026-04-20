@@ -221,13 +221,34 @@ function initPricingCarousel() {
     });
 }
 
+function initSectionCarousel(trackId, prevSelector, nextSelector) {
+    const track = document.getElementById(trackId);
+    const prev = document.querySelector(prevSelector);
+    const next = document.querySelector(nextSelector);
+    if (!track || !prev || !next) return;
+
+    function step(direction) {
+        const amount = track.clientWidth;
+        track.scrollBy({ left: direction * amount, behavior: 'smooth' });
+    }
+
+    prev.addEventListener('click', function () {
+        step(-1);
+    });
+    next.addEventListener('click', function () {
+        step(1);
+    });
+}
+
 function initPromptVaultProtection() {
-    const locked = document.querySelector('.prompt-vault-card');
-    if (!locked) return;
+    const lockedAreas = document.querySelectorAll('.prompt-vault-card, .prompt-samples-showcase');
+    if (!lockedAreas.length) return;
 
     ['contextmenu', 'copy', 'cut', 'dragstart', 'selectstart'].forEach(function (evt) {
-        locked.addEventListener(evt, function (e) {
-            e.preventDefault();
+        lockedAreas.forEach(function (locked) {
+            locked.addEventListener(evt, function (e) {
+                e.preventDefault();
+            });
         });
     });
 }
@@ -944,6 +965,7 @@ const PROJECT_CATALOG = {
         tags: ['Prompt Engineering', 'Template Systems', 'AI Ops'],
         detailSections: [
             { title: 'Summary', body: 'A premium prompt library designed for fast, high-quality output in product strategy, marketing, operations, and technical workflows.' },
+            { title: 'Included Preview Set', body: '10 sample prompts are shown publicly using Role + Task + Context + Format structure. Critical blocks remain blurred until paid access is granted.' },
             { title: 'What Is Inside', items: [
                 'Role + objective prompt frameworks',
                 'Multi-step system prompts for consistent outputs',
@@ -1162,30 +1184,15 @@ export function initPortfolioRuntime() {
     loadDarkMode();
     document.getElementById('themePanelOpen').addEventListener('click', function () {
         setNavOpenState(false);
-        const panel = document.getElementById('themePanel');
-        if (panel && panel.classList.contains('open')) {
-            closeThemePanel();
-        } else {
-            openThemePanel();
-        }
-    });
-    document.getElementById('themePanelBackdrop').addEventListener('click', closeThemePanel);
-    document.querySelectorAll('.theme-option-btn[data-theme-choice]').forEach(btn => {
-        btn.addEventListener('click', function () {
-            const choice = btn.getAttribute('data-theme-choice');
-            if (choice === 'toggle') {
-                toggleDarkMode();
-            } else {
-                setTheme(choice);
-            }
-            closeThemePanel();
-        });
+        toggleDarkMode();
     });
     initSmoothScrolling();
     initScrollAnimations();
     initProjectFiltering();
     initProjectsCarousel();
     initPricingCarousel();
+    initSectionCarousel('skillsCarouselTrack', '[data-skills-carousel="prev"]', '[data-skills-carousel="next"]');
+    initSectionCarousel('servicesCarouselTrack', '[data-services-carousel="prev"]', '[data-services-carousel="next"]');
     initProjectModal();
     initGallery();
     initCollectionModal();
@@ -1213,9 +1220,7 @@ export function initPortfolioRuntime() {
         if (activeTag === 'INPUT' || activeTag === 'TEXTAREA') return;
         if (e.key.toLowerCase() === 't' || (e.ctrlKey && e.key.toLowerCase() === 'k')) {
             e.preventDefault();
-            const panel = document.getElementById('themePanel');
-            if (panel && panel.classList.contains('open')) closeThemePanel();
-            else openThemePanel();
+            toggleDarkMode();
         }
 
         const galleryModal = document.getElementById('galleryLightbox');
