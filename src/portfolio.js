@@ -203,7 +203,7 @@ function initProjectsCarousel() {
     if (!track || !prev || !next) return;
 
     function step(direction) {
-        const amount = Math.min(track.clientWidth * 0.82, 400);
+        const amount = track.clientWidth;
         track.scrollBy({ left: direction * amount, behavior: 'smooth' });
     }
 

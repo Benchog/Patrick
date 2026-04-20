@@ -27,12 +27,12 @@
             --premium-edge: rgba(192, 132, 252, 0.36);
             --premium-text-muted: #c4b5fd;
             /* Unified interactive UI (buttons + icon accents) */
-            --ui-gradient: var(--premium-hire-gradient);
+            --ui-gradient: var(--gold-gradient);
             --ui-on-gradient: #020617;
-            --ui-icon-accent: #f472b6;
-            --ui-icon-accent-2: #c084fc;
-            --ui-outline: rgba(192, 132, 252, 0.55);
-            --ui-outline-soft: rgba(244, 114, 182, 0.35);
+            --ui-icon-accent: var(--accent-gold);
+            --ui-icon-accent-2: var(--accent-gold);
+            --ui-outline: rgba(255, 215, 0, 0.45);
+            --ui-outline-soft: rgba(255, 215, 0, 0.28);
         }
 
         body[data-color-scheme="royal"] {
@@ -40,6 +40,8 @@
             --accent-gold: #FFD700;
             --gradient-bg: linear-gradient(135deg, #0A1128 0%, #1e3c72 50%, #2a5298 100%);
             --gold-gradient: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            --ui-outline: rgba(255, 215, 0, 0.45);
+            --ui-outline-soft: rgba(255, 215, 0, 0.28);
         }
 
         body[data-color-scheme="emerald"] {
@@ -47,6 +49,8 @@
             --accent-gold: #34d399;
             --gradient-bg: linear-gradient(135deg, #062b25 0%, #0e4f44 50%, #157a64 100%);
             --gold-gradient: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+            --ui-outline: rgba(52, 211, 153, 0.48);
+            --ui-outline-soft: rgba(16, 185, 129, 0.28);
         }
 
         body[data-color-scheme="sunset"] {
@@ -54,6 +58,8 @@
             --accent-gold: #ff8a3d;
             --gradient-bg: linear-gradient(135deg, #2b0f2a 0%, #5a1e44 50%, #a03d3d 100%);
             --gold-gradient: linear-gradient(135deg, #ff8a3d 0%, #ff6b6b 100%);
+            --ui-outline: rgba(255, 138, 61, 0.5);
+            --ui-outline-soft: rgba(255, 107, 107, 0.3);
         }
 
         body[data-color-scheme="violet"] {
@@ -61,6 +67,8 @@
             --accent-gold: #a78bfa;
             --gradient-bg: linear-gradient(135deg, #1b1235 0%, #312e81 50%, #4f46e5 100%);
             --gold-gradient: linear-gradient(135deg, #a78bfa 0%, #818cf8 100%);
+            --ui-outline: rgba(167, 139, 250, 0.52);
+            --ui-outline-soft: rgba(129, 140, 248, 0.32);
         }
 
         body[data-color-scheme="obsidian"] {
@@ -68,6 +76,8 @@
             --accent-gold: #f59e0b;
             --gradient-bg: linear-gradient(135deg, #0b0f19 0%, #111827 50%, #1f2937 100%);
             --gold-gradient: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+            --ui-outline: rgba(245, 158, 11, 0.5);
+            --ui-outline-soft: rgba(249, 115, 22, 0.3);
         }
 
         body[data-color-scheme="aurora"] {
@@ -75,6 +85,8 @@
             --accent-gold: #22d3ee;
             --gradient-bg: linear-gradient(135deg, #022c43 0%, #0f766e 50%, #0ea5e9 100%);
             --gold-gradient: linear-gradient(135deg, #22d3ee 0%, #06b6d4 100%);
+            --ui-outline: rgba(34, 211, 238, 0.52);
+            --ui-outline-soft: rgba(6, 182, 212, 0.32);
         }
 
         body[data-color-scheme="rose-luxe"] {
@@ -82,6 +94,8 @@
             --accent-gold: #f472b6;
             --gradient-bg: linear-gradient(135deg, #2a1630 0%, #4c1d4a 50%, #7c2d5a 100%);
             --gold-gradient: linear-gradient(135deg, #f472b6 0%, #fb7185 100%);
+            --ui-outline: rgba(244, 114, 182, 0.52);
+            --ui-outline-soft: rgba(251, 113, 133, 0.32);
         }
 
         body[data-color-scheme="imperial"] {
@@ -89,6 +103,8 @@
             --accent-gold: #facc15;
             --gradient-bg: linear-gradient(135deg, #1f1b06 0%, #3f2f08 50%, #6b4f12 100%);
             --gold-gradient: linear-gradient(135deg, #facc15 0%, #f59e0b 100%);
+            --ui-outline: rgba(250, 204, 21, 0.54);
+            --ui-outline-soft: rgba(245, 158, 11, 0.32);
         }
 
         body {
@@ -127,10 +143,10 @@
         /* Light-mode ambient animated background */
         body:not(.dark-mode) {
             background:
-                radial-gradient(circle at 10% 10%, rgba(99, 102, 241, 0.08) 0%, transparent 34%),
-                radial-gradient(circle at 88% 16%, rgba(14, 165, 233, 0.1) 0%, transparent 30%),
-                radial-gradient(circle at 28% 82%, rgba(16, 185, 129, 0.08) 0%, transparent 36%),
-                linear-gradient(180deg, #f5f8ff 0%, #f7fbff 45%, #f6f7fb 100%);
+                radial-gradient(circle at 10% 10%, rgba(99, 102, 241, 0.06) 0%, transparent 34%),
+                radial-gradient(circle at 88% 16%, rgba(14, 165, 233, 0.08) 0%, transparent 30%),
+                radial-gradient(circle at 28% 82%, rgba(16, 185, 129, 0.06) 0%, transparent 36%),
+                linear-gradient(180deg, #f8faff 0%, #fbfdff 45%, #f8f9fc 100%);
         }
 
         body:not(.dark-mode)::before,
@@ -140,8 +156,8 @@
             inset: -20%;
             pointer-events: none;
             z-index: -1;
-            opacity: 0.52;
-            filter: blur(50px);
+            opacity: 0.4;
+            filter: blur(44px);
             animation: ambientDrift 24s ease-in-out infinite alternate;
         }
 
@@ -216,8 +232,8 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: var(--premium-hire-gradient);
-            color: #020617;
+            background: var(--ui-gradient);
+            color: var(--ui-on-gradient);
             text-decoration: none;
             font-weight: 800;
             font-size: 0.82rem;
@@ -330,9 +346,9 @@
         body:not(.dark-mode) .skill-category,
         body:not(.dark-mode) .project-card,
         body:not(.dark-mode) .contact-card {
-            background: rgba(255, 255, 255, 0.52);
+            background: rgba(255, 255, 255, 0.8);
             border: 1px solid rgba(15, 23, 42, 0.11);
-            box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+            box-shadow: 0 16px 34px rgba(15, 23, 42, 0.1);
             backdrop-filter: blur(14px) saturate(140%);
         }
 
@@ -771,6 +787,36 @@
             color: var(--premium-text-muted);
             margin: 0 0 1rem;
             text-transform: none;
+            position: relative;
+            padding: 0.42rem 0.78rem;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.32);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .hero-kicker::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            background: linear-gradient(110deg, transparent 16%, rgba(255, 255, 255, 0.15) 38%, rgba(255, 255, 255, 0.68) 50%, rgba(255, 255, 255, 0.15) 62%, transparent 84%);
+            background-size: 250% 100%;
+            animation: kickerTravel 3.4s linear infinite;
+            z-index: -1;
+        }
+
+        body:not(.dark-mode) .hero-kicker {
+            color: #111827;
+            background: rgba(255, 255, 255, 0.88);
+            border-color: rgba(15, 23, 42, 0.12);
+            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.1);
+        }
+
+        @keyframes kickerTravel {
+            0% { background-position: 180% 0; }
+            100% { background-position: -120% 0; }
         }
 
         .hero-kicker-pulse {
@@ -1488,7 +1534,7 @@
             text-transform: uppercase;
             padding: 0.3rem 0.55rem;
             border-radius: 999px;
-            background: var(--gold-gradient);
+            background: var(--ui-gradient);
             color: var(--primary-blue);
         }
 
@@ -1551,7 +1597,7 @@
         .pricing-usd {
             font-size: 0.95rem;
             font-weight: 700;
-            color: var(--accent-gold);
+            color: var(--ui-icon-accent);
             margin-top: 0.35rem;
         }
 
@@ -1583,8 +1629,8 @@
             width: 100%;
             padding: 0.55rem 1rem;
             border-radius: 999px;
-            background: var(--gold-gradient);
-            color: var(--primary-blue);
+            background: var(--ui-gradient);
+            color: var(--ui-on-gradient);
             font-weight: 700;
             font-size: 0.9rem;
             text-decoration: none;
@@ -1593,7 +1639,7 @@
 
         .pricing-cta a:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 22px rgba(255, 215, 0, 0.35);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
         }
 
         .pricing-empty {
@@ -2789,6 +2835,8 @@
 
             .nav-hire-item {
                 display: list-item;
+                order: 999;
+                margin-top: 0.25rem;
             }
 
             .nav-hire-mobile {
@@ -2877,7 +2925,7 @@
             }
 
             .nav-links a.active {
-                color: var(--accent-gold);
+                color: var(--ui-icon-accent);
             }
 
             body:not(.dark-mode) .nav-links a,
@@ -3014,12 +3062,28 @@
             }
 
             .projects-carousel-shell {
-                padding-left: 50px;
-                padding-right: 50px;
+                padding: 0;
+                position: relative;
+                padding-bottom: 3.5rem;
             }
 
             .projects-carousel-btn {
                 display: inline-flex;
+                position: absolute;
+                bottom: 0.1rem;
+                top: auto;
+                transform: none;
+                width: 46px;
+                height: 46px;
+            }
+
+            .projects-carousel-btn--prev {
+                left: calc(50% - 58px);
+            }
+
+            .projects-carousel-btn--next {
+                left: calc(50% + 12px);
+                right: auto;
             }
 
             #projectsCarouselTrack.projects-grid {
@@ -3027,15 +3091,16 @@
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
                 scroll-snap-type: x mandatory;
-                gap: 1rem;
+                gap: 0.8rem;
                 padding: 0.25rem 0 0.85rem;
                 scrollbar-width: thin;
+                width: 100%;
             }
 
             #projectsCarouselTrack.projects-grid .project-card {
-                flex: 0 0 min(88vw, 420px);
-                scroll-snap-align: center;
-                max-width: min(88vw, 420px);
+                flex: 0 0 100%;
+                scroll-snap-align: start;
+                max-width: 100%;
             }
 
             .project-card-cover {
@@ -3527,8 +3592,8 @@
             height: 46px;
             border: none;
             border-radius: 14px;
-            background: var(--gold-gradient);
-            color: var(--primary-blue);
+            background: var(--ui-gradient);
+            color: var(--ui-on-gradient);
             cursor: pointer;
             display: grid;
             place-items: center;
@@ -3581,7 +3646,7 @@
 
         body.dark-mode .nav-links a:hover,
         body.dark-mode .nav-links a.active {
-            color: var(--premium-cyan);
+            color: var(--ui-icon-accent);
         }
 
         body.dark-mode .nav-theme-trigger {
@@ -3589,18 +3654,18 @@
         }
 
         body.dark-mode .logo-wordmark {
-            background: linear-gradient(135deg, #e0f2fe 0%, #22d4ee 42%, #a5b4fc 100%);
+            background: var(--ui-gradient);
             -webkit-background-clip: text;
             background-clip: text;
         }
 
         body.dark-mode .logo-nav-icon {
-            color: var(--premium-cyan);
-            filter: drop-shadow(0 0 14px rgba(34, 212, 238, 0.45));
+            color: var(--ui-icon-accent);
+            filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.2));
         }
 
         body.dark-mode .menu-toggle {
-            color: var(--premium-cyan);
+            color: var(--ui-icon-accent);
         }
 
         body.dark-mode #mainContent {
@@ -3613,11 +3678,11 @@
         }
 
         body.dark-mode .section-title::after {
-            background: var(--premium-hire-gradient);
+            background: var(--ui-gradient);
             height: 3px;
             width: 96px;
             border-radius: 999px;
-            box-shadow: 0 0 24px rgba(34, 212, 238, 0.35);
+            box-shadow: 0 0 24px rgba(0, 0, 0, 0.24);
         }
 
         body.dark-mode .services-grid .service-card,

@@ -41,8 +41,8 @@ export function AppMarkup() {
                       <li><a href="#services">Services</a></li>
                       <li><a href="#projects">Projects</a></li>
                       <li><a href="#pricing">Pricing</a></li>
-                      <li className="nav-hire-item"><a href="#contact" className="nav-hire-mobile">Hire Patrick</a></li>
                       <li><a href="#contact">Contact</a></li>
+                      <li className="nav-hire-item"><a href="#contact" className="nav-hire-mobile">Hire Patrick</a></li>
                   </ul>
                   <div className="nav-trailing">
                       <a href="#contact" className="hire-now-btn">Hire Patrick</a>
