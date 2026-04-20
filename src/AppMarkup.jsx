@@ -33,8 +33,8 @@ export function AppMarkup() {
                       <span className="logo-wordmark">Patrick</span>
                   </a>
                   <ul className="nav-links" id="primaryNavLinks">
-                      <li><a href="#hero">Home</a></li>
-                      <li><a href="#about">About</a></li>
+                      <li><a href="#hero">About</a></li>
+                      
                       <li><a href="#skills">Skills</a></li>
                       <li><a href="#services">Services</a></li>
                       <li><a href="#projects">Projects</a></li>
@@ -85,10 +85,10 @@ export function AppMarkup() {
                   <div className="hero-copy">
                       <p className="hero-kicker">
                           <span className="hero-kicker-pulse" aria-hidden="true"></span>
-                          Mechanical Engineer · Product builder · Techiman, Ghana
+                          About me · Mechanical Engineer · Product builder · Techiman, Ghana
                       </p>
-                      <h1>Patrick Benchog</h1>
-                      <p className="hero-lead tagline">I Build Real Systems That Solve Real Problems — With AI, Speed, and Purpose.</p>
+                      <h1>About Patrick Benchog</h1>
+                      <p className="hero-lead tagline">Mechanical Engineer and digital systems builder focused on creating premium apps, dashboards, and web platforms that solve real business friction.</p>
                       <div className="hero-stats" aria-label="Highlights">
                           <div className="hero-stat">
                               <span className="hero-stat-value">Full stack</span>
@@ -115,6 +115,20 @@ export function AppMarkup() {
                           <a href="#projects" className="cta-button cta-button--ghost">View work</a>
                           <a href="Benchog Patrick_CV.pdf" className="glass-button slide-in-up hero-cv-btn" target="_blank" rel="noopener">Download CV</a>
                       </div>
+                      <div className="hero-command-strip" aria-label="Command center summary">
+                          <article className="hero-command-card">
+                              <p className="hero-command-label">Primary focus</p>
+                              <p className="hero-command-value">Apps + dashboards that drive decisions</p>
+                          </article>
+                          <article className="hero-command-card">
+                              <p className="hero-command-label">Build tempo</p>
+                              <p className="hero-command-value">Fast iterations, clean handoff</p>
+                          </article>
+                          <article className="hero-command-card">
+                              <p className="hero-command-label">Execution mode</p>
+                              <p className="hero-command-value">AI-assisted, engineering disciplined</p>
+                          </article>
+                      </div>
                   </div>
                   <div className="hero-visual" aria-hidden="false">
                       <div className="hero-portrait-ring">
@@ -129,7 +143,7 @@ export function AppMarkup() {
       
           
           <section id="about" className="fade-in">
-              <h2 className="section-title">About Patrick</h2>
+              <h2 className="section-title">Core Story</h2>
               <div className="about-content">
                   <div className="about-image">
                       <img src="1750806398142.jpeg" alt="Benchog Patrick" />

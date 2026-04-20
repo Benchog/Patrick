@@ -150,10 +150,12 @@
         /* Dark-mode ambient animated background */
         body.dark-mode {
             background:
-                radial-gradient(circle at 12% 12%, rgba(99, 102, 241, 0.14) 0%, transparent 34%),
-                radial-gradient(circle at 84% 18%, rgba(34, 211, 238, 0.11) 0%, transparent 30%),
-                radial-gradient(circle at 24% 86%, rgba(168, 85, 247, 0.12) 0%, transparent 34%),
-                linear-gradient(180deg, #070b16 0%, #0a1128 55%, #0c132f 100%);
+                repeating-linear-gradient(90deg, rgba(56, 189, 248, 0.06) 0px, rgba(56, 189, 248, 0.06) 1px, transparent 1px, transparent 120px),
+                repeating-linear-gradient(0deg, rgba(56, 189, 248, 0.05) 0px, rgba(56, 189, 248, 0.05) 1px, transparent 1px, transparent 120px),
+                radial-gradient(circle at 12% 12%, rgba(99, 102, 241, 0.16) 0%, transparent 34%),
+                radial-gradient(circle at 84% 18%, rgba(34, 211, 238, 0.14) 0%, transparent 30%),
+                radial-gradient(circle at 24% 86%, rgba(168, 85, 247, 0.14) 0%, transparent 34%),
+                linear-gradient(180deg, #040912 0%, #0a1128 55%, #111a35 100%);
         }
 
         body.dark-mode::before,
@@ -646,6 +648,19 @@
             border-color: rgba(255, 255, 255, 0.22);
         }
 
+        body:not(.dark-mode) .hero-command-card {
+            background: rgba(255, 255, 255, 0.14);
+            border-color: rgba(255, 255, 255, 0.24);
+        }
+
+        body:not(.dark-mode) .hero-command-label {
+            color: rgba(255, 255, 255, 0.72);
+        }
+
+        body:not(.dark-mode) .hero-command-value {
+            color: rgba(255, 255, 255, 0.94);
+        }
+
         body:not(.dark-mode) .hero--premium .rotating-text {
             color: var(--accent-gold);
         }
@@ -923,6 +938,48 @@
             padding: 0.85rem 1.5rem !important;
         }
 
+        .hero-command-strip {
+            margin-top: 1.1rem;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.65rem;
+            max-width: 720px;
+            opacity: 0;
+            animation: slideInUp 1s ease-out 1.55s forwards;
+        }
+
+        .hero-command-card {
+            padding: 0.72rem 0.8rem;
+            border-radius: 14px;
+            background: rgba(15, 23, 42, 0.48);
+            border: 1px solid rgba(56, 189, 248, 0.22);
+            box-shadow: 0 10px 24px rgba(2, 6, 23, 0.28);
+            transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+        }
+
+        .hero-command-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(34, 212, 238, 0.48);
+            box-shadow: 0 16px 30px rgba(34, 212, 238, 0.15);
+        }
+
+        .hero-command-label {
+            font-size: 0.67rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--premium-text-muted);
+            margin: 0 0 0.28rem;
+        }
+
+        .hero-command-value {
+            font-size: 0.82rem;
+            font-weight: 600;
+            line-height: 1.35;
+            color: #e2e8f0;
+            margin: 0;
+        }
+
         .rotating-text {
             color: var(--premium-cyan);
             font-weight: 600;
@@ -992,6 +1049,24 @@
             padding: 100px 2rem;
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        section:not(#hero) {
+            position: relative;
+            isolation: isolate;
+        }
+
+        section:not(#hero)::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(92%, 1080px);
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.32), rgba(99, 102, 241, 0.28), transparent);
+            pointer-events: none;
+            opacity: 0.7;
         }
 
         .section-title {
@@ -1832,6 +1907,16 @@
         .project-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        body.dark-mode .project-card:hover,
+        body.dark-mode .pricing-card:hover,
+        body.dark-mode .skill-category:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow:
+                0 0 0 1px rgba(56, 189, 248, 0.28),
+                0 26px 62px rgba(2, 6, 23, 0.55),
+                0 0 44px rgba(34, 212, 238, 0.14);
         }
 
         .project-card-cover {
@@ -2722,6 +2807,12 @@
             .hero-portrait-ring {
                 width: min(260px, 72vw);
                 margin: 0 auto;
+            }
+
+            .hero-command-strip {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+                margin-top: 0.95rem;
             }
 
             .hero-portrait-orbit {

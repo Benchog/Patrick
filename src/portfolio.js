@@ -957,7 +957,7 @@ function bindImgFallbackChain(root) {
 
 function initActiveNavOnScroll() {
     const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-    const sectionIds = ['hero', 'about', 'skills', 'services', 'projects', 'pricing', 'contact'];
+    const sectionIds = ['hero', 'skills', 'services', 'projects', 'pricing', 'contact'];
     const sections = sectionIds.map(function (id) {
         return document.getElementById(id);
     }).filter(Boolean);
