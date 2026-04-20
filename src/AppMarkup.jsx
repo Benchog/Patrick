@@ -64,18 +64,6 @@ export function AppMarkup() {
                   <button type="button" className="theme-option-btn" data-theme-choice="dark">Dark</button>
                   <button type="button" className="theme-option-btn full" data-theme-choice="toggle">Toggle</button>
               </div>
-              <h4 style={{"marginTop":"0.9rem"}}>Color Studio</h4>
-              <p>Choose a signature look for the whole portfolio.</p>
-              <div className="theme-color-options">
-                  <button type="button" className="theme-color-btn" data-color-choice="royal"><span className="theme-color-dot" style={{"background":"#2a5298"}}></span>Royal</button>
-                  <button type="button" className="theme-color-btn" data-color-choice="emerald"><span className="theme-color-dot" style={{"background":"#10b981"}}></span>Emerald</button>
-                  <button type="button" className="theme-color-btn" data-color-choice="sunset"><span className="theme-color-dot" style={{"background":"#ff6b6b"}}></span>Sunset</button>
-                  <button type="button" className="theme-color-btn" data-color-choice="violet"><span className="theme-color-dot" style={{"background":"#818cf8"}}></span>Violet</button>
-                  <button type="button" className="theme-color-btn" data-color-choice="obsidian"><span className="theme-color-dot" style={{"background":"#f59e0b"}}></span>Obsidian Gold</button>
-                  <button type="button" className="theme-color-btn" data-color-choice="aurora"><span className="theme-color-dot" style={{"background":"#22d3ee"}}></span>Aurora Teal</button>
-                  <button type="button" className="theme-color-btn" data-color-choice="rose-luxe"><span className="theme-color-dot" style={{"background":"#f472b6"}}></span>Rose Luxe</button>
-                  <button type="button" className="theme-color-btn" data-color-choice="imperial"><span className="theme-color-dot" style={{"background":"#facc15"}}></span>Imperial Gold</button>
-              </div>
           </div>
       
           <main id="mainContent">

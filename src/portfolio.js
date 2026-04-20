@@ -52,15 +52,6 @@ function setTheme(mode) {
     if (activeBtn) activeBtn.classList.add('active');
 }
 
-function setColorScheme(scheme) {
-    const valid = ['royal', 'emerald', 'sunset', 'violet', 'obsidian', 'aurora', 'rose-luxe', 'imperial'];
-    const next = valid.includes(scheme) ? scheme : 'royal';
-    document.body.setAttribute('data-color-scheme', next);
-    localStorage.setItem('colorScheme', next);
-    document.querySelectorAll('.theme-color-btn[data-color-choice]').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-color-choice') === next);
-    });
-}
 
 // Dark mode toggle
 function toggleDarkMode() {
@@ -77,10 +68,6 @@ function loadDarkMode() {
     setTheme(darkMode === 'enabled' ? 'dark' : 'light');
 }
 
-function loadColorScheme() {
-    const saved = localStorage.getItem('colorScheme') || 'royal';
-    setColorScheme(saved);
-}
 
 function openThemePanel() {
     const panel = document.getElementById('themePanel');
@@ -1122,7 +1109,6 @@ export function initPortfolioRuntime() {
     createParticles();
     animateRotatingText();
     loadDarkMode();
-    loadColorScheme();
     document.getElementById('themePanelOpen').addEventListener('click', function () {
         setNavOpenState(false);
         const panel = document.getElementById('themePanel');
@@ -1142,11 +1128,6 @@ export function initPortfolioRuntime() {
                 setTheme(choice);
             }
             closeThemePanel();
-        });
-    });
-    document.querySelectorAll('.theme-color-btn[data-color-choice]').forEach(btn => {
-        btn.addEventListener('click', function () {
-            setColorScheme(btn.getAttribute('data-color-choice'));
         });
     });
     initSmoothScrolling();
