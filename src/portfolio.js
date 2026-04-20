@@ -202,6 +202,36 @@ function initProjectsCarousel() {
     });
 }
 
+function initPricingCarousel() {
+    const track = document.getElementById('pricingCarouselTrack');
+    const prev = document.querySelector('[data-pricing-carousel="prev"]');
+    const next = document.querySelector('[data-pricing-carousel="next"]');
+    if (!track || !prev || !next) return;
+
+    function step(direction) {
+        const amount = track.clientWidth;
+        track.scrollBy({ left: direction * amount, behavior: 'smooth' });
+    }
+
+    prev.addEventListener('click', function () {
+        step(-1);
+    });
+    next.addEventListener('click', function () {
+        step(1);
+    });
+}
+
+function initPromptVaultProtection() {
+    const locked = document.querySelector('.prompt-vault-card');
+    if (!locked) return;
+
+    ['contextmenu', 'copy', 'cut', 'dragstart', 'selectstart'].forEach(function (evt) {
+        locked.addEventListener(evt, function (e) {
+            e.preventDefault();
+        });
+    });
+}
+
 // Typing effect for hero tagline
 function initTypingEffect() {
     const tagline = document.querySelector('.hero .tagline');
@@ -905,6 +935,27 @@ const PROJECT_CATALOG = {
             { file: 'BenchTech-Contact.png', caption: 'Contact section' },
             { file: 'BenchTech-Book Service.png', caption: 'Book service flow' }
         ]
+    },
+    promptvault: {
+        title: 'Prompt Vault: Elite AI Templates',
+        subtitle: 'Protected prompt systems for high-output teams',
+        liveUrl: '',
+        liveLabel: '',
+        tags: ['Prompt Engineering', 'Template Systems', 'AI Ops'],
+        detailSections: [
+            { title: 'Summary', body: 'A premium prompt library designed for fast, high-quality output in product strategy, marketing, operations, and technical workflows.' },
+            { title: 'What Is Inside', items: [
+                'Role + objective prompt frameworks',
+                'Multi-step system prompts for consistent outputs',
+                'Business-ready templates for strategy and execution',
+                'Technical templates for rapid prototyping and docs'
+            ]},
+            { title: 'Access Model', body: 'Visitors see a partial preview. Protected blocks remain locked and blurred. Full access is provided only after purchase or authorized onboarding.' },
+            { title: 'Why It Matters', body: 'Cuts prompt drafting time dramatically while improving consistency, clarity, and output quality across use-cases.' }
+        ],
+        gallery: [
+            { file: 'Dashboard.png', caption: 'Protected template preview' }
+        ]
     }
 };
 
@@ -1134,6 +1185,7 @@ export function initPortfolioRuntime() {
     initScrollAnimations();
     initProjectFiltering();
     initProjectsCarousel();
+    initPricingCarousel();
     initProjectModal();
     initGallery();
     initCollectionModal();
@@ -1145,6 +1197,7 @@ export function initPortfolioRuntime() {
     // Chat widget and theme hint intentionally disabled for a cleaner recruiter-first experience.
     //initCursorTrail();
     initParallaxScrolling();
+    initPromptVaultProtection();
 
     // Add keyboard navigation
     document.addEventListener('keydown', (e) => {

@@ -690,7 +690,7 @@
             inset: -1px;
             border-radius: inherit;
             padding: 1px;
-            background: linear-gradient(112deg, transparent 18%, rgba(255, 102, 214, 0.22) 38%, rgba(255, 255, 255, 0.95) 50%, rgba(139, 92, 246, 0.35) 62%, transparent 82%);
+            background: linear-gradient(112deg, transparent 18%, rgba(255, 102, 214, 0.2) 38%, rgba(255, 102, 214, 0.95) 50%, rgba(139, 92, 246, 0.42) 62%, transparent 82%);
             background-size: 230% 100%;
             -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
             -webkit-mask-composite: xor;
@@ -1335,6 +1335,85 @@
             gap: 2rem;
         }
 
+        .prompt-vault-card {
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .prompt-preview-snippet {
+            display: grid;
+            gap: 0.45rem;
+            padding: 1rem;
+            border-radius: 14px;
+            background: rgba(2, 6, 23, 0.82);
+            border: 1px solid var(--ui-outline);
+            color: #dbeafe;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.78rem;
+            line-height: 1.35;
+        }
+
+        .prompt-preview-snippet p {
+            margin: 0;
+        }
+
+        .prompt-preview-snippet .blur-line {
+            filter: blur(4px);
+            opacity: 0.72;
+        }
+
+        .prompt-lock-note {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            margin: 0.55rem 0 0;
+            font-size: 0.76rem;
+            color: var(--text-light);
+        }
+
+        .project-flow-strip {
+            margin-top: 1.4rem;
+            overflow: hidden;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(15, 23, 42, 0.36);
+            position: relative;
+        }
+
+        .project-flow-track {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            width: max-content;
+            padding: 0.8rem;
+            animation: flowProjects 34s linear infinite;
+        }
+
+        .project-flow-strip:hover .project-flow-track {
+            animation-play-state: paused;
+        }
+
+        .project-flow-track img {
+            width: clamp(160px, 18vw, 230px);
+            aspect-ratio: 16 / 9;
+            border-radius: 14px;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+            transition: transform 0.24s ease, box-shadow 0.24s ease;
+        }
+
+        .project-flow-track img:hover {
+            transform: scale(1.08);
+            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.45);
+            z-index: 2;
+        }
+
+        @keyframes flowProjects {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
         /* Pricing (Supabase-driven) */
         #pricing {
             scroll-margin-top: 5.5rem;
@@ -1374,6 +1453,35 @@
             gap: 1.5rem;
             max-width: 1100px;
             margin: 0 auto;
+        }
+
+        .pricing-carousel-shell {
+            position: relative;
+        }
+
+        .pricing-carousel-btn {
+            display: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            border: 1px solid var(--ui-outline);
+            background: rgba(15, 23, 42, 0.72);
+            color: var(--ui-icon-accent);
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 3;
+        }
+
+        .pricing-carousel-btn--prev {
+            left: -0.4rem;
+        }
+
+        .pricing-carousel-btn--next {
+            right: -0.4rem;
         }
 
         .pricing-card {
@@ -1530,6 +1638,118 @@
         .pricing-cta a:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+        }
+
+        .service-request-section {
+            scroll-margin-top: 5.5rem;
+        }
+
+        .service-request-intro {
+            text-align: center;
+            margin: -0.6rem auto 1.8rem;
+            max-width: 700px;
+            color: var(--text-light);
+        }
+
+        .service-request-form {
+            max-width: 860px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.9rem;
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid rgba(15, 23, 42, 0.12);
+            box-shadow: 0 16px 38px rgba(15, 23, 42, 0.11);
+            border-radius: 20px;
+            padding: 1.1rem;
+            backdrop-filter: blur(10px) saturate(130%);
+        }
+
+        .service-request-form label {
+            display: flex;
+            flex-direction: column;
+            gap: 0.36rem;
+            font-size: 0.86rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .service-request-form input,
+        .service-request-form select,
+        .service-request-form textarea {
+            border: 1px solid rgba(15, 23, 42, 0.15);
+            border-radius: 12px;
+            padding: 0.62rem 0.72rem;
+            font: inherit;
+            color: var(--text-dark);
+            background: rgba(255, 255, 255, 0.94);
+        }
+
+        .service-request-form select,
+        .service-request-message,
+        .service-request-price-box,
+        .service-request-submit,
+        .service-request-status {
+            grid-column: 1 / -1;
+        }
+
+        .service-request-price-box input[readonly] {
+            background: rgba(245, 243, 255, 0.9);
+            border-color: var(--ui-outline);
+            color: #1f2937;
+            font-weight: 700;
+        }
+
+        .service-request-submit {
+            border: none;
+            border-radius: 999px;
+            padding: 0.78rem 1rem;
+            background: var(--ui-gradient);
+            color: var(--ui-on-gradient);
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .service-request-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .service-request-status {
+            font-size: 0.84rem;
+            font-weight: 600;
+            margin: 0.2rem 0 0;
+        }
+
+        .service-request-status.ok {
+            color: #16a34a;
+        }
+
+        .service-request-status.err {
+            color: #dc2626;
+        }
+
+        body.dark-mode .service-request-form {
+            background: rgba(15, 23, 42, 0.58);
+            border-color: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 18px 46px rgba(0, 0, 0, 0.45);
+        }
+
+        body.dark-mode .service-request-form label {
+            color: #e5e7eb;
+        }
+
+        body.dark-mode .service-request-form input,
+        body.dark-mode .service-request-form select,
+        body.dark-mode .service-request-form textarea {
+            background: rgba(2, 6, 23, 0.65);
+            border-color: rgba(255, 255, 255, 0.16);
+            color: #f8fafc;
+        }
+
+        body.dark-mode .service-request-price-box input[readonly] {
+            background: rgba(30, 41, 59, 0.9);
+            color: #f8fafc;
         }
 
         .pricing-empty {
@@ -2991,6 +3211,59 @@
                 flex: 0 0 100%;
                 scroll-snap-align: start;
                 max-width: 100%;
+            }
+
+            .project-flow-strip {
+                margin-top: 1rem;
+            }
+
+            .project-flow-track img {
+                width: min(72vw, 230px);
+            }
+
+            .pricing-carousel-shell {
+                position: relative;
+                padding-bottom: 3.4rem;
+            }
+
+            .pricing-carousel-btn {
+                display: inline-flex;
+                top: auto;
+                bottom: 0.05rem;
+                transform: none;
+                width: 46px;
+                height: 46px;
+            }
+
+            .pricing-carousel-btn--prev {
+                left: calc(50% - 58px);
+            }
+
+            .pricing-carousel-btn--next {
+                left: calc(50% + 12px);
+                right: auto;
+            }
+
+            #pricingCarouselTrack.pricing-grid {
+                display: flex;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scroll-snap-type: x mandatory;
+                gap: 0.9rem;
+                width: 100%;
+                padding: 0.25rem 0 0.85rem;
+                scrollbar-width: thin;
+            }
+
+            #pricingCarouselTrack.pricing-grid .pricing-card {
+                flex: 0 0 100%;
+                max-width: 100%;
+                scroll-snap-align: start;
+            }
+
+            .service-request-form {
+                grid-template-columns: 1fr;
+                padding: 1rem;
             }
 
             .project-card-cover {

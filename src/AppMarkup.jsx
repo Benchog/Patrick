@@ -10,6 +10,8 @@ import {
   Palette,
   Monitor,
   FileText,
+  BrainCircuit,
+  Lock,
   Github,
   Linkedin,
   MessageCircle,
@@ -19,6 +21,7 @@ import {
 } from 'lucide-react';
 import { PricingSection } from './PricingSection.jsx';
 import { ToolStackIcons } from './ToolStackIcons.jsx';
+import { ServiceRequestSection } from './ServiceRequestSection.jsx';
 
 const iconProps = { className: 'icon-lucide', strokeWidth: 1.85, absoluteStrokeWidth: true };
 
@@ -232,6 +235,11 @@ export function AppMarkup() {
                       <h3>Document & Thesis Editing</h3>
                       <p>Expert proofreading, editing, formatting, and paraphrasing for academic and professional documents — structured, polished, and submission-ready.</p>
                   </div>
+                  <div className="service-card">
+                      <div className="service-icon"><BrainCircuit {...iconProps} size={48} aria-hidden="true" /></div>
+                      <h3>Prompt Engineering Systems</h3>
+                      <p>I design robust prompt workflows and reusable AI templates that generate production-ready outputs for content, products, automation, and business operations.</p>
+                  </div>
               </div>
           </section>
       
@@ -243,6 +251,7 @@ export function AppMarkup() {
                   <button type="button" className="filter-btn" data-filter="app">Apps</button>
                   <button type="button" className="filter-btn" data-filter="web">Websites</button>
                   <button type="button" className="filter-btn" data-filter="data">Data Analytics</button>
+                  <button type="button" className="filter-btn" data-filter="ai">AI Systems</button>
                   <button type="button" className="filter-btn" data-filter="design">Design</button>
                   <button type="button" className="filter-btn" data-filter="photography">Photography</button>
               </div>
@@ -484,15 +493,65 @@ export function AppMarkup() {
                           </div>
                       </div>
                   </div>
+
+                  <div className="project-card prompt-vault-card" data-category="ai">
+                      <div className="project-card-cover project-card-cover--contain">
+                          <div className="prompt-preview-snippet" aria-hidden="true">
+                              <p>You are a strategic product architect with systems thinking...</p>
+                              <p className="blur-line">[framework + persona calibration block hidden]</p>
+                              <p>Return response in execution sequence with risk matrix and scorecard...</p>
+                              <p className="blur-line">[proprietary response constraints hidden]</p>
+                          </div>
+                      </div>
+                      <div className="project-card-body">
+                          <h3>Prompt Vault: Elite AI Templates</h3>
+                          <p className="project-card-excerpt">Premium templates for generating high-quality outputs fast across product, marketing, and operations workflows.</p>
+                          <p className="project-impact">Impact: converts hours of drafting into repeatable outputs in minutes.</p>
+                          <ul className="project-card-highlights">
+                              <li>Battle-tested prompt architecture blocks</li>
+                              <li>Domain-specific templates (business + technical)</li>
+                              <li>Locked premium sections available after purchase</li>
+                          </ul>
+                          <div className="project-tags">
+                              <span className="tag">Prompt Engineering</span>
+                              <span className="tag">Template Systems</span>
+                              <span className="tag">AI Ops</span>
+                          </div>
+                          <div className="project-card-actions">
+                              <button type="button" className="btn-view-project" data-project="promptvault">View Project</button>
+                              <a href="#service-request" className="btn-project-live">Request Access</a>
+                          </div>
+                          <p className="prompt-lock-note"><Lock {...iconProps} size={14} aria-hidden="true" /> Protected preview. Full templates unlock after purchase.</p>
+                      </div>
+                  </div>
       
               </div>
               <button type="button" className="projects-carousel-btn projects-carousel-btn--next" data-projects-carousel="next" aria-label="Next projects">
                   <ChevronRight {...iconProps} size={28} aria-hidden="true" />
               </button>
               </div>
+              <div className="project-flow-strip" aria-label="Project screenshot highlights">
+                  <div className="project-flow-track">
+                      <img src="Dashboard.png" alt="The Optimist screenshot" />
+                      <img src="SP-Dashboard.png" alt="StockPulse screenshot" />
+                      <img src="IMS-Dash.png" alt="IMS app screenshot" />
+                      <img src="Furniture_Sales_Dashboard-.png" alt="Furniture dashboard screenshot" className="img-fallback-chain" data-fallback-srcs="Furniture_Sales_Dashboard.png,Furniture_Sales_Dashboard.svg" />
+                      <img src="Marketing_Performance_Dashboard%20.png" alt="Marketing dashboard screenshot" className="img-fallback-chain" data-fallback-srcs="Marketing_Performance_Dashboard.png,Marketing_Performance_Dashboard_.png,Marketing_Performance_Dashboard.svg" />
+                      <img src="PrimeDraft-Home.png" alt="PrimeDraft screenshot" className="img-fallback-chain" data-fallback-srcs="Primed.png" />
+                      <img src="BenchTech-Dashboard.png" alt="BenchTech screenshot" className="img-fallback-chain" data-fallback-srcs="BenchTech.png" />
+                      <img src="Dashboard.png" alt="The Optimist screenshot duplicate" />
+                      <img src="SP-Dashboard.png" alt="StockPulse screenshot duplicate" />
+                      <img src="IMS-Dash.png" alt="IMS app screenshot duplicate" />
+                      <img src="Furniture_Sales_Dashboard-.png" alt="Furniture dashboard screenshot duplicate" className="img-fallback-chain" data-fallback-srcs="Furniture_Sales_Dashboard.png,Furniture_Sales_Dashboard.svg" />
+                      <img src="Marketing_Performance_Dashboard%20.png" alt="Marketing dashboard screenshot duplicate" className="img-fallback-chain" data-fallback-srcs="Marketing_Performance_Dashboard.png,Marketing_Performance_Dashboard_.png,Marketing_Performance_Dashboard.svg" />
+                      <img src="PrimeDraft-Home.png" alt="PrimeDraft screenshot duplicate" className="img-fallback-chain" data-fallback-srcs="Primed.png" />
+                      <img src="BenchTech-Dashboard.png" alt="BenchTech screenshot duplicate" className="img-fallback-chain" data-fallback-srcs="BenchTech.png" />
+                  </div>
+              </div>
           </section>
       
           <PricingSection />
+          <ServiceRequestSection />
       
               
           <section id="contact" className="fade-in" tabIndex={-1} aria-label="Contact">

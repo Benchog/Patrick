@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
@@ -191,7 +192,11 @@ export function PricingSection() {
           <code>supabase/pricing_plans.sql</code>.
         </div>
       ) : (
-        <div className="pricing-grid">
+        <div className="pricing-carousel-shell">
+          <button type="button" className="pricing-carousel-btn pricing-carousel-btn--prev" data-pricing-carousel="prev" aria-label="Previous pricing cards">
+            <ChevronLeft className="icon-lucide" size={24} aria-hidden="true" />
+          </button>
+          <div className="pricing-grid" id="pricingCarouselTrack">
           {plans.map((p) => {
             const feats = parseFeatures(p.features);
             const usd = formatUsd(p.price_ghs);
@@ -221,11 +226,15 @@ export function PricingSection() {
                   </ul>
                 ) : null}
                 <div className="pricing-cta">
-                  <a href="#contact">Start a conversation</a>
+                  <a href={`?service=${encodeURIComponent(p.slug)}#service-request`}>Start a conversation</a>
                 </div>
               </article>
             );
           })}
+          </div>
+          <button type="button" className="pricing-carousel-btn pricing-carousel-btn--next" data-pricing-carousel="next" aria-label="Next pricing cards">
+            <ChevronRight className="icon-lucide" size={24} aria-hidden="true" />
+          </button>
         </div>
       )}
     </section>
