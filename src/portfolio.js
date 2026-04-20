@@ -172,6 +172,7 @@ function initScrollAnimations() {
 function initProjectFiltering() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
+    const track = document.getElementById('projectsCarouselTrack');
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -190,7 +191,27 @@ function initProjectFiltering() {
                     card.style.display = 'none';
                 }
             });
+            if (track) track.scrollLeft = 0;
         });
+    });
+}
+
+function initProjectsCarousel() {
+    const track = document.getElementById('projectsCarouselTrack');
+    const prev = document.querySelector('[data-projects-carousel="prev"]');
+    const next = document.querySelector('[data-projects-carousel="next"]');
+    if (!track || !prev || !next) return;
+
+    function step(direction) {
+        const amount = Math.min(track.clientWidth * 0.82, 400);
+        track.scrollBy({ left: direction * amount, behavior: 'smooth' });
+    }
+
+    prev.addEventListener('click', function () {
+        step(-1);
+    });
+    next.addEventListener('click', function () {
+        step(1);
     });
 }
 
@@ -707,7 +728,7 @@ const PROJECT_CATALOG = {
         subtitle: 'Personal Finance Intelligence System',
         liveUrl: 'https://theoptimist.pages.dev/',
         liveLabel: 'Open live app ↗',
-        tags: ['Cross-platform', 'Cloud backend', 'Supabase', 'AI-assisted'],
+        tags: ['Cross-platform', 'Cloud backend', 'Supabase', 'AI-accelerated'],
         detailSections: [
             { title: 'Summary', body: 'A full-featured personal finance system designed to help users track, manage, and grow their money with complete clarity and control.' },
             { title: 'The Problem', body: 'Many people struggle with managing their finances, not because they don\'t earn enough, but because they lack visibility into where their money goes. This leads to overspending, poor savings habits, and financial stress.' },
@@ -723,8 +744,8 @@ const PROJECT_CATALOG = {
                 'Cross-device data synchronization'
             ]},
             { title: 'Impact', body: 'This system transforms financial confusion into structured, trackable insights, helping users make better financial decisions and stay in control of their money.' },
-            { title: 'Tech Stack', body: 'Cross-platform product stack · Supabase / Firebase · AI-assisted development (Cursor, Claude)' },
-            { title: 'My Role', body: 'Designed the system structure, guided AI tools in development, implemented core features, and handled testing and improvements.' },
+            { title: 'Tech Stack', body: 'Cross-platform product stack · Supabase / Firebase · expert AI-native workflows (Cursor, Claude, modern assistants)' },
+            { title: 'My Role', body: 'Designed the system structure, led AI-accelerated implementation, shipped core features, and owned testing and iteration.' },
             { title: 'What I Learned', body: 'Improved my ability to design complex systems, manage multiple financial features, and effectively use AI tools to accelerate development.' }
         ],
         gallery: [
@@ -755,7 +776,7 @@ const PROJECT_CATALOG = {
                 'PDF report generation'
             ]},
             { title: 'Impact', body: 'Reduces hours of manual work, improves accuracy, and simplifies the entire stock management process.' },
-            { title: 'Tech Stack', body: 'Cross-platform product stack · Backend integration · AI-assisted development (Cursor, Claude)' },
+            { title: 'Tech Stack', body: 'Cross-platform product stack · Backend integration · expert AI-native development (Cursor, Claude)' },
             { title: 'My Role', body: 'Designed the workflow, built the system using AI tools, and implemented automation for stock tracking and reporting.' },
             { title: 'What I Learned', body: 'Learned how to design efficient tracking systems and automate repetitive real-world tasks.' }
         ],
@@ -787,8 +808,8 @@ const PROJECT_CATALOG = {
                 'Simple and user-friendly interface'
             ]},
             { title: 'Impact', body: 'Eliminates confusion, reduces unnecessary travel, and improves overall client experience and operational efficiency.' },
-            { title: 'Tech Stack', body: 'Cross-platform product stack · Backend logic integration · AI-assisted development (Cursor, Claude)' },
-            { title: 'My Role', body: 'Identified the problem, designed the solution, and built the system using AI-assisted tools.' },
+            { title: 'Tech Stack', body: 'Cross-platform product stack · Backend logic integration · expert AI-native development (Cursor, Claude)' },
+            { title: 'My Role', body: 'Identified the problem, designed the solution, and shipped the build with expert AI-led engineering workflows.' },
             { title: 'What I Learned', body: 'Improved my ability to build solutions that directly impact real users and solve operational challenges.' }
         ],
         gallery: [
@@ -1131,6 +1152,7 @@ export function initPortfolioRuntime() {
     initSmoothScrolling();
     initScrollAnimations();
     initProjectFiltering();
+    initProjectsCarousel();
     initProjectModal();
     initGallery();
     initCollectionModal();
@@ -1297,8 +1319,9 @@ function injectPortfolioExtraStyles() {
     .cta-button:focus,
     .btn-view-project:focus,
     .filter-btn:focus,
-    .social-link:focus {
-        outline: 2px solid var(--accent-gold);
+    .social-link:focus,
+    .projects-carousel-btn:focus {
+        outline: 2px solid var(--ui-icon-accent, #f472b6);
         outline-offset: 2px;
     }
     /* Dark mode cards — glass + cyan edge (matches premium theme in index.css) */
@@ -1306,34 +1329,34 @@ function injectPortfolioExtraStyles() {
     .dark-mode .contact-card {
     background: rgba(15, 23, 42, 0.58);
     color: #FAFAFA;
-    border: 1px solid rgba(56, 189, 248, 0.14);
+    border: 1px solid rgba(192, 132, 252, 0.22);
     box-shadow: 0 22px 55px rgba(0, 0, 0, 0.42);
     backdrop-filter: blur(14px) saturate(145%);
     }
     .dark-mode .cta-button:not(.cta-button--ghost) {
-    background: linear-gradient(135deg, #22d4ee 0%, #3b82f6 48%, #6366f1 100%);
+    background: var(--ui-gradient, linear-gradient(135deg, #f472b6 0%, #c084fc 48%, #f59e0b 100%));
     color: #020617 !important;
     border: none;
-    box-shadow: 0 10px 34px rgba(34, 212, 238, 0.28);
+    box-shadow: 0 10px 34px rgba(192, 132, 252, 0.28);
     }
     .dark-mode .cta-button:not(.cta-button--ghost):hover {
     filter: brightness(1.06);
-    box-shadow: 0 14px 42px rgba(56, 189, 248, 0.38);
+    box-shadow: 0 14px 42px rgba(244, 114, 182, 0.32);
     }
     .dark-mode .cta-button--ghost {
     background: transparent !important;
     color: #e2e8f0 !important;
-    border: 1px solid rgba(148, 163, 184, 0.35);
+    border: 1px solid rgba(192, 132, 252, 0.45);
     box-shadow: none !important;
     }
     /* Dark mode project filter buttons */
     .dark-mode .filter-btn {
     background: rgba(15, 23, 42, 0.65);
     color: #e2e8f0;
-    border: 1px solid rgba(56, 189, 248, 0.2);
+    border: 1px solid rgba(192, 132, 252, 0.35);
     }
     .dark-mode .filter-btn.active {
-    background: linear-gradient(135deg, rgba(34, 212, 238, 0.95), rgba(59, 130, 246, 0.9));
+    background: var(--ui-gradient, linear-gradient(135deg, #f472b6 0%, #c084fc 48%, #f59e0b 100%));
     color: #020617;
     border-color: transparent;
     }

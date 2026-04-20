@@ -14,8 +14,11 @@ import {
   Linkedin,
   MessageCircle,
   Mail,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
 import { PricingSection } from './PricingSection.jsx';
+import { ToolStackIcons } from './ToolStackIcons.jsx';
 
 const iconProps = { className: 'icon-lucide', strokeWidth: 1.85, absoluteStrokeWidth: true };
 
@@ -100,14 +103,15 @@ export function AppMarkup() {
                               <span className="hero-stat-label">Built for real workflows</span>
                           </div>
                           <div className="hero-stat">
-                              <span className="hero-stat-value">AI-assisted</span>
-                              <span className="hero-stat-label">Speed without shortcuts</span>
+                              <span className="hero-stat-value">AI-native expert</span>
+                              <span className="hero-stat-label">Strategic models, sharp judgment</span>
                           </div>
                           <div className="hero-stat">
                               <span className="hero-stat-value">Discipline</span>
                               <span className="hero-stat-label">Engineering + craft</span>
                           </div>
                       </div>
+                      <ToolStackIcons />
                       <p className="caption hero-caption-tight">
                           <span className="rotating-text" id="rotatingText">App Builder</span> • Problem Solver • Fast Executor
                       </p>
@@ -141,7 +145,7 @@ export function AppMarkup() {
                           </div>
                       </div>
                       <div className="skill-item">
-                          <span>AI-Powered Building</span>
+                          <span>Expert AI workflows</span>
                           <div className="skill-bar">
                               <div className="skill-progress" style={{"width":"95%"}}></div>
                           </div>
@@ -254,7 +258,11 @@ export function AppMarkup() {
                   <button type="button" className="filter-btn" data-filter="design">Design</button>
                   <button type="button" className="filter-btn" data-filter="photography">Photography</button>
               </div>
-              <div className="projects-grid">
+              <div className="projects-carousel-shell">
+              <button type="button" className="projects-carousel-btn projects-carousel-btn--prev" data-projects-carousel="prev" aria-label="Previous projects">
+                  <ChevronLeft {...iconProps} size={28} aria-hidden="true" />
+              </button>
+              <div className="projects-grid" id="projectsCarouselTrack">
       
                   
                   <div className="project-card" data-category="app">
@@ -274,7 +282,7 @@ export function AppMarkup() {
                               <span className="tag">Cross-platform</span>
                               <span className="tag">Cloud backend</span>
                               <span className="tag">Supabase</span>
-                              <span className="tag">AI-assisted</span>
+                              <span className="tag">AI-accelerated</span>
                           </div>
                           <div className="project-card-actions">
                               <button type="button" className="btn-view-project" data-project="optimist">View Project</button>
@@ -489,6 +497,10 @@ export function AppMarkup() {
                       </div>
                   </div>
       
+              </div>
+              <button type="button" className="projects-carousel-btn projects-carousel-btn--next" data-projects-carousel="next" aria-label="Next projects">
+                  <ChevronRight {...iconProps} size={28} aria-hidden="true" />
+              </button>
               </div>
           </section>
       
