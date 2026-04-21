@@ -3,6 +3,7 @@ import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+const PROMPT_UNLOCK_KEY = 'promptVaultPaidUnlocked';
 
 const REQUIRED_PLAN_DEFAULTS = [
   { slug: 'app-development', title: 'App development', price_ghs: 22000, billing_note: 'from · scoped to requirements', sort_order: 10 },
@@ -43,6 +44,10 @@ export function ServiceRequestSection() {
     timeline: '',
   });
   const [submitting, setSubmitting] = useState(false);
+  const [unlocking, setUnlocking] = useState(false);
+  const [paidUnlocked, setPaidUnlocked] = useState(
+    typeof window !== 'undefined' && localStorage.getItem(PROMPT_UNLOCK_KEY) === 'true',
+  );
 
   useEffect(() => {
     if (!supabaseUrl || !supabaseAnonKey) return;
@@ -64,6 +69,39 @@ export function ServiceRequestSection() {
     })();
     return () => {
       cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const reference = params.get('reference') || params.get('unlock_reference');
+    if (!reference) return;
+    let alive = true;
+    (async () => {
+      try {
+        const r = await fetch('/api/verify-unlock-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ reference }),
+        });
+        const data = await r.json().catch(() => ({}));
+        if (!alive) return;
+        if (r.ok && data?.ok && data?.paid) {
+          localStorage.setItem(PROMPT_UNLOCK_KEY, 'true');
+          setPaidUnlocked(true);
+          setStatus({ type: 'success', message: 'Payment confirmed. Prompt Vault is unlocked on this device.' });
+          params.delete('reference');
+          params.delete('unlock_reference');
+          params.delete('trxref');
+          const next = `${window.location.pathname}?${params.toString()}${window.location.hash || ''}`.replace(/\?$/, '');
+          window.history.replaceState({}, '', next);
+        }
+      } catch {
+        // ignore
+      }
+    })();
+    return () => {
+      alive = false;
     };
   }, []);
 
@@ -96,6 +134,19 @@ export function ServiceRequestSection() {
     setForm((prev) => ({ ...prev, [key]: e.target.value }));
   };
 
+  const resetForm = (keepStatus = false) => {
+    setSelectedSlug('');
+    setForm({
+      fullName: '',
+      email: '',
+      phone: '',
+      company: '',
+      message: '',
+      timeline: '',
+    });
+    if (!keepStatus) setStatus({ type: 'idle', message: '' });
+  };
+
   const onSubmit = async (e) => {
     e.preventDefault();
     if (!selectedPlan) {
@@ -126,14 +177,7 @@ export function ServiceRequestSection() {
         type: 'success',
         message: 'Request sent successfully. Patrick will reach out by email shortly.',
       });
-      setForm({
-        fullName: '',
-        email: '',
-        phone: '',
-        company: '',
-        message: '',
-        timeline: '',
-      });
+      resetForm(true);
     } catch (err) {
       setStatus({
         type: 'error',
@@ -147,6 +191,39 @@ export function ServiceRequestSection() {
     } finally {
       clearTimeout(timeoutId);
       setSubmitting(false);
+    }
+  };
+
+  const startUnlockCheckout = async () => {
+    if (selectedSlug !== 'prompt-engineer-systems') return;
+    if (paidUnlocked) {
+      setStatus({ type: 'success', message: 'Prompt Vault is already unlocked on this device.' });
+      return;
+    }
+    if (!form.email) {
+      setStatus({ type: 'error', message: 'Enter your email first, then click unlock.' });
+      return;
+    }
+    setUnlocking(true);
+    setStatus({ type: 'idle', message: '' });
+    try {
+      const r = await fetch('/api/create-unlock-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: form.email,
+          serviceSlug: selectedSlug,
+        }),
+      });
+      const data = await r.json().catch(() => ({}));
+      if (!r.ok || !data?.url) throw new Error(data?.error || 'Could not start payment.');
+      window.location.href = data.url;
+    } catch (err) {
+      setStatus({
+        type: 'error',
+        message: err instanceof Error ? err.message : 'Could not start payment.',
+      });
+      setUnlocking(false);
     }
   };
 
@@ -226,6 +303,14 @@ export function ServiceRequestSection() {
         <button type="submit" className="service-request-submit" disabled={submitting}>
           {submitting ? 'Sending...' : 'Send request'}
         </button>
+        <button type="button" className="service-request-reset" onClick={resetForm} disabled={submitting || unlocking}>
+          Reset form
+        </button>
+        {selectedSlug === 'prompt-engineer-systems' ? (
+          <button type="button" className="service-request-unlock" onClick={startUnlockCheckout} disabled={unlocking || paidUnlocked}>
+            {paidUnlocked ? 'Prompt Vault unlocked' : unlocking ? 'Preparing payment...' : 'Pay & unlock Prompt Vault'}
+          </button>
+        ) : null}
 
         {status.message ? (
           <p className={`service-request-status ${status.type === 'success' ? 'ok' : 'err'}`}>{status.message}</p>

@@ -975,9 +975,7 @@ const PROJECT_CATALOG = {
             { title: 'Access Model', body: 'Visitors see a partial preview. Protected blocks remain locked and blurred. Full access is provided only after purchase or authorized onboarding.' },
             { title: 'Why It Matters', body: 'Cuts prompt drafting time dramatically while improving consistency, clarity, and output quality across use-cases.' }
         ],
-        gallery: [
-            { file: 'Dashboard.png', caption: 'Protected template preview' }
-        ]
+        gallery: []
     }
 };
 
@@ -989,6 +987,10 @@ function escapeHtml(str) {
 
 function isPromptOwnerUnlocked() {
     return localStorage.getItem('ownerPromptAccess') === 'true';
+}
+
+function isPromptPaidUnlocked() {
+    return localStorage.getItem('promptVaultPaidUnlocked') === 'true';
 }
 
 function buildPromptSamplesHtml(unlocked) {
@@ -1019,7 +1021,7 @@ function buildPromptSamplesHtml(unlocked) {
         '<h3 class="project-modal-section-title">Premium Prompt Samples</h3>' +
         '<p class="project-modal-lead">' + (unlocked ? 'Owner preview unlocked on this device.' : 'Protected preview only. Full templates unlock after purchase.') + '</p>' +
         '<div class="project-modal-prompt-grid">' + cards + '</div>' +
-        (unlocked ? '' : '<div class="project-modal-prompt-lock"><a href="#service-request" class="btn-project-live">Unlock full templates</a></div>') +
+        (unlocked ? '' : '<div class="project-modal-prompt-lock"><a href="#service-request" data-unlock-samples="1" class="btn-project-live">Unlock full templates</a></div>') +
         '</section>';
 }
 
@@ -1118,7 +1120,7 @@ function openProjectModal(slug) {
 
     const detailHtml = buildProjectDetailBody(data);
 
-    const galleryHtml = data.gallery.map(function (g) {
+    const galleryHtml = (data.gallery || []).map(function (g) {
         const src = encodeURI(g.file);
         const extras = [];
         if (g.fallback) extras.push(g.fallback);
@@ -1141,15 +1143,19 @@ function openProjectModal(slug) {
             escapeHtml(data.liveLabel) + '</a></div>';
     }
 
-    const promptSamplesHtml = slug === 'promptvault' ? buildPromptSamplesHtml(isPromptOwnerUnlocked()) : '';
+    const promptSamplesHtml = slug === 'promptvault'
+        ? buildPromptSamplesHtml(isPromptOwnerUnlocked() || isPromptPaidUnlocked())
+        : '';
+    const gallerySectionHtml = galleryHtml
+        ? '<h3 class="project-modal-gallery-heading">Screens &amp; detail</h3><div class="project-modal-gallery">' + galleryHtml + '</div>'
+        : '';
 
     body.innerHTML =
         '<h2 id="projectModalTitle">' + escapeHtml(data.title) + '</h2>' +
         '<div class="project-tags">' + tagsHtml + '</div>' +
         detailHtml +
         actionsHtml +
-        '<h3 class="project-modal-gallery-heading">Screens &amp; detail</h3>' +
-        '<div class="project-modal-gallery">' + galleryHtml + '</div>' +
+        gallerySectionHtml +
         promptSamplesHtml;
 
     modal.classList.add('is-open');
@@ -1187,6 +1193,14 @@ function initProjectModal() {
 
     modal.addEventListener('click', function (e) {
         if (e.target === modal) closeProjectModal();
+    });
+
+    modal.addEventListener('click', function (e) {
+        const unlockLink = e.target.closest && e.target.closest('[data-unlock-samples="1"]');
+        if (!unlockLink) return;
+        e.preventDefault();
+        closeProjectModal();
+        window.location.href = '?service=prompt-engineer-systems#service-request';
     });
 }
 

@@ -181,9 +181,7 @@ export function PricingSection() {
   return (
     <section id="pricing" className="fade-in pricing-section-premium" tabIndex={-1} aria-label="Pricing">
       <h2 className="section-title">Pricing</h2>
-      <p className="pricing-intro">
-        Explore starting prices for each service below — figures are in Ghana cedis (GHS). USD beside each card is a rough live conversion for anyone paying or thinking in dollars.
-      </p>
+      <p className="pricing-intro">Explore starting prices for each service below.</p>
       <p className="pricing-rate-line">
         {usdPerGhs != null ? (
           <>

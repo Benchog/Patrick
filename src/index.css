@@ -1788,6 +1788,8 @@
         .service-request-message,
         .service-request-price-box,
         .service-request-submit,
+        .service-request-reset,
+        .service-request-unlock,
         .service-request-status {
             grid-column: 1 / -1;
         }
@@ -1809,8 +1811,29 @@
             cursor: pointer;
         }
 
+        .service-request-reset,
+        .service-request-unlock {
+            border-radius: 999px;
+            padding: 0.7rem 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            border: 1px solid var(--ui-outline);
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--text-dark);
+        }
+
+        .service-request-unlock {
+            background: rgba(139, 92, 246, 0.12);
+        }
+
         .service-request-submit:disabled {
             opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .service-request-reset:disabled,
+        .service-request-unlock:disabled {
+            opacity: 0.65;
             cursor: not-allowed;
         }
 
@@ -1849,6 +1872,13 @@
         body.dark-mode .service-request-price-box input[readonly] {
             background: rgba(30, 41, 59, 0.9);
             color: #f8fafc;
+        }
+
+        body.dark-mode .service-request-reset,
+        body.dark-mode .service-request-unlock {
+            background: rgba(2, 6, 23, 0.68);
+            color: #f8fafc;
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
         body:not(.dark-mode) .project-modal-prompt-card {
@@ -3433,6 +3463,33 @@
 
             .project-card-cover {
                 height: 190px;
+            }
+
+            .project-card-body {
+                gap: 0.55rem;
+            }
+
+            .project-card-body h3 {
+                font-size: 1.18rem;
+                line-height: 1.2;
+            }
+
+            .project-card-excerpt {
+                font-size: 0.9rem;
+                line-height: 1.4;
+                -webkit-line-clamp: 3;
+            }
+
+            .project-impact {
+                margin-top: 0;
+                line-height: 1.35;
+                font-size: 0.82rem;
+            }
+
+            .project-card-highlights {
+                font-size: 0.9rem;
+                line-height: 1.4;
+                margin-top: 0.2rem;
             }
 
             .btn-view-project,
