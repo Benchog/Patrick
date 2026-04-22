@@ -274,7 +274,7 @@ export function PricingSection() {
                   </ul>
                 ) : null}
                 <div className="pricing-cta">
-                  <a href={`?service=${encodeURIComponent(p.slug)}#service-request`}>Start a conversation</a>
+                  <a href="#service-request" data-service-jump={p.slug}>Start a conversation</a>
                 </div>
               </article>
             );

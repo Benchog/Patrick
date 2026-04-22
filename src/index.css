@@ -3219,7 +3219,8 @@
             }
 
             body:not(.dark-mode) .hero-kicker {
-                color: #111827;
+                color: #ffffff;
+                text-shadow: 0 1px 8px rgba(2, 6, 23, 0.46);
                 border-color: rgba(15, 23, 42, 0.26);
                 box-shadow: 0 0 0 1px rgba(255, 102, 214, 0.28), 0 0 24px rgba(255, 102, 214, 0.26);
             }
@@ -3477,7 +3478,12 @@
             .project-card-excerpt {
                 font-size: 0.9rem;
                 line-height: 1.4;
-                -webkit-line-clamp: 3;
+                display: block;
+                -webkit-line-clamp: unset;
+                -webkit-box-orient: initial;
+                overflow: visible;
+                flex: initial;
+                min-height: auto;
             }
 
             .project-impact {

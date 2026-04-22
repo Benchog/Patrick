@@ -1021,7 +1021,7 @@ function buildPromptSamplesHtml(unlocked) {
         '<h3 class="project-modal-section-title">Premium Prompt Samples</h3>' +
         '<p class="project-modal-lead">' + (unlocked ? 'Owner preview unlocked on this device.' : 'Protected preview only. Full templates unlock after purchase.') + '</p>' +
         '<div class="project-modal-prompt-grid">' + cards + '</div>' +
-        (unlocked ? '' : '<div class="project-modal-prompt-lock"><a href="#service-request" data-unlock-samples="1" class="btn-project-live">Unlock full templates</a></div>') +
+        (unlocked ? '' : '<div class="project-modal-prompt-lock"><a href="#service-request" data-service-jump="prompt-engineer-systems" class="btn-project-live">Unlock full templates</a></div>') +
         '</section>';
 }
 
@@ -1195,12 +1195,29 @@ function initProjectModal() {
         if (e.target === modal) closeProjectModal();
     });
 
-    modal.addEventListener('click', function (e) {
-        const unlockLink = e.target.closest && e.target.closest('[data-unlock-samples="1"]');
-        if (!unlockLink) return;
-        e.preventDefault();
-        closeProjectModal();
-        window.location.href = '?service=prompt-engineer-systems#service-request';
+}
+
+function initServiceRequestJumps() {
+    document.addEventListener('click', function (e) {
+        const link = e.target.closest && e.target.closest('a[data-service-jump]');
+        if (!link) return;
+        const slug = link.getAttribute('data-service-jump') || '';
+        if (slug) {
+            localStorage.setItem('serviceRequestSelectedSlug', slug);
+            window.dispatchEvent(new CustomEvent('service-jump', { detail: { slug: slug } }));
+        }
+        if (document.getElementById('projectModal')?.classList.contains('is-open')) {
+            closeProjectModal();
+        }
+        const target = document.getElementById('service-request');
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (window.history && window.history.replaceState) {
+                const clean = `${window.location.pathname}${window.location.search || ''}#service-request`;
+                window.history.replaceState({}, '', clean);
+            }
+        }
     });
 }
 
@@ -1251,6 +1268,7 @@ export function initPortfolioRuntime() {
     initSectionCarousel('skillsCarouselTrack', '[data-skills-carousel="prev"]', '[data-skills-carousel="next"]');
     initSectionCarousel('servicesCarouselTrack', '[data-services-carousel="prev"]', '[data-services-carousel="next"]');
     initProjectModal();
+    initServiceRequestJumps();
     initGallery();
     initCollectionModal();
     bindImgFallbackChain(document.getElementById('projects'));

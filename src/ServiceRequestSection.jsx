@@ -108,7 +108,24 @@ export function ServiceRequestSection() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const fromUrl = params.get('service');
-    if (fromUrl) setSelectedSlug(fromUrl);
+    if (fromUrl) {
+      setSelectedSlug(fromUrl);
+      return;
+    }
+    const fromStorage = localStorage.getItem('serviceRequestSelectedSlug');
+    if (fromStorage) {
+      setSelectedSlug(fromStorage);
+      localStorage.removeItem('serviceRequestSelectedSlug');
+    }
+  }, []);
+
+  useEffect(() => {
+    const onJump = (e) => {
+      const slug = e?.detail?.slug;
+      if (slug) setSelectedSlug(slug);
+    };
+    window.addEventListener('service-jump', onJump);
+    return () => window.removeEventListener('service-jump', onJump);
   }, []);
 
   const selectedPlan = useMemo(
