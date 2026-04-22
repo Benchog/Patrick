@@ -3266,7 +3266,7 @@
             }
 
             section {
-                padding: clamp(3rem, 10vw, 4rem) max(1rem, env(safe-area-inset-left)) clamp(3rem, 10vw, 4rem) max(1rem, env(safe-area-inset-right));
+                padding: clamp(2.2rem, 8vw, 3rem) max(0.95rem, env(safe-area-inset-left)) clamp(2.2rem, 8vw, 3rem) max(0.95rem, env(safe-area-inset-right));
             }
 
             .section-title {
@@ -3300,25 +3300,25 @@
             .skills-carousel-shell,
             .services-carousel-shell {
                 position: relative;
-                padding-bottom: 3.4rem;
+                padding-bottom: 0;
             }
 
             .section-carousel-btn {
                 display: inline-flex;
-                top: auto;
-                bottom: 0.1rem;
-                transform: none;
+                top: 50%;
+                bottom: auto;
+                transform: translateY(-50%);
                 width: 46px;
                 height: 46px;
             }
 
             .section-carousel-btn--prev {
-                left: calc(50% - 58px);
+                left: 0.35rem;
             }
 
             .section-carousel-btn--next {
-                left: calc(50% + 12px);
-                right: auto;
+                right: 0.35rem;
+                left: auto;
             }
 
             #skillsCarouselTrack.skills-grid,
@@ -3329,7 +3329,7 @@
                 scroll-snap-type: x mandatory;
                 gap: 0.9rem;
                 width: 100%;
-                padding: 0.25rem 0 0.85rem;
+                padding: 0.25rem 0.15rem 0.35rem;
                 scrollbar-width: thin;
             }
 
@@ -3352,7 +3352,7 @@
                 -webkit-overflow-scrolling: touch;
                 gap: 0.5rem;
                 padding: 0.25rem 0 0.75rem;
-                margin: 0 -0.25rem 2rem;
+                margin: 0 -0.25rem 1rem;
                 scrollbar-width: thin;
             }
 
@@ -3366,26 +3366,26 @@
             .projects-carousel-shell {
                 padding: 0;
                 position: relative;
-                padding-bottom: 3.5rem;
+                padding-bottom: 0;
             }
 
             .projects-carousel-btn {
                 display: inline-flex;
                 position: absolute;
-                bottom: 0.1rem;
-                top: auto;
-                transform: none;
+                top: 50%;
+                bottom: auto;
+                transform: translateY(-50%);
                 width: 46px;
                 height: 46px;
             }
 
             .projects-carousel-btn--prev {
-                left: calc(50% - 58px);
+                left: 0.35rem;
             }
 
             .projects-carousel-btn--next {
-                left: calc(50% + 12px);
-                right: auto;
+                right: 0.35rem;
+                left: auto;
             }
 
             #projectsCarouselTrack.projects-grid {
@@ -3394,7 +3394,7 @@
                 -webkit-overflow-scrolling: touch;
                 scroll-snap-type: x mandatory;
                 gap: 0.8rem;
-                padding: 0.25rem 0 0.85rem;
+                padding: 0.25rem 0.15rem 0.35rem;
                 scrollbar-width: thin;
                 width: 100%;
                 align-items: flex-start;
@@ -3422,25 +3422,25 @@
 
             .pricing-carousel-shell {
                 position: relative;
-                padding-bottom: 3.4rem;
+                padding-bottom: 0;
             }
 
             .pricing-carousel-btn {
                 display: inline-flex;
-                top: auto;
-                bottom: 0.05rem;
-                transform: none;
+                top: 50%;
+                bottom: auto;
+                transform: translateY(-50%);
                 width: 46px;
                 height: 46px;
             }
 
             .pricing-carousel-btn--prev {
-                left: calc(50% - 58px);
+                left: 0.35rem;
             }
 
             .pricing-carousel-btn--next {
-                left: calc(50% + 12px);
-                right: auto;
+                right: 0.35rem;
+                left: auto;
             }
 
             #pricingCarouselTrack.pricing-grid {
@@ -3450,7 +3450,7 @@
                 scroll-snap-type: x mandatory;
                 gap: 0.9rem;
                 width: 100%;
-                padding: 0.25rem 0 0.85rem;
+                padding: 0.25rem 0.15rem 0.35rem;
                 scrollbar-width: thin;
             }
 
