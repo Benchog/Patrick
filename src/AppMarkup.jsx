@@ -71,7 +71,7 @@ export function AppMarkup() {
       
           <main id="mainContent">
           
-          <section id="hero" className="hero hero--premium">
+          <section id="hero" className="hero hero--premium hero--with-about">
               <div className="hero-portrait-bg" aria-hidden="true"></div>
               <div className="hero-grid-glow" aria-hidden="true"></div>
               <div className="hero-vignette" aria-hidden="true"></div>
@@ -80,35 +80,36 @@ export function AppMarkup() {
                   <div className="hero-copy">
                       <p className="hero-kicker">
                           <span className="hero-kicker-pulse" aria-hidden="true"></span>
-                          Mechanical Engineer · Product builder · Techiman, Ghana
+                          Mechanical Engineer • Digital Solutions Builder • Ghana
                       </p>
                       <h1>Patrick Benchog</h1>
-                      <p className="hero-lead tagline">Mechanical Engineer and digital systems builder focused on creating premium apps, dashboards, and web platforms that solve real business friction.</p>
+                      <p className="hero-headline tagline">Building practical digital solutions that help people work smarter.</p>
+                      <p className="hero-lead">I help students, professionals and businesses turn ideas into practical digital solutions. From websites and business systems to academic documents and technical support, my focus is simple: deliver work that is useful, reliable and built around real needs.</p>
                       <div className="hero-stats" aria-label="Highlights">
                           <div className="hero-stat">
-                              <span className="hero-stat-value">Full stack</span>
-                              <span className="hero-stat-label">Apps, sites &amp; dashboards</span>
+                              <span className="hero-stat-value">Digital Solutions</span>
+                              <span className="hero-stat-label">Websites, apps &amp; business systems</span>
                           </div>
                           <div className="hero-stat">
-                              <span className="hero-stat-value">Ops-first</span>
-                              <span className="hero-stat-label">Built for real workflows</span>
+                              <span className="hero-stat-value">Problem Solver</span>
+                              <span className="hero-stat-label">Built around practical needs</span>
                           </div>
                           <div className="hero-stat">
-                              <span className="hero-stat-value">AI-native expert</span>
-                              <span className="hero-stat-label">Strategic models, sharp judgment</span>
+                              <span className="hero-stat-value">AI-Assisted Development</span>
+                              <span className="hero-stat-label">Modern tools, thoughtful execution</span>
                           </div>
                           <div className="hero-stat">
-                              <span className="hero-stat-value">Discipline</span>
-                              <span className="hero-stat-label">Engineering + craft</span>
+                              <span className="hero-stat-value">Engineering Mindset</span>
+                              <span className="hero-stat-label">Structured thinking. Reliable delivery.</span>
                           </div>
                       </div>
                       <ToolStackIcons />
                       <p className="caption hero-caption-tight">
-                          <span className="rotating-text" id="rotatingText">App Builder</span> • Problem Solver • Fast Executor
+                          Reliable • Detail-Oriented • Solution Focused
                       </p>
                       <div className="hero-cta-row">
-                          <a href="#contact" className="cta-button cta-button--primary">Get in Touch</a>
-                          <a href="#projects" className="cta-button cta-button--ghost">View work</a>
+                          <a href="#contact" className="cta-button cta-button--primary">Let&apos;s Work Together</a>
+                          <a href="#projects" className="cta-button cta-button--ghost">View Projects</a>
                           <a href="Benchog Patrick_CV.pdf" className="glass-button slide-in-up hero-cv-btn" target="_blank" rel="noopener">Download CV</a>
                       </div>
                   </div>
@@ -118,6 +119,23 @@ export function AppMarkup() {
                               <img src="1750806398142.jpeg" alt="Patrick Benchog" />
                           </div>
                           <div className="hero-portrait-orbit" aria-hidden="true"></div>
+                      </div>
+                  </div>
+              </div>
+              <div id="heroAbout" className="hero-about-panel" aria-hidden="true">
+                  <div className="hero-about-inner">
+                      <h2 className="hero-about-title">About Patrick</h2>
+                      <div className="about-content hero-about-content">
+                          <div className="about-image">
+                              <img src="1750806398142.jpeg" alt="Patrick Benchog" loading="lazy" />
+                          </div>
+                          <div className="about-text">
+                              <p>I enjoy solving problems that make work easier for people.</p>
+                              <p>My background in Mechanical Engineering taught me how to approach challenges methodically, analyse systems and think beyond the obvious solution. Today, I apply that same mindset to digital products and professional services.</p>
+                              <p>Over the past few years I have built software for personal finance, workplace operations and internal business processes while also helping students and professionals prepare documents that meet high academic and professional standards.</p>
+                              <p>Whether I&apos;m creating a website, improving a workflow, formatting a thesis or supporting a client with technology, my goal is always the same: produce work that is clear, dependable and genuinely useful.</p>
+                              <p>I believe good technology should simplify work rather than complicate it.</p>
+                          </div>
                       </div>
                   </div>
               </div>
@@ -226,12 +244,27 @@ export function AppMarkup() {
                   <div className="service-card">
                       <div className="service-icon"><Code2 {...iconProps} size={48} aria-hidden="true" /></div>
                       <h3>Website Development</h3>
-                      <p>Creating stunning, fast, and professional websites for businesses and individuals — deployed and live, not just mockups. From portfolios to full service websites.</p>
+                      <p>Clean, professional websites for businesses and individuals — deployed and live, not just mockups. From portfolios to full service websites.</p>
+                  </div>
+                  <div className="service-card">
+                      <div className="service-icon"><Monitor {...iconProps} size={48} aria-hidden="true" /></div>
+                      <h3>Web Application Development</h3>
+                      <p>Custom web applications shaped around how your team actually works, from intake forms to internal dashboards.</p>
+                  </div>
+                  <div className="service-card">
+                      <div className="service-icon"><Smartphone {...iconProps} size={48} aria-hidden="true" /></div>
+                      <h3>Mobile Application Development</h3>
+                      <p>Mobile apps designed for everyday use — practical interfaces, dependable performance and features that match real workflows.</p>
                   </div>
                   <div className="service-card">
                       <div className="service-icon"><BarChart3 {...iconProps} size={48} aria-hidden="true" /></div>
-                      <h3>Data Analytics & Dashboards</h3>
-                      <p>Turning raw data into clear, beautiful dashboards that tell the real story behind the numbers — built for decision-makers who need answers, not just charts.</p>
+                      <h3>Data Analytics &amp; Dashboards</h3>
+                      <p>Turning raw data into clear dashboards that tell the real story behind the numbers — built for decision-makers who need answers, not just charts.</p>
+                  </div>
+                  <div className="service-card">
+                      <div className="service-icon"><BarChart3 {...iconProps} size={48} aria-hidden="true" /></div>
+                      <h3>Business Systems</h3>
+                      <p>Software that helps you record, track and manage the operations that keep your business running day to day.</p>
                   </div>
                   <div className="service-card">
                       <div className="service-icon"><Compass {...iconProps} size={48} aria-hidden="true" /></div>
@@ -240,23 +273,58 @@ export function AppMarkup() {
                   </div>
                   <div className="service-card">
                       <div className="service-icon"><Palette {...iconProps} size={48} aria-hidden="true" /></div>
-                      <h3>Graphics & Photo Editing</h3>
-                      <p>High-speed, high-quality graphics design and photo editing powered by modern tools — flyers, branding, visuals, and edits delivered with precision and creativity.</p>
+                      <h3>Graphics &amp; Photo Editing</h3>
+                      <p>High-quality graphics design and photo editing — flyers, branding, visuals, and edits delivered with precision and care.</p>
+                  </div>
+                  <div className="service-card">
+                      <div className="service-icon"><Palette {...iconProps} size={48} aria-hidden="true" /></div>
+                      <h3>Graphic Design</h3>
+                      <p>Visuals for branding, marketing and day-to-day communication — layouts that are clear, balanced and fit for purpose.</p>
+                  </div>
+                  <div className="service-card">
+                      <div className="service-icon"><Compass {...iconProps} size={48} aria-hidden="true" /></div>
+                      <h3>Presentation Design</h3>
+                      <p>Slides structured so your message comes through — professional formatting, readable hierarchy and a polished finish.</p>
                   </div>
                   <div className="service-card">
                       <div className="service-icon"><Monitor {...iconProps} size={48} aria-hidden="true" /></div>
-                      <h3>IT Support & Computer Services</h3>
-                      <p>Windows installation, software setup, system activation, antivirus, and all software-related fixes — fast, reliable, and professional tech support.</p>
+                      <h3>IT Support &amp; Computer Services</h3>
+                      <p>Windows installation, software setup, system activation, antivirus, and software-related fixes — reliable and professional tech support.</p>
                   </div>
                   <div className="service-card">
                       <div className="service-icon"><FileText {...iconProps} size={48} aria-hidden="true" /></div>
-                      <h3>Document & Thesis Editing</h3>
-                      <p>Expert proofreading, editing, formatting, and paraphrasing for academic and professional documents — structured, polished, and submission-ready.</p>
+                      <h3>Document &amp; Thesis Editing</h3>
+                      <p>Proofreading, editing, formatting, and paraphrasing for academic and professional documents — structured, polished, and submission-ready.</p>
+                  </div>
+                  <div className="service-card">
+                      <div className="service-icon"><FileText {...iconProps} size={48} aria-hidden="true" /></div>
+                      <h3>CV Writing</h3>
+                      <p>CVs written and formatted for clarity — so recruiters and hiring managers can quickly see what you bring to a role.</p>
+                  </div>
+                  <div className="service-card">
+                      <div className="service-icon"><FileText {...iconProps} size={48} aria-hidden="true" /></div>
+                      <h3>Proofreading &amp; Editing</h3>
+                      <p>Careful review of grammar, structure and tone so your writing reads cleanly and holds up to professional scrutiny.</p>
+                  </div>
+                  <div className="service-card">
+                      <div className="service-icon"><FileText {...iconProps} size={48} aria-hidden="true" /></div>
+                      <h3>Thesis Formatting</h3>
+                      <p>Academic theses formatted to meet institutional guidelines — margins, headings, references and layout handled with care.</p>
+                  </div>
+                  <div className="service-card">
+                      <div className="service-icon"><FileText {...iconProps} size={48} aria-hidden="true" /></div>
+                      <h3>Document Formatting</h3>
+                      <p>Reports, proposals and formal documents laid out consistently — readable, well-structured and ready to share.</p>
                   </div>
                   <div className="service-card">
                       <div className="service-icon"><BrainCircuit {...iconProps} size={48} aria-hidden="true" /></div>
                       <h3>Prompt Engineer Systems</h3>
-                      <p>I design robust prompt workflows and reusable AI templates that generate production-ready outputs for content, products, automation, and business operations.</p>
+                      <p>Robust prompt workflows and reusable AI templates that generate production-ready outputs for content, products, automation, and business operations.</p>
+                  </div>
+                  <div className="service-card">
+                      <div className="service-icon"><BrainCircuit {...iconProps} size={48} aria-hidden="true" /></div>
+                      <h3>AI Workflow &amp; Automation</h3>
+                      <p>Thoughtful use of AI tools to speed up repetitive tasks, improve consistency and support better decision-making.</p>
                   </div>
               </div>
               <button type="button" className="section-carousel-btn section-carousel-btn--next" data-services-carousel="next" aria-label="Next services cards">
@@ -290,7 +358,7 @@ export function AppMarkup() {
                       </div>
                       <div className="project-card-body">
                           <h3>The Optimist</h3>
-                          <p className="project-card-excerpt">Turn financial confusion into total clarity.</p>
+                          <p className="project-card-excerpt">Personal Finance Manager designed to help individuals manage income, expenses, budgets and savings with greater clarity.</p>
                           <p className="project-impact">Impact: helps users move from money stress to structured financial control.</p>
                           <ul className="project-card-highlights">
                               <li>Complete personal finance management system</li>
@@ -317,7 +385,7 @@ export function AppMarkup() {
                       </div>
                       <div className="project-card-body">
                           <h3>StockPulse</h3>
-                          <p className="project-card-excerpt">Stop counting stock every week — automate it.</p>
+                          <p className="project-card-excerpt">A stock management system built to simplify inventory tracking and improve workplace operations.</p>
                           <p className="project-impact">Impact: cuts manual stock workload and improves inventory accuracy.</p>
                           <ul className="project-card-highlights">
                               <li>Automated inventory tracking system</li>
@@ -344,7 +412,7 @@ export function AppMarkup() {
                       </div>
                       <div className="project-card-body">
                           <h3>IMS Fee App</h3>
-                          <p className="project-card-excerpt">Know exactly what to pay before you arrive.</p>
+                          <p className="project-card-excerpt">A fee management application used to record and manage payment transactions efficiently.</p>
                           <p className="project-impact">Impact: reduces wasted trips and uncertainty for non-citizen clients.</p>
                           <ul className="project-card-highlights">
                               <li>Real-time fee calculation system</li>
@@ -577,11 +645,11 @@ export function AppMarkup() {
       
               
           <section id="contact" className="fade-in" tabIndex={-1} aria-label="Contact">
-              <h2 className="section-title">Let's Build the Future</h2>
+              <h2 className="section-title">Contact</h2>
               <div className="contact-content">
                   <div className="contact-card">
-                      <h3>Let us build something that moves results.</h3>
-                      <p>I design and ship practical apps, websites, dashboards, and digital assets that solve real operational problems. If you are hiring, collaborating, or scaling a project, I am ready to contribute fast with clear communication and execution.</p>
+                      <p>If you&apos;re looking for someone who approaches problems thoughtfully and delivers practical digital solutions, I&apos;d be glad to hear about your project.</p>
+                      <p>Whether it&apos;s a website, software, business workflow, academic document or technical support, let&apos;s discuss how I can help.</p>
                       
                       <div className="social-links">
                           <a href="https://github.com/Benchog" className="social-link" title="GitHub" target="_blank" rel="noopener noreferrer">

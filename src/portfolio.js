@@ -294,7 +294,7 @@ function initVoiceGreeting() {
             greeting.innerHTML = `
                 <div style="display: flex; align-items: center; gap: 10px;">
                     <svg class="icon-lucide" style="width:1.35em;height:1.35em;color:var(--accent-gold);flex-shrink:0" viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
-                    <span>"Welcome to Patrick's world — let's create something legendary!"</span>
+                    <span>Welcome — feel free to look around or get in touch if you have a project in mind.</span>
                 </div>
                 <button onclick="this.parentElement.remove()" style="position: absolute; top: 5px; right: 10px; background: none; border: none; color: white; cursor: pointer;">×</button>
             `;
@@ -1074,6 +1074,61 @@ function bindImgFallbackChain(root) {
     });
 }
 
+function initProfileAboutReveal() {
+    const hero = document.getElementById('hero');
+    const about = document.getElementById('heroAbout');
+    const skills = document.getElementById('skills');
+    if (!hero || !about || !skills) return;
+
+    function update() {
+        const vh = window.innerHeight;
+        const scrollY = window.scrollY;
+        const heroRect = hero.getBoundingClientRect();
+        const skillsRect = skills.getBoundingClientRect();
+
+        const atProfileTop = scrollY < vh * 0.12;
+        const scrolledIntoProfile = scrollY > vh * 0.18;
+        const stillInProfile = heroRect.bottom > vh * 0.28;
+        const skillsApproaching = skillsRect.top < vh * 0.82;
+
+        if (atProfileTop || !scrolledIntoProfile) {
+            about.classList.remove('is-visible', 'is-hiding');
+            about.setAttribute('aria-hidden', 'true');
+            return;
+        }
+
+        if (skillsApproaching) {
+            about.classList.remove('is-visible');
+            about.classList.add('is-hiding');
+            about.setAttribute('aria-hidden', 'true');
+            return;
+        }
+
+        if (scrolledIntoProfile && stillInProfile) {
+            about.classList.add('is-visible');
+            about.classList.remove('is-hiding');
+            about.setAttribute('aria-hidden', 'false');
+            return;
+        }
+
+        about.classList.remove('is-visible');
+        about.classList.add('is-hiding');
+        about.setAttribute('aria-hidden', 'true');
+    }
+
+    let ticking = false;
+    window.addEventListener('scroll', function () {
+        if (!ticking) {
+            window.requestAnimationFrame(function () {
+                update();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+    update();
+}
+
 function initActiveNavOnScroll() {
     const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
     const sectionIds = ['hero', 'skills', 'services', 'projects', 'pricing', 'contact'];
@@ -1273,6 +1328,7 @@ export function initPortfolioRuntime() {
     initCollectionModal();
     bindImgFallbackChain(document.getElementById('projects'));
     initSmartMediaLoading();
+    initProfileAboutReveal();
     initActiveNavOnScroll();
     initTypingEffect();
     initVoiceGreeting();

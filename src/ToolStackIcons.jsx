@@ -6,7 +6,7 @@ const aiIconProps = { className: 'icon-lucide tool-stack-lucide', strokeWidth: 1
 export function ToolStackIcons() {
   return (
     <div className="tool-stack" aria-label="Tools and platforms Patrick works with">
-      <p className="tool-stack-kicker">Stack I ship with</p>
+      <p className="tool-stack-kicker">Tools I Work With</p>
       <div className="tool-stack-row">
         <div className="tool-icon-3d" title="AI — models &amp; assistants">
           <div className="tool-icon-3d-plate tool-icon-3d-plate--ai">
@@ -17,20 +17,32 @@ export function ToolStackIcons() {
           <span className="tool-icon-3d-label">AI</span>
         </div>
 
-        <div className="tool-icon-3d" title="Microsoft Excel">
+        <div className="tool-icon-3d" title="JavaScript">
           <div className="tool-icon-3d-plate">
-            <div className="tool-icon-3d-face tool-icon-3d-face--excel">
+            <div className="tool-icon-3d-face">
               <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true">
-                <rect width="24" height="24" rx="3" fill="#217346" />
+                <rect width="24" height="24" rx="4" fill="#f7df1e" />
                 <path
-                  fill="#fff"
-                  d="M6.5 6.5h4.25v4.25H6.5V6.5zm6.75 0H17.5v4.25h-4.25V6.5zM6.5 13.25h4.25V17.5H6.5v-4.25zm6.75 0H17.5V17.5h-4.25v-4.25z"
+                  fill="#323330"
+                  d="M7.5 18.5l1.2-7.3h2.1l-.7 4.2c-.1.7.4 1.1 1 1.1.6 0 1-.3 1.1-.9l.7-4.4h2.1l-1.2 7.3c-.4 2.3-1.8 3.4-3.8 3.4-2.1 0-3.2-1-2.8-3.4zM15.8 11.2h2.1l-.3 1.8h-2.1l.3-1.8zm-.5 3.1h2.1l-.4 2.5c-.3 1.9-1.6 2.8-3.4 2.8-.9 0-1.6-.2-2-.5l.5-1.6c.3.2.7.3 1.2.3.7 0 1.1-.4 1.3-1.1l.7-4.4z"
                 />
-                <path fill="#217346" d="M8.5 8.5h2.25v2.25H8.5V8.5zm6.75 0h2.25v2.25h-2.25V8.5zM8.5 15.25h2.25v2.25H8.5v-2.25zm6.75 0h2.25v2.25h-2.25v-2.25z" />
               </svg>
             </div>
           </div>
-          <span className="tool-icon-3d-label">Excel</span>
+          <span className="tool-icon-3d-label">JavaScript</span>
+        </div>
+
+        <div className="tool-icon-3d" title="Python">
+          <div className="tool-icon-3d-plate">
+            <div className="tool-icon-3d-face">
+              <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true">
+                <rect width="24" height="24" rx="4" fill="#152039" />
+                <path d="M12 4c-3 0-2.8 1.3-2.8 1.3v2h5.5v1.1H7.1s-3.1-.4-3.1 3.1 2.7 3.4 2.7 3.4h1.6v-2.2s-.1-2.7 2.7-2.7h4.7s2.6 0 2.6-2.5V5.8S18.8 4 15.8 4H12zm-1.7 1.5a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6z" fill="#ffd43b" />
+                <path d="M12 20c3 0 2.8-1.3 2.8-1.3v-2H9.3v-1.1h7.6s3.1.4 3.1-3.1-2.7-3.4-2.7-3.4h-1.6v2.2s.1 2.7-2.7 2.7h-4.7S5.7 14 5.7 16.5v1.7S5.2 20 8.2 20H12zm1.7-1.5a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6z" fill="#3776ab" />
+              </svg>
+            </div>
+          </div>
+          <span className="tool-icon-3d-label">Python</span>
         </div>
 
         <div className="tool-icon-3d" title="React">
@@ -77,26 +89,47 @@ export function ToolStackIcons() {
           <span className="tool-icon-3d-label">Flutter</span>
         </div>
 
-        <div className="tool-icon-3d" title="Adobe Illustrator">
+        <div className="tool-icon-3d" title="Supabase">
           <div className="tool-icon-3d-plate">
-            <div className="tool-icon-3d-face tool-icon-3d-face--ai-svg">
+            <div className="tool-icon-3d-face">
               <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true">
-                <rect width="24" height="24" rx="3" fill="#330000" />
-                <text
-                  x="12"
-                  y="16"
-                  textAnchor="middle"
-                  fill="#ff9a00"
-                  fontSize="11"
-                  fontWeight="800"
-                  fontFamily="system-ui, sans-serif"
-                >
-                  Ai
-                </text>
+                <rect width="24" height="24" rx="4" fill="#1c1c1c" />
+                <path
+                  fill="#3ecf8e"
+                  d="M14.5 4.2 8.2 12.1c-.5.6-.1 1.5.7 1.5h3.1l-1.8 7.3c-.2.8.9 1.2 1.3.5l6.8-9.3c.5-.7.1-1.6-.7-1.6h-3.4l1.3-5.3c.2-.7-.6-1.2-1.2-.8z"
+                />
               </svg>
             </div>
           </div>
-          <span className="tool-icon-3d-label">Illustrator</span>
+          <span className="tool-icon-3d-label">Supabase</span>
+        </div>
+
+        <div className="tool-icon-3d" title="Microsoft Excel">
+          <div className="tool-icon-3d-plate">
+            <div className="tool-icon-3d-face tool-icon-3d-face--excel">
+              <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true">
+                <rect width="24" height="24" rx="3" fill="#217346" />
+                <path
+                  fill="#fff"
+                  d="M6.5 6.5h4.25v4.25H6.5V6.5zm6.75 0H17.5v4.25h-4.25V6.5zM6.5 13.25h4.25V17.5H6.5v-4.25zm6.75 0H17.5V17.5h-4.25v-4.25z"
+                />
+                <path fill="#217346" d="M8.5 8.5h2.25v2.25H8.5V8.5zm6.75 0h2.25v2.25h-2.25V8.5zM8.5 15.25h2.25v2.25H8.5v-2.25zm6.75 0h2.25v2.25h-2.25v-2.25z" />
+              </svg>
+            </div>
+          </div>
+          <span className="tool-icon-3d-label">Excel</span>
+        </div>
+
+        <div className="tool-icon-3d" title="AutoCAD">
+          <div className="tool-icon-3d-plate">
+            <div className="tool-icon-3d-face">
+              <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true">
+                <rect width="24" height="24" rx="4" fill="#8b1d1d" />
+                <path d="M12 4l5 15h-2.4l-1-3h-3.3l-1 3H7L12 4zm0 4.3l-1.2 4h2.4l-1.2-4z" fill="#fff1f2" />
+              </svg>
+            </div>
+          </div>
+          <span className="tool-icon-3d-label">AutoCAD</span>
         </div>
 
         <div className="tool-icon-3d" title="Solid Edge">
@@ -127,32 +160,31 @@ export function ToolStackIcons() {
           </div>
           <span className="tool-icon-3d-label">Solid Edge</span>
         </div>
-        <div className="tool-icon-3d" title="AutoCAD">
+
+        <div className="tool-icon-3d" title="Adobe Illustrator">
           <div className="tool-icon-3d-plate">
-            <div className="tool-icon-3d-face">
+            <div className="tool-icon-3d-face tool-icon-3d-face--ai-svg">
               <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true">
-                <rect width="24" height="24" rx="4" fill="#8b1d1d" />
-                <path d="M12 4l5 15h-2.4l-1-3h-3.3l-1 3H7L12 4zm0 4.3l-1.2 4h2.4l-1.2-4z" fill="#fff1f2" />
+                <rect width="24" height="24" rx="3" fill="#330000" />
+                <text
+                  x="12"
+                  y="16"
+                  textAnchor="middle"
+                  fill="#ff9a00"
+                  fontSize="11"
+                  fontWeight="800"
+                  fontFamily="system-ui, sans-serif"
+                >
+                  Ai
+                </text>
               </svg>
             </div>
           </div>
-          <span className="tool-icon-3d-label">AutoCAD</span>
-        </div>
-        <div className="tool-icon-3d" title="Python">
-          <div className="tool-icon-3d-plate">
-            <div className="tool-icon-3d-face">
-              <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true">
-                <rect width="24" height="24" rx="4" fill="#152039" />
-                <path d="M12 4c-3 0-2.8 1.3-2.8 1.3v2h5.5v1.1H7.1s-3.1-.4-3.1 3.1 2.7 3.4 2.7 3.4h1.6v-2.2s-.1-2.7 2.7-2.7h4.7s2.6 0 2.6-2.5V5.8S18.8 4 15.8 4H12zm-1.7 1.5a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6z" fill="#ffd43b" />
-                <path d="M12 20c3 0 2.8-1.3 2.8-1.3v-2H9.3v-1.1h7.6s3.1.4 3.1-3.1-2.7-3.4-2.7-3.4h-1.6v2.2s.1 2.7-2.7 2.7h-4.7S5.7 14 5.7 16.5v1.7S5.2 20 8.2 20H12zm1.7-1.5a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6z" fill="#3776ab" />
-              </svg>
-            </div>
-          </div>
-          <span className="tool-icon-3d-label">Python</span>
+          <span className="tool-icon-3d-label">Illustrator</span>
         </div>
       </div>
       <p className="tool-stack-note">
-        Expert AI-led execution across these tools — fast delivery without compromising engineering judgment.
+        I combine engineering thinking with modern digital tools to build solutions that are practical, efficient and easy to use.
       </p>
     </div>
   );
