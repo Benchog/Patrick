@@ -1367,18 +1367,24 @@
 
         .skill-chip-list {
             list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+            margin: 0;
+            padding: 0;
+            line-height: 0;
         }
 
         .skill-chip-list li {
+            display: inline-block;
             background: rgba(139, 92, 246, 0.1);
             border: 1px solid var(--ui-outline-soft);
             border-radius: 999px;
             padding: 0.35rem 0.75rem;
+            margin: 0 0.5rem 0.5rem 0;
             font-size: 0.88rem;
             font-weight: 600;
+            line-height: 1.35;
+            vertical-align: top;
+            width: auto;
+            max-width: 100%;
         }
 
         .skills-grid--grouped .tool-stack {
@@ -1466,17 +1472,15 @@
         }
 
         .skills-grid--grouped {
-            align-items: stretch;
+            align-items: start;
         }
 
         .skills-grid--grouped .skill-category {
             height: auto;
             min-height: 0;
             padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.85rem;
-            align-self: stretch;
+            display: block;
+            align-self: start;
         }
 
         .skills-grid--grouped .skill-category h3 {
@@ -1487,7 +1491,6 @@
         .skills-grid--grouped .skill-chip-list {
             margin: 0;
             padding: 0;
-            flex: 1;
         }
 
         .skills-carousel-shell,

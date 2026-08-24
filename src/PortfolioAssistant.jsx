@@ -3,16 +3,7 @@ import { Sparkles, X, Send, Loader2 } from 'lucide-react';
 
 const iconProps = { className: 'icon-lucide', strokeWidth: 1.85, absoluteStrokeWidth: true };
 
-const WELCOME_TEXT = `Hi. I can help you find the right part of Patrick's site.
-
-He works with **data, records, documents and clients**. He **handles non-citizen Ghana Card registration in Techiman, Bono East, Ghana**, and also offers websites, apps, graphics, photography and IT support through Benchog Labs.
-
-• **Hiring / remote work**: Experience, About and Skills
-• **Document support**: PrimeDraft Services
-• **Websites, apps, design, IT**: Benchog Labs
-• **Contact**: email, LinkedIn, WhatsApp and CV download
-
-What would you like to know?`;
+const WELCOME_TEXT = `Hi, I am Patrick's assistant. What can I help you with today?`;
 
 const SERVICE_CHIPS = [
   { label: 'Hiring / experience', prompt: 'I am a recruiter or employer. Summarize Patrick\'s current experience and how to contact him.' },
@@ -101,7 +92,7 @@ function fallbackReply(userText) {
   if (/prompt vault|ai systems|prompt engineer/.test(t)) {
     return 'That item is not shown in the public Projects section right now. For AI-related document help, see **AI content humanization** under PrimeDraft Services, or email **pat.benchog@gmail.com**.';
   }
-  return 'I can help with Patrick\'s **experience**, **skills**, **services**, **projects**, **pricing** or **contact** details. Ask a specific question about hiring, Ghana Card work, PrimeDraft documents, or Benchog Labs (websites, apps, graphics, photography, IT).';
+  return 'Ask me about Patrick\'s experience, skills, services, projects, pricing or how to contact him, and I will answer from the details on this site.';
 }
 
 const CHAT_URL = import.meta.env.VITE_CHAT_API_URL || '/api/chat';

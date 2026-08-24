@@ -227,7 +227,6 @@ export function AppMarkup() {
           
           <section id="services" className="fade-in">
               <h2 className="section-title">Services</h2>
-              <p className="section-lead">Work is grouped by the kind of help you need. Document services are delivered through PrimeDraft Services. Technology work is delivered through Benchog Labs.</p>
               <div className="services-groups">
                   <article className="service-group">
                       <h3>Data &amp; administrative support</h3>
