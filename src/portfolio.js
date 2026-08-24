@@ -171,6 +171,10 @@ function initProjectFiltering() {
             const filterValue = button.getAttribute('data-filter');
 
             projectCards.forEach(card => {
+                if (card.hasAttribute('hidden') || card.getAttribute('aria-hidden') === 'true') {
+                    card.style.display = 'none';
+                    return;
+                }
                 if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
                     card.style.display = '';
                     card.style.animation = 'fadeInUp 0.5s ease forwards';
@@ -203,21 +207,25 @@ function initProjectsCarousel() {
 }
 
 function initPricingCarousel() {
-    const track = document.getElementById('pricingCarouselTrack');
-    const prev = document.querySelector('[data-pricing-carousel="prev"]');
-    const next = document.querySelector('[data-pricing-carousel="next"]');
-    if (!track || !prev || !next) return;
+    const bound = { current: false };
 
     function step(direction) {
-        const amount = track.clientWidth;
+        const track = document.getElementById('pricingCarouselTrack');
+        if (!track) return;
+        const amount = Math.max(track.clientWidth, 280);
         track.scrollBy({ left: direction * amount, behavior: 'smooth' });
     }
 
-    prev.addEventListener('click', function () {
-        step(-1);
-    });
-    next.addEventListener('click', function () {
-        step(1);
+    if (bound.current) return;
+    bound.current = true;
+
+    document.addEventListener('click', function (e) {
+        const btn = e.target && e.target.closest ? e.target.closest('[data-pricing-carousel]') : null;
+        if (!btn) return;
+        e.preventDefault();
+        const dir = btn.getAttribute('data-pricing-carousel');
+        if (dir === 'prev') step(-1);
+        if (dir === 'next') step(1);
     });
 }
 
@@ -928,11 +936,11 @@ const PROJECT_CATALOG = {
     primed: {
         title: 'PrimeDraft Services',
         paragraphs: [
-            'A website for PrimeDraft Services — document editing and proofreading. It includes service information, a work process section, reviews, and a quote request flow. Deployed and live.'
+            'A website for PrimeDraft Services — document editing and proofreading. It includes service information, a work process section, reviews, and a quote request flow.'
         ],
-        liveUrl: 'https://primedraftservices.vercel.app',
-        liveLabel: 'Visit live site ↗',
-        tags: ['Website', 'Business', 'Deployed'],
+        liveUrl: '',
+        liveLabel: '',
+        tags: ['Website', 'Business'],
         gallery: [
             { file: 'PrimeDraft-Home.png', caption: 'Homepage', fallback: 'Primed.png' },
             { file: 'PrimeDraft-Services.png', caption: 'Services section' },
@@ -1131,7 +1139,7 @@ function initProfileAboutReveal() {
 
 function initActiveNavOnScroll() {
     const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-    const sectionIds = ['hero', 'about', 'experience', 'education', 'skills', 'services', 'ventures', 'projects', 'pricing', 'contact'];
+    const sectionIds = ['hero', 'about', 'experience', 'education', 'skills', 'services', 'projects', 'pricing', 'contact'];
     const sections = sectionIds.map(function (id) {
         return document.getElementById(id);
     }).filter(Boolean);

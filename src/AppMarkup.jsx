@@ -15,7 +15,6 @@ import {
   ChevronRight,
 } from 'lucide-react';
 import { PricingSection } from './PricingSection.jsx';
-import { ToolStackIcons } from './ToolStackIcons.jsx';
 import { ServiceRequestSection } from './ServiceRequestSection.jsx';
 
 const iconProps = { className: 'icon-lucide', strokeWidth: 1.85, absoluteStrokeWidth: true };
@@ -36,6 +35,8 @@ export function AppMarkup() {
                       <li><a href="#hero">Home</a></li>
                       <li><a href="#about">About</a></li>
                       <li><a href="#experience">Experience</a></li>
+                      <li><a href="#education">Education</a></li>
+                      <li><a href="#skills">Skills</a></li>
                       <li><a href="#services">Services</a></li>
                       <li><a href="#projects">Projects</a></li>
                       <li><a href="#contact">Contact</a></li>
@@ -94,7 +95,7 @@ export function AppMarkup() {
                           </div>
                           <div className="hero-stat">
                               <span className="hero-stat-value">Technology</span>
-                              <span className="hero-stat-label">Web, software and IT support</span>
+                              <span className="hero-stat-label">Websites, apps, design &amp; IT</span>
                           </div>
                       </div>
                       <div className="hero-cta-row">
@@ -122,8 +123,8 @@ export function AppMarkup() {
                   </div>
                   <div className="about-text">
                       <p>My work sits where data, people, documentation and technology meet.</p>
-                      <p>I currently support non-citizen registration in Ghana through Margins ID Group. That work involves interviewing clients, collecting and entering identity information into a national database, reviewing supporting documents, and helping people complete the Ghana Card process accurately and confidentially.</p>
-                      <p>Alongside that, I run PrimeDraft Services for academic and professional document support, and Benchog Labs for websites, software and technology help. I also hold a Bachelor of Science in Mechanical Engineering from the University for Development Studies.</p>
+                      <p>I am in charge of the non-citizen Ghana Card registration in Techiman, Bono East, Ghana, through Margins ID Group. That work involves interviewing clients, collecting and entering identity information into a national database, reviewing supporting documents, and helping people complete the Ghana Card process accurately and confidentially.</p>
+                      <p>Alongside that, I run PrimeDraft Services for academic and professional document support, and Benchog Labs for websites, apps, graphics design, mobile photography and IT support. I also hold a Bachelor of Science in Mechanical Engineering from the University for Development Studies.</p>
                       <p>I am looking for remote roles in data entry, records and administrative support, document work, operations support and client service — and I remain available for document, web and technology projects.</p>
                   </div>
               </div>
@@ -135,8 +136,8 @@ export function AppMarkup() {
                   <article className="experience-card">
                       <p className="experience-kicker">Current</p>
                       <h3>Margins ID Group</h3>
-                      <p className="experience-role">Identity registration and records support</p>
-                      <p>Supporting the registration of non-citizens in Ghana, including Ghana Card processing. The work depends on accurate data entry, careful document checks and clear client communication.</p>
+                      <p className="experience-role">Identity Management System (IMS)</p>
+                      <p>In charge of the non-citizen Ghana Card registration in Techiman, Bono East, Ghana. The work depends on accurate data entry, careful document checks and clear client communication.</p>
                       <ul>
                           <li>Interview clients and collect identity information</li>
                           <li>Enter and process information in a national database</li>
@@ -157,18 +158,18 @@ export function AppMarkup() {
                           <li>Client communication, request handling and deadline management</li>
                           <li>Careful handling of confidential files</li>
                       </ul>
-                      <p className="experience-link"><a href="https://primedraftservices.vercel.app" target="_blank" rel="noopener noreferrer">primedraftservices.vercel.app</a></p>
                   </article>
                   <article className="experience-card">
                       <p className="experience-kicker">Business</p>
                       <h3>Benchog Labs</h3>
                       <p className="experience-role">Technology and digital solutions</p>
-                      <p>My technology initiative for websites, software, digital services and technical support. The work is practical: understand the problem, then build or set up something people can actually use.</p>
+                      <p>My technology initiative for practical digital work. The focus is understanding the problem, then delivering something people can actually use.</p>
                       <ul>
-                          <li>Website and web application development</li>
-                          <li>Software projects for finance, inventory and fee management</li>
-                          <li>IT support, including Windows, Office setup and software fixes</li>
-                          <li>Dashboards and document-ready visuals when the brief calls for them</li>
+                          <li>Websites</li>
+                          <li>Apps</li>
+                          <li>Graphics design</li>
+                          <li>Mobile photography</li>
+                          <li>IT support</li>
                       </ul>
                   </article>
               </div>
@@ -188,44 +189,32 @@ export function AppMarkup() {
               <h2 className="section-title">Skills</h2>
               <div className="skills-grid skills-grid--grouped">
                   <div className="skill-category">
-                      <h3><FileText {...iconProps} size={20} aria-hidden="true" /> Data &amp; administration</h3>
+                      <h3><FileText {...iconProps} size={20} aria-hidden="true" /> Office &amp; productivity</h3>
                       <ul className="skill-chip-list">
-                          <li>Data entry</li>
-                          <li>Records management</li>
-                          <li>Database work</li>
-                          <li>Information verification</li>
-                          <li>Documentation</li>
-                          <li>Administrative support</li>
+                          <li>Microsoft Office</li>
+                          <li>Microsoft Excel</li>
+                          <li>Microsoft Word</li>
+                          <li>Google Sheets</li>
+                          <li>Google Docs</li>
+                          <li>Google Workspace</li>
                       </ul>
                   </div>
                   <div className="skill-category">
-                      <h3><Heart {...iconProps} size={20} aria-hidden="true" /> Customer &amp; client support</h3>
+                      <h3><Heart {...iconProps} size={20} aria-hidden="true" /> Data &amp; records</h3>
                       <ul className="skill-chip-list">
-                          <li>Customer service</li>
-                          <li>Client communication</li>
-                          <li>Interviewing / intake</li>
-                          <li>Active listening</li>
-                          <li>Problem solving</li>
-                          <li>Professional communication</li>
+                          <li>Database Systems</li>
+                          <li>Digital Records Management</li>
                       </ul>
                   </div>
                   <div className="skill-category">
-                      <h3><Cpu {...iconProps} size={20} aria-hidden="true" /> Technology</h3>
+                      <h3><Cpu {...iconProps} size={20} aria-hidden="true" /> Technology &amp; creative</h3>
                       <ul className="skill-chip-list">
                           <li>Web development</li>
-                          <li>JavaScript</li>
-                          <li>React</li>
-                          <li>Next.js</li>
-                          <li>Python</li>
-                          <li>Flutter</li>
-                          <li>Supabase</li>
-                          <li>Excel</li>
-                          <li>AutoCAD</li>
-                          <li>Solid Edge</li>
-                          <li>Illustrator</li>
-                          <li>IT support</li>
+                          <li>App development</li>
+                          <li>IT Support</li>
+                          <li>Graphics Design</li>
+                          <li>Mobile Photography</li>
                       </ul>
-                      <ToolStackIcons />
                   </div>
               </div>
           </section>
@@ -249,36 +238,20 @@ export function AppMarkup() {
                       <ul>
                           <li><strong>Editing &amp; proofreading</strong> — grammar, structure and tone for academic and professional writing.</li>
                           <li><strong>Formatting</strong> — theses, reports and formal documents laid out to required standards.</li>
-                          <li><strong>Document preparation</strong> — CVs, presentations and submission-ready files.</li>
+                          <li><strong>Document preparation</strong> — CVs, cover letters, thesis writing, assignments and presentation layout.</li>
+                          <li><strong>AI content humanization</strong> — refining AI-generated text so it reads naturally and fits the brief.</li>
                           <li><strong>Client communication</strong> — clear briefs, revisions and deadline handling.</li>
                       </ul>
                   </article>
                   <article className="service-group">
                       <h3>Technology services <span>Benchog Labs</span></h3>
                       <ul>
-                          <li><strong>Website development</strong> — business and personal sites that are live and easy to use.</li>
-                          <li><strong>Web &amp; mobile applications</strong> — practical software for workflows, records and operations.</li>
-                          <li><strong>Technical support</strong> — Windows, Office setup, antivirus and software fixes.</li>
-                          <li><strong>Digital solutions</strong> — dashboards, graphics and CAD drawings when the project needs them.</li>
+                          <li><strong>Websites</strong> — business and personal sites that are live and easy to use.</li>
+                          <li><strong>Apps</strong> — practical software for workflows, records and day-to-day operations.</li>
+                          <li><strong>Graphics design</strong> — visuals for branding, marketing and communication.</li>
+                          <li><strong>Mobile photography</strong> — portraits and photo work suited to professional presentation.</li>
+                          <li><strong>IT support</strong> — Windows, Office setup, antivirus and software fixes.</li>
                       </ul>
-                  </article>
-              </div>
-          </section>
-
-          <section id="ventures" className="fade-in">
-              <h2 className="section-title">Benchog Labs &amp; PrimeDraft</h2>
-              <div className="ventures-grid">
-                  <article className="venture-card">
-                      <p className="experience-kicker">Technology</p>
-                      <h3>Benchog Labs</h3>
-                      <p>Benchog Labs is my technology and business initiative. I use it to build websites, software and digital services, and to provide technical support. It is a working practice, not a large company — the point is useful tools, not scale claims.</p>
-                      <a href="#projects" className="venture-link">See related projects</a>
-                  </article>
-                  <article className="venture-card">
-                      <p className="experience-kicker">Documents</p>
-                      <h3>PrimeDraft Services</h3>
-                      <p>PrimeDraft Services provides academic and professional document support: editing, proofreading, formatting and document preparation. The live site explains the offer and how to request work.</p>
-                      <a href="https://primedraftservices.vercel.app" className="venture-link" target="_blank" rel="noopener noreferrer">Visit PrimeDraft</a>
                   </article>
               </div>
           </section>
@@ -291,7 +264,6 @@ export function AppMarkup() {
                   <button type="button" className="filter-btn" data-filter="app">Apps</button>
                   <button type="button" className="filter-btn" data-filter="web">Websites</button>
                   <button type="button" className="filter-btn" data-filter="data">Data Analytics</button>
-                  <button type="button" className="filter-btn" data-filter="ai">AI Systems</button>
                   <button type="button" className="filter-btn" data-filter="design">Design</button>
                   <button type="button" className="filter-btn" data-filter="photography">Photography</button>
               </div>
@@ -453,7 +425,6 @@ export function AppMarkup() {
                           </div>
                           <div className="project-card-actions">
                               <button type="button" className="btn-view-project" data-project="primed">View Project</button>
-                              <a href="https://primedraftservices.vercel.app" className="btn-project-live" target="_blank" rel="noopener">Visit Site ↗</a>
                           </div>
                       </div>
                   </div>
@@ -534,7 +505,7 @@ export function AppMarkup() {
                       </div>
                   </div>
 
-                  <div className="project-card prompt-vault-card" data-category="ai">
+                  <div className="project-card prompt-vault-card" data-category="ai" hidden aria-hidden="true" style={{"display":"none"}}>
                       <div className="project-card-cover project-card-cover--contain">
                           <div className="prompt-preview-snippet" aria-hidden="true">
                               <p>You are a strategic product architect with systems thinking...</p>
@@ -599,13 +570,10 @@ export function AppMarkup() {
               <div className="contact-content">
                   <div className="contact-card">
                       <h3>Let&apos;s talk about the work.</h3>
-                      <p>If you are hiring for data, records, administrative or client-support work, or you need document or technology help, email is the most reliable way to reach me. LinkedIn is the best place to see my professional profile alongside this site.</p>
+                      <p>If you are hiring for data, records, administrative or client-support work, or you need document or technology help, use the links below. LinkedIn is the best place to see my professional profile alongside this site.</p>
                       <div className="contact-actions">
-                          <a href="mailto:pat.benchog@gmail.com" className="cta-button cta-button--primary">Email Patrick</a>
-                          <a href="https://www.linkedin.com/in/patrick-benchog" className="cta-button cta-button--ghost" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                          <a href="Benchog Patrick_CV.pdf" className="glass-button" target="_blank" rel="noopener">Download CV</a>
+                          <a href="Benchog Patrick_CV.pdf" className="cta-button cta-button--primary contact-cv-btn" target="_blank" rel="noopener">Download CV</a>
                       </div>
-                      <p className="contact-email">pat.benchog@gmail.com</p>
                       
                       <div className="social-links">
                           <a href="https://github.com/Benchog" className="social-link" title="GitHub" target="_blank" rel="noopener noreferrer">

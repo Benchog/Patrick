@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -16,11 +16,30 @@ const REQUIRED_PLAN_DEFAULTS = [
   { slug: 'website-larger', title: 'Larger website', subtitle: 'More pages & structure', price_ghs: 9500, billing_note: 'from · depends on page count' },
   { slug: 'data-dashboards', title: 'Data analytics & dashboards', subtitle: 'Numbers you can act on', price_ghs: 6500, billing_note: 'from · per engagement' },
   { slug: 'cad-cam', title: 'CAD / CAM engineering', subtitle: 'Drawings you can use', price_ghs: 5500, billing_note: 'from · per deliverable' },
-  { slug: 'graphics-photo', title: 'Graphics & photo editing', subtitle: 'Brand-ready visuals', price_ghs: 2800, billing_note: 'from · per package' },
+  { slug: 'graphics-photo', title: 'Graphics design & mobile photography', subtitle: 'Brand-ready visuals', price_ghs: 2800, billing_note: 'from · per package' },
   { slug: 'it-support', title: 'IT support & computer help', subtitle: 'Windows, Office, fixes', price_ghs: 400, billing_note: 'from · per session / ticket' },
   { slug: 'document-thesis', title: 'Document & thesis editing', subtitle: 'Clear, submission-ready work', price_ghs: 1200, billing_note: 'from · per document' },
-  { slug: 'prompt-engineer-systems', title: 'Prompt Engineer systems', subtitle: 'Protected premium templates', price_ghs: 3200, billing_note: 'from · per access package' },
 ];
+
+const HIDDEN_PLAN_SLUGS = new Set(['prompt-engineer-systems']);
+
+function mergeClientPlans(plans) {
+  const merged = (plans || []).filter((p) => p && !HIDDEN_PLAN_SLUGS.has(p.slug));
+  REQUIRED_PLAN_DEFAULTS.forEach((seed) => {
+    if (!merged.some((p) => p.slug === seed.slug)) {
+      merged.push({
+        ...seed,
+        id: seed.slug,
+        description: '',
+        features: [],
+        sort_order: 999,
+        is_highlight: false,
+      });
+    }
+  });
+  merged.sort((a, b) => (a.sort_order ?? 999) - (b.sort_order ?? 999));
+  return merged;
+}
 
 function parseFeatures(raw) {
   if (Array.isArray(raw)) return raw.filter(Boolean).map(String);
@@ -143,6 +162,13 @@ export function PricingSection() {
     }).format(usd);
   };
 
+  const scrollPricing = useCallback((direction) => {
+    const track = document.getElementById('pricingCarouselTrack');
+    if (!track) return;
+    const amount = Math.max(track.clientWidth * 0.92, 260);
+    track.scrollBy({ left: direction * amount, behavior: 'smooth' });
+  }, []);
+
   if (error === 'missing_env') {
     return (
       <section id="pricing" className="fade-in pricing-section-premium" tabIndex={-1} aria-label="Pricing">
@@ -181,7 +207,7 @@ export function PricingSection() {
   return (
     <section id="pricing" className="fade-in pricing-section-premium" tabIndex={-1} aria-label="Pricing">
       <h2 className="section-title">Pricing</h2>
-      <p className="pricing-intro">Explore starting prices for each service below.</p>
+      <p className="pricing-intro">Client packages only — starting prices for document and technology services. Final quotes depend on scope and timeline.</p>
       <p className="pricing-rate-line">
         {usdPerGhs != null ? (
           <>
@@ -196,56 +222,28 @@ export function PricingSection() {
         )}
       </p>
 
-      {(() => {
-        const merged = [...plans];
-        REQUIRED_PLAN_DEFAULTS.forEach((seed) => {
-          if (!merged.some((p) => p.slug === seed.slug)) {
-            merged.push({
-              ...seed,
-              id: seed.slug,
-              description:
-                seed.slug === 'prompt-engineer-systems'
-                  ? 'Reusable premium prompt systems and execution templates for real business apps, websites, and AI operations.'
-                  : '',
-              features: [],
-              sort_order: 999,
-              is_highlight: false,
-            });
-          }
-        });
-        merged.sort((a, b) => (a.sort_order ?? 999) - (b.sort_order ?? 999));
-        return merged;
-      })().length === 0 ? (
+      {mergeClientPlans(plans).length === 0 ? (
         <div className="pricing-empty">
           No active plans yet. In Supabase, open the <code>pricing_plans</code> table and add rows with <code>is_active = true</code>, or run the seed in{' '}
           <code>supabase/pricing_plans.sql</code>.
         </div>
       ) : (
         <div className="pricing-carousel-shell">
-          <button type="button" className="pricing-carousel-btn pricing-carousel-btn--prev" data-pricing-carousel="prev" aria-label="Previous pricing cards">
+          <button
+            type="button"
+            className="pricing-carousel-btn pricing-carousel-btn--prev"
+            data-pricing-carousel="prev"
+            aria-label="Previous pricing cards"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              scrollPricing(-1);
+            }}
+          >
             <ChevronLeft className="icon-lucide" size={24} aria-hidden="true" />
           </button>
           <div className="pricing-grid" id="pricingCarouselTrack">
-          {(() => {
-            const merged = [...plans];
-            REQUIRED_PLAN_DEFAULTS.forEach((seed) => {
-              if (!merged.some((p) => p.slug === seed.slug)) {
-                merged.push({
-                  ...seed,
-                  id: seed.slug,
-                  description:
-                    seed.slug === 'prompt-engineer-systems'
-                      ? 'Reusable premium prompt systems and execution templates for real business apps, websites, and AI operations.'
-                      : '',
-                  features: [],
-                  sort_order: 999,
-                  is_highlight: false,
-                });
-              }
-            });
-            merged.sort((a, b) => (a.sort_order ?? 999) - (b.sort_order ?? 999));
-            return merged;
-          })().map((p) => {
+          {mergeClientPlans(plans).map((p) => {
             const feats = parseFeatures(p.features);
             const usd = formatUsd(p.price_ghs);
             return (
@@ -280,7 +278,17 @@ export function PricingSection() {
             );
           })}
           </div>
-          <button type="button" className="pricing-carousel-btn pricing-carousel-btn--next" data-pricing-carousel="next" aria-label="Next pricing cards">
+          <button
+            type="button"
+            className="pricing-carousel-btn pricing-carousel-btn--next"
+            data-pricing-carousel="next"
+            aria-label="Next pricing cards"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              scrollPricing(1);
+            }}
+          >
             <ChevronRight className="icon-lucide" size={24} aria-hidden="true" />
           </button>
         </div>

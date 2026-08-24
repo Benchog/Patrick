@@ -14,7 +14,6 @@ const REQUIRED_PLAN_DEFAULTS = [
   { slug: 'graphics-photo', title: 'Graphics & photo editing', price_ghs: 2800, billing_note: 'from · per package', sort_order: 60 },
   { slug: 'it-support', title: 'IT support & computer help', price_ghs: 400, billing_note: 'from · per session / ticket', sort_order: 70 },
   { slug: 'document-thesis', title: 'Document & thesis editing', price_ghs: 1200, billing_note: 'from · per document', sort_order: 80 },
-  { slug: 'prompt-engineer-systems', title: 'Prompt Engineer systems', price_ghs: 3200, billing_note: 'from · per access package', sort_order: 90 },
 ];
 
 function formatGhs(n) {
@@ -130,7 +129,7 @@ export function ServiceRequestSection() {
 
   const selectedPlan = useMemo(
     () => {
-      const merged = [...plans];
+      const merged = [...plans].filter((p) => p.slug !== 'prompt-engineer-systems');
       REQUIRED_PLAN_DEFAULTS.forEach((seed) => {
         if (!merged.some((p) => p.slug === seed.slug)) merged.push(seed);
       });
@@ -140,7 +139,7 @@ export function ServiceRequestSection() {
   );
 
   const serviceOptions = useMemo(() => {
-    const merged = [...plans];
+    const merged = [...plans].filter((p) => p.slug !== 'prompt-engineer-systems');
     REQUIRED_PLAN_DEFAULTS.forEach((seed) => {
       if (!merged.some((p) => p.slug === seed.slug)) merged.push(seed);
     });
