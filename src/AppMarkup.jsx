@@ -35,7 +35,6 @@ export function AppMarkup() {
                       <li><a href="#hero">Home</a></li>
                       <li><a href="#about">About</a></li>
                       <li><a href="#experience">Experience</a></li>
-                      <li><a href="#education">Education</a></li>
                       <li><a href="#skills">Skills</a></li>
                       <li><a href="#services">Services</a></li>
                       <li><a href="#projects">Projects</a></li>
@@ -75,10 +74,10 @@ export function AppMarkup() {
                   <div className="hero-copy">
                       <p className="hero-kicker">
                           <span className="hero-kicker-pulse" aria-hidden="true"></span>
-                          Data • Documents • Client Support • Ghana
+                          Data • Documents • Client Support
                       </p>
                       <h1>Patrick Benchog</h1>
-                      <p className="hero-headline tagline">Data, documentation and client support — with a technical edge.</p>
+                      <p className="hero-headline tagline">Data, documentation and client support, with a technical edge.</p>
                       <p className="hero-lead">I work with people, records and systems. That includes entering and verifying information, supporting clients through established processes, preparing documents, and building practical websites and software when the work needs a technical solution.</p>
                       <div className="hero-stats" aria-label="Areas of work">
                           <div className="hero-stat">
@@ -123,9 +122,9 @@ export function AppMarkup() {
                   </div>
                   <div className="about-text">
                       <p>My work sits where data, people, documentation and technology meet.</p>
-                      <p>I am in charge of the non-citizen Ghana Card registration in Techiman, Bono East, Ghana, through Margins ID Group. That work involves interviewing clients, collecting and entering identity information into a national database, reviewing supporting documents, and helping people complete the Ghana Card process accurately and confidentially.</p>
+                      <p>I handle the non-citizen Ghana Card registration in Techiman, Bono East, Ghana, through Margins ID Group. That work involves interviewing clients, collecting and entering identity information into a national database, reviewing supporting documents, and helping people complete the Ghana Card process accurately and confidentially.</p>
                       <p>Alongside that, I run PrimeDraft Services for academic and professional document support, and Benchog Labs for websites, apps, graphics design, mobile photography and IT support. I also hold a Bachelor of Science in Mechanical Engineering from the University for Development Studies.</p>
-                      <p>I am looking for remote roles in data entry, records and administrative support, document work, operations support and client service — and I remain available for document, web and technology projects.</p>
+                      <p>I am looking for remote roles in data entry, records and administrative support, document work, operations support and client service. I also remain available for document, web and technology projects.</p>
                   </div>
               </div>
           </section>
@@ -136,26 +135,29 @@ export function AppMarkup() {
                   <article className="experience-card">
                       <p className="experience-kicker">Current</p>
                       <h3>Margins ID Group</h3>
-                      <p className="experience-role">Identity Management System (IMS)</p>
-                      <p>In charge of the non-citizen Ghana Card registration in Techiman, Bono East, Ghana. The work depends on accurate data entry, careful document checks and clear client communication.</p>
+                      <p className="experience-role">Customer Service, Data Entry &amp; Operations</p>
+                      <p>I handle the non-citizen Ghana Card registration in Techiman, Bono East, Ghana. The work combines daily database operations, client-facing service and careful document handling.</p>
                       <ul>
-                          <li>Interview clients and collect identity information</li>
-                          <li>Enter and process information in a national database</li>
-                          <li>Review supporting documentation and verify details</li>
-                          <li>Assist clients through the registration process</li>
-                          <li>Handle sensitive personal and identity information confidentially</li>
-                          <li>Follow established procedures and keep accurate records</li>
+                          <li>Enter and process non-citizen information for 20+ clients daily using a national database</li>
+                          <li>Interview clients and collect the information required for registration</li>
+                          <li>Complete and process required forms and supporting documentation</li>
+                          <li>Review submitted information to ensure it is properly captured before processing</li>
+                          <li>Assist clients throughout the registration process and respond to enquiries clearly and professionally</li>
+                          <li>Handle confidential personal information responsibly and follow required data-security procedures</li>
+                          <li>Work within structured administrative processes while managing a consistent daily workload</li>
                       </ul>
                   </article>
                   <article className="experience-card">
                       <p className="experience-kicker">Business</p>
                       <h3>PrimeDraft Services</h3>
-                      <p className="experience-role">Document support</p>
-                      <p>A document-support practice for students and professionals. Requests are managed from first brief through delivery.</p>
+                      <p className="experience-role">Founder &amp; Document Support Specialist</p>
+                      <p>A document-support practice for students and professionals. Work is managed from first brief through delivery, with clear communication throughout.</p>
                       <ul>
-                          <li>Editing, proofreading and formatting of academic and professional documents</li>
-                          <li>Document preparation, including CVs and presentation layout</li>
-                          <li>Client communication, request handling and deadline management</li>
+                          <li>Editing and proofreading for academic and professional writing</li>
+                          <li>Formatting theses, reports and formal documents to required standards</li>
+                          <li>Document preparation, including CVs, cover letters, thesis writing, assignments and presentation layout</li>
+                          <li>AI content humanization to refine AI-generated text so it reads naturally and fits the brief</li>
+                          <li>Client communication, request handling, revisions and deadline management</li>
                           <li>Careful handling of confidential files</li>
                       </ul>
                   </article>
@@ -174,36 +176,39 @@ export function AppMarkup() {
                   </article>
               </div>
           </section>
-
-          <section id="education" className="fade-in">
-              <h2 className="section-title">Education</h2>
-              <article className="education-card">
-                  <h3>Bachelor of Science in Mechanical Engineering</h3>
-                  <p>University for Development Studies</p>
-                  <p className="education-note">Specialization in thermo-fluids and energy. Engineering training still informs how I approach records, systems and problem-solving — it is not the centre of my current professional work.</p>
-              </article>
-          </section>
       
           
           <section id="skills" className="fade-in">
               <h2 className="section-title">Skills</h2>
               <div className="skills-grid skills-grid--grouped">
                   <div className="skill-category">
-                      <h3><FileText {...iconProps} size={20} aria-hidden="true" /> Office &amp; productivity</h3>
+                      <h3><FileText {...iconProps} size={20} aria-hidden="true" /> Data &amp; administration</h3>
                       <ul className="skill-chip-list">
-                          <li>Microsoft Office</li>
+                          <li>Data Entry &amp; Data Processing</li>
+                          <li>National Database Operations</li>
+                          <li>Administrative Support</li>
+                          <li>Operations Support</li>
+                          <li>Document Management</li>
+                          <li>Confidential Record Handling</li>
+                          <li>Data Accuracy &amp; Quality Assurance</li>
+                          <li>File Management</li>
+                          <li>Workflow Management</li>
+                          <li>Time Management</li>
                           <li>Microsoft Excel</li>
                           <li>Microsoft Word</li>
-                          <li>Google Sheets</li>
-                          <li>Google Docs</li>
+                          <li>Microsoft PowerPoint</li>
                           <li>Google Workspace</li>
+                          <li>Google Sheets</li>
                       </ul>
                   </div>
                   <div className="skill-category">
-                      <h3><Heart {...iconProps} size={20} aria-hidden="true" /> Data &amp; records</h3>
+                      <h3><Heart {...iconProps} size={20} aria-hidden="true" /> Customer &amp; client support</h3>
                       <ul className="skill-chip-list">
-                          <li>Database Systems</li>
-                          <li>Digital Records Management</li>
+                          <li>Customer &amp; Client Support</li>
+                          <li>Interviewing / intake</li>
+                          <li>Active listening</li>
+                          <li>Problem solving</li>
+                          <li>Professional communication</li>
                       </ul>
                   </div>
                   <div className="skill-category">
@@ -227,30 +232,30 @@ export function AppMarkup() {
                   <article className="service-group">
                       <h3>Data &amp; administrative support</h3>
                       <ul>
-                          <li><strong>Data entry</strong> — accurate capture of records into databases and spreadsheets.</li>
-                          <li><strong>Records management</strong> — organizing, reviewing and maintaining files so information stays usable.</li>
-                          <li><strong>Information verification</strong> — checking documents and details before they are processed.</li>
-                          <li><strong>Administrative support</strong> — process-following, documentation and day-to-day operations help.</li>
+                          <li><strong>Data entry</strong>: accurate capture of records into databases and spreadsheets.</li>
+                          <li><strong>Records management</strong>: organizing, reviewing and maintaining files so information stays usable.</li>
+                          <li><strong>Information verification</strong>: checking documents and details before they are processed.</li>
+                          <li><strong>Administrative support</strong>: process-following, documentation and day-to-day operations help.</li>
                       </ul>
                   </article>
                   <article className="service-group">
                       <h3>Document services <span>PrimeDraft Services</span></h3>
                       <ul>
-                          <li><strong>Editing &amp; proofreading</strong> — grammar, structure and tone for academic and professional writing.</li>
-                          <li><strong>Formatting</strong> — theses, reports and formal documents laid out to required standards.</li>
-                          <li><strong>Document preparation</strong> — CVs, cover letters, thesis writing, assignments and presentation layout.</li>
-                          <li><strong>AI content humanization</strong> — refining AI-generated text so it reads naturally and fits the brief.</li>
-                          <li><strong>Client communication</strong> — clear briefs, revisions and deadline handling.</li>
+                          <li><strong>Editing &amp; proofreading</strong>: grammar, structure and tone for academic and professional writing.</li>
+                          <li><strong>Formatting</strong>: theses, reports and formal documents laid out to required standards.</li>
+                          <li><strong>Document preparation</strong>: CVs, cover letters, thesis writing, assignments and presentation layout.</li>
+                          <li><strong>AI content humanization</strong>: refining AI-generated text so it reads naturally and fits the brief.</li>
+                          <li><strong>Client communication</strong>: clear briefs, revisions and deadline handling.</li>
                       </ul>
                   </article>
                   <article className="service-group">
                       <h3>Technology services <span>Benchog Labs</span></h3>
                       <ul>
-                          <li><strong>Websites</strong> — business and personal sites that are live and easy to use.</li>
-                          <li><strong>Apps</strong> — practical software for workflows, records and day-to-day operations.</li>
-                          <li><strong>Graphics design</strong> — visuals for branding, marketing and communication.</li>
-                          <li><strong>Mobile photography</strong> — portraits and photo work suited to professional presentation.</li>
-                          <li><strong>IT support</strong> — Windows, Office setup, antivirus and software fixes.</li>
+                          <li><strong>Websites</strong>: business and personal sites that are live and easy to use.</li>
+                          <li><strong>Apps</strong>: practical software for workflows, records and day-to-day operations.</li>
+                          <li><strong>Graphics design</strong>: visuals for branding, marketing and communication.</li>
+                          <li><strong>Mobile photography</strong>: portraits and photo work suited to professional presentation.</li>
+                          <li><strong>IT support</strong>: Windows, Office setup, antivirus and software fixes.</li>
                       </ul>
                   </article>
               </div>
@@ -362,7 +367,7 @@ export function AppMarkup() {
                       <div className="project-card-body">
                           <h3>Furniture Sales Dashboard</h3>
                           <p className="project-card-excerpt">An Excel dashboard built from a furniture sales dataset to compare sales, profit and operational patterns.</p>
-                          <p className="project-impact">The dashboard surfaces findings from the dataset — including a large sales total against a much smaller profit figure — so the numbers are easier to discuss.</p>
+                          <p className="project-impact">The dashboard surfaces findings from the dataset, including a large sales total against a much smaller profit figure, so the numbers are easier to discuss.</p>
                           <ul className="project-card-highlights">
                               <li>$741K+ sales data analyzed</li>
                               <li>Identified low profit margins</li>
@@ -411,7 +416,7 @@ export function AppMarkup() {
                       </div>
                       <div className="project-card-body">
                           <h3>PrimeDraft Services</h3>
-                          <p className="project-card-excerpt">The live website for PrimeDraft Services — document editing, proofreading and quote requests.</p>
+                          <p className="project-card-excerpt">The live website for PrimeDraft Services: document editing, proofreading and quote requests.</p>
                           <p className="project-impact">Built to present the document-support offer clearly and give clients a way to get in touch.</p>
                           <ul className="project-card-highlights">
                               <li>Service clarity and offer positioning</li>
@@ -463,7 +468,7 @@ export function AppMarkup() {
                       <div className="project-card-body">
                           <h3>Design Gallery</h3>
                           <p className="project-card-excerpt">Posters, social designs and brand visuals.</p>
-                          <p className="project-impact">A sample of layout and visual work — not a client case-study gallery.</p>
+                          <p className="project-impact">A sample of layout and visual work, not a client case-study gallery.</p>
                           <ul className="project-card-highlights">
                               <li>Posters and social creatives</li>
                               <li>Brand + layout consistency</li>
@@ -517,7 +522,7 @@ export function AppMarkup() {
                       <div className="project-card-body">
                           <h3>Prompt Vault</h3>
                           <p className="project-card-excerpt">A library of reusable AI prompt templates for product, operations and writing work. Full templates are available after purchase or authorized access.</p>
-                          <p className="project-impact">Shown as a protected preview — not an open public product catalogue.</p>
+                          <p className="project-impact">Shown as a protected preview, not an open public product catalogue.</p>
                           <ul className="project-card-highlights">
                               <li>Reusable prompt frameworks</li>
                               <li>Templates for business and technical tasks</li>
@@ -611,7 +616,7 @@ export function AppMarkup() {
                       <h2 className="collection-modal-title" id="collectionTitle">Gallery</h2>
                       <p className="collection-modal-intro" id="collectionIntro"></p>
                       <section id="gallery">
-                          <p className="gallery-intro">When I'm not building apps, I'm usually behind a camera or a layout — cleaning up light, tightening type, or trying to make something people actually stop for. These are pieces I still like when I look back: not every file on my drive, but work that felt honest when I made it.</p>
+                          <p className="gallery-intro">When I'm not building apps, I'm usually behind a camera or a layout, cleaning up light, tightening type, or trying to make something people actually stop for. These are pieces I still like when I look back: not every file on my drive, but work that felt honest when I made it.</p>
                           <div className="gallery-filter" role="tablist" aria-label="Gallery filters">
                               <button type="button" className="gallery-filter-btn active" data-gallery-filter="all">All</button>
                               <button type="button" className="gallery-filter-btn" data-gallery-filter="photography">Photography</button>

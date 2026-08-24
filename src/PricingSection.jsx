@@ -207,7 +207,7 @@ export function PricingSection() {
   return (
     <section id="pricing" className="fade-in pricing-section-premium" tabIndex={-1} aria-label="Pricing">
       <h2 className="section-title">Pricing</h2>
-      <p className="pricing-intro">Client packages only — starting prices for document and technology services. Final quotes depend on scope and timeline.</p>
+      <p className="pricing-intro">Client packages only. Starting prices for document and technology services. Final quotes depend on scope and timeline.</p>
       <p className="pricing-rate-line">
         {usdPerGhs != null ? (
           <>

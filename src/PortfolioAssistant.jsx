@@ -3,14 +3,14 @@ import { Sparkles, X, Send, Loader2 } from 'lucide-react';
 
 const iconProps = { className: 'icon-lucide', strokeWidth: 1.85, absoluteStrokeWidth: true };
 
-const WELCOME_TEXT = `Hi — I can help you find the right part of Patrick's site.
+const WELCOME_TEXT = `Hi. I can help you find the right part of Patrick's site.
 
-He works with **data, records, documents and clients**. He is **in charge of non-citizen Ghana Card registration in Techiman, Bono East, Ghana**, and also offers websites, apps, graphics, photography and IT support through Benchog Labs.
+He works with **data, records, documents and clients**. He **handles non-citizen Ghana Card registration in Techiman, Bono East, Ghana**, and also offers websites, apps, graphics, photography and IT support through Benchog Labs.
 
-• **Hiring / remote work** — Experience, Education and Skills
-• **Document support** — PrimeDraft Services
-• **Websites, apps, design, IT** — Benchog Labs
-• **Contact** — email, LinkedIn, WhatsApp and CV download
+• **Hiring / remote work**: Experience, About and Skills
+• **Document support**: PrimeDraft Services
+• **Websites, apps, design, IT**: Benchog Labs
+• **Contact**: email, LinkedIn, WhatsApp and CV download
 
 What would you like to know?`;
 
@@ -19,8 +19,8 @@ const SERVICE_CHIPS = [
   { label: 'Data & records', prompt: 'Tell me about Patrick\'s Ghana Card registration work and records responsibilities.' },
   { label: 'Documents', prompt: 'What document services does Patrick offer through PrimeDraft?' },
   { label: 'Benchog Labs', prompt: 'What does Benchog Labs offer?' },
-  { label: 'IT support', prompt: 'IT support and computer services — scope and how to get help.' },
-  { label: 'Contact', prompt: 'I want to contact Patrick — email, LinkedIn and other options.', goToContact: true },
+  { label: 'IT support', prompt: 'IT support and computer services: scope and how to get help.' },
+  { label: 'Contact', prompt: 'I want to contact Patrick: email, LinkedIn and other options.', goToContact: true },
 ];
 
 /** User wants to book, hire, or reach out — scroll main page to #contact */
@@ -51,7 +51,7 @@ function fallbackReply(userText) {
   const t = userText.toLowerCase();
 
   if (/who (is|are) (patrick|you)|about patrick|tell me about (him|patrick)/.test(t)) {
-    return 'Patrick Benchog works with **data, records, documents and clients**, and also builds practical technology solutions. He is **in charge of non-citizen Ghana Card registration in Techiman, Bono East, Ghana** through Margins ID Group (IMS), runs **PrimeDraft Services** for documents, and **Benchog Labs** for websites, apps, graphics design, mobile photography and IT support.';
+    return 'Patrick Benchog works with **data, records, documents and clients**, and also builds practical technology solutions. He **handles non-citizen Ghana Card registration in Techiman, Bono East, Ghana** through Margins ID Group, runs **PrimeDraft Services** as Founder & Document Support Specialist, and **Benchog Labs** for websites, apps, graphics design, mobile photography and IT support.';
   }
   if (/whatsapp|phone|call|text/.test(t)) {
     return 'You can reach Patrick on WhatsApp at **+233240025563**. Share what you need and your timeline so he can reply with a clear next step.';
@@ -63,13 +63,13 @@ function fallbackReply(userText) {
     return 'Email: **pat.benchog@gmail.com**. You can also use LinkedIn, WhatsApp or the **Download CV** button in Contact.';
   }
   if (/price|cost|budget|how much|pricing|quote/.test(t)) {
-    return 'Starting prices for **client packages** are in the Pricing section. Final quotes depend on scope and timeline — email **pat.benchog@gmail.com** with what you need.';
+    return 'Starting prices for **client packages** are in the Pricing section. Final quotes depend on scope and timeline. Email **pat.benchog@gmail.com** with what you need.';
   }
-  if (/margin|ghana card|regist|techi|bono|ims|identity management|in charge/.test(t)) {
-    return 'Patrick is **in charge of the non-citizen Ghana Card registration in Techiman, Bono East, Ghana** through Margins ID Group (**Identity Management System / IMS**). That includes interviewing clients, entering identity information into a national database, checking documents, and helping people through the process carefully. He is not presenting himself as a government employee or the owner of that database.';
+  if (/margin|ghana card|regist|techi|bono|ims|identity management|handle/.test(t)) {
+    return 'Patrick **handles the non-citizen Ghana Card registration in Techiman, Bono East, Ghana** through Margins ID Group in a **Customer Service, Data Entry & Operations** role. That includes interviewing clients, entering information into a national database, processing forms and documentation, and assisting clients day to day. He is not presenting himself as a government employee or the owner of that database.';
   }
   if (/hire|recruit|job|employ|remote|admin|data entry|records/.test(t)) {
-    return 'For hiring, start with **Experience**, **Education** and **Skills**. Email **pat.benchog@gmail.com** or use [LinkedIn](https://www.linkedin.com/in/patrick-benchog). He is open to remote data, records, admin, document and client-support roles.';
+    return 'For hiring, start with **Experience**, **About** and **Skills**. Email **pat.benchog@gmail.com** or use [LinkedIn](https://www.linkedin.com/in/patrick-benchog). He is open to remote data, records, admin, document and client-support roles.';
   }
   if (/benchog labs|what does benchog/.test(t)) {
     return '**Benchog Labs** offers websites, apps, graphics design, mobile photography and IT support.';
@@ -80,11 +80,11 @@ function fallbackReply(userText) {
   if (/web|site|landing|portfolio|benchtech/.test(t)) {
     return 'Website work sits under **Benchog Labs**. Examples on this site include this portfolio and **BenchTech Support**.';
   }
-  if (/data|dashboard|excel|analytics|record|database|sheets|docs|workspace|word|office/.test(t)) {
-    return 'Patrick works with **database systems and digital records** in his current role, and uses Microsoft Office / Excel / Word plus Google Workspace tools. He has also built Excel dashboards from sales and marketing datasets — those are analysis projects, not claims about his own revenue.';
+  if (/data|dashboard|excel|analytics|record|database|sheets|workspace|word|office|powerpoint/.test(t)) {
+    return 'Patrick works with **national database operations**, data entry and digital records in his current role, and uses Microsoft Excel, Word, PowerPoint and Google Workspace tools. He has also built Excel dashboards from sales and marketing datasets. Those are analysis projects, not claims about his own revenue.';
   }
   if (/cad|mechanical|autocad|solid|drawing|manufactur|education|degree|uds/.test(t)) {
-    return 'Patrick holds a **BSc in Mechanical Engineering** from the University for Development Studies. Engineering is part of his background; his current day-to-day work is data, documents, clients and technology.';
+    return 'Patrick holds a **BSc in Mechanical Engineering** from the University for Development Studies, mentioned in the About section. Engineering is part of his background; his current day-to-day work is data, documents, clients and technology.';
   }
   if (/photo|design|graphic|brand|poster|edit/.test(t)) {
     return 'Graphics design and mobile photography are offered through **Benchog Labs**. There is also a design and photography gallery under Projects.';
@@ -93,15 +93,15 @@ function fallbackReply(userText) {
     return '**PrimeDraft Services** covers editing, proofreading, formatting, document preparation (including CVs, cover letters, thesis writing and assignments), and AI content humanization. Email **pat.benchog@gmail.com** to discuss a document.';
   }
   if (/it\b|windows|install|computer|laptop|virus|office setup/.test(t)) {
-    return '**IT support** is offered through Benchog Labs — setup, antivirus and software fixes. BenchTech Support is the public site for that offer.';
+    return '**IT support** is offered through Benchog Labs: setup, antivirus and software fixes. BenchTech Support is the public site for that offer.';
   }
   if (/skill/.test(t)) {
-    return 'Skills on the site include Microsoft Office, Excel, Word, Google Sheets, Docs and Workspace, Database Systems, Digital Records Management, web development, app development, IT support, graphics design and mobile photography.';
+    return 'Skills on the site include data entry and processing, national database operations, administrative and operations support, document and file management, Microsoft Office and Google Workspace tools, customer and client support, plus web development, app development, IT support, graphics design and mobile photography.';
   }
   if (/prompt vault|ai systems|prompt engineer/.test(t)) {
     return 'That item is not shown in the public Projects section right now. For AI-related document help, see **AI content humanization** under PrimeDraft Services, or email **pat.benchog@gmail.com**.';
   }
-  return 'I can help with Patrick\'s **experience**, **skills**, **services**, **projects**, **pricing** or **contact** details. Ask a specific question — for example hiring, Ghana Card / IMS work, PrimeDraft documents, or Benchog Labs (websites, apps, graphics, photography, IT).';
+  return 'I can help with Patrick\'s **experience**, **skills**, **services**, **projects**, **pricing** or **contact** details. Ask a specific question about hiring, Ghana Card work, PrimeDraft documents, or Benchog Labs (websites, apps, graphics, photography, IT).';
 }
 
 const CHAT_URL = import.meta.env.VITE_CHAT_API_URL || '/api/chat';

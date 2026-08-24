@@ -1139,7 +1139,7 @@ function initProfileAboutReveal() {
 
 function initActiveNavOnScroll() {
     const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-    const sectionIds = ['hero', 'about', 'experience', 'education', 'skills', 'services', 'projects', 'pricing', 'contact'];
+    const sectionIds = ['hero', 'about', 'experience', 'skills', 'services', 'projects', 'pricing', 'contact'];
     const sections = sectionIds.map(function (id) {
         return document.getElementById(id);
     }).filter(Boolean);
