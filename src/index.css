@@ -576,7 +576,8 @@
             color: white;
         }
 
-        body:not(.dark-mode) .hero--premium .hero-lead {
+        body:not(.dark-mode) .hero--premium .hero-lead,
+        body:not(.dark-mode) .hero--premium .hero-headline {
             color: rgba(255, 255, 255, 0.92);
         }
 
@@ -1241,10 +1242,192 @@
         }
 
         .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            text-align: justify;
+            font-size: 1.08rem;
+            line-height: 1.75;
+            text-align: left;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+
+        .section-lead {
+            max-width: 42rem;
+            margin: -1.5rem auto 2.25rem;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+
+        .experience-list,
+        .ventures-grid,
+        .services-groups {
+            display: grid;
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .experience-list {
+            grid-template-columns: 1fr;
+        }
+
+        .ventures-grid,
+        .services-groups {
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+
+        .experience-card,
+        .education-card,
+        .venture-card,
+        .service-group {
+            background: white;
+            border-radius: 20px;
+            padding: 1.75rem 1.85rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-kicker {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--ui-icon-accent);
+            margin-bottom: 0.4rem;
+        }
+
+        .experience-card h3,
+        .education-card h3,
+        .venture-card h3,
+        .service-group h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.35rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-role {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .experience-card p,
+        .education-card p,
+        .venture-card p,
+        .service-group p,
+        .experience-card li,
+        .service-group li {
+            color: var(--text-light);
+        }
+
+        .experience-card ul,
+        .service-group ul {
+            margin: 0.85rem 0 0 1.1rem;
+        }
+
+        .experience-card li,
+        .service-group li {
+            margin-bottom: 0.4rem;
+        }
+
+        .experience-link,
+        .venture-link,
+        .contact-email {
+            display: inline-block;
+            margin-top: 1rem;
+            font-weight: 700;
+            color: var(--ui-icon-accent);
+            text-decoration: none;
+        }
+
+        .service-group h3 span {
+            display: block;
+            margin-top: 0.25rem;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--ui-icon-accent);
+        }
+
+        .education-card {
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .education-note {
+            margin-top: 0.75rem;
+        }
+
+        .skill-chip-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-chip-list li {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid var(--ui-outline-soft);
+            border-radius: 999px;
+            padding: 0.35rem 0.75rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        .skills-grid--grouped .tool-stack {
+            margin-top: 1.25rem;
+            text-align: left;
+        }
+
+        .skills-grid--grouped .tool-stack-kicker {
+            text-align: left;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+            margin: 1.25rem 0 0.5rem;
+        }
+
+        .contact-email {
+            display: block;
+            text-align: center;
+        }
+
+        body.dark-mode .experience-card,
+        body.dark-mode .education-card,
+        body.dark-mode .venture-card,
+        body.dark-mode .service-group {
+            background: rgba(15, 23, 42, 0.58);
+            border: 1px solid rgba(192, 132, 252, 0.22);
+            box-shadow: 0 22px 55px rgba(0, 0, 0, 0.42);
+        }
+
+        body.dark-mode .experience-card h3,
+        body.dark-mode .education-card h3,
+        body.dark-mode .venture-card h3,
+        body.dark-mode .service-group h3 {
+            color: #f8fafc;
+        }
+
+        body.dark-mode .experience-card p,
+        body.dark-mode .education-card p,
+        body.dark-mode .venture-card p,
+        body.dark-mode .experience-card li,
+        body.dark-mode .service-group li,
+        body.dark-mode .section-lead {
+            color: #cbd5e1;
+        }
+
+        body.dark-mode .skill-chip-list li {
+            background: rgba(15, 23, 42, 0.65);
+            color: #e2e8f0;
+            border-color: rgba(192, 132, 252, 0.35);
         }
 
         .mantra-box {

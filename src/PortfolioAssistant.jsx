@@ -3,28 +3,24 @@ import { Sparkles, X, Send, Loader2 } from 'lucide-react';
 
 const iconProps = { className: 'icon-lucide', strokeWidth: 1.85, absoluteStrokeWidth: true };
 
-const WELCOME_TEXT = `Hi — I'm Patrick's AI guide. Here's what he partners on:
+const WELCOME_TEXT = `Hi — I can help you find the right part of Patrick's site.
 
-• **App development** — production-ready cross-platform products with real backends
-• **Websites** — fast, credible sites that ship and convert
-• **Data & dashboards** — clarity from messy numbers for real decisions
-• **CAD / CAM** — mechanical drawings and design discipline (Solid Edge, AutoCAD)
-• **Graphics & photo** — brand visuals and polished edits
-• **IT support** — setup, fixes, and reliable troubleshooting
-• **Documents & thesis** — editing, structure, and academic polish
+He works with **data, records, documents and clients**, and also builds websites and software.
 
-**Which service do you want to explore or book?** Tap an option below or describe your goal in your own words.`;
+• **Hiring / remote work** — start with Experience, then Projects
+• **Document support** — PrimeDraft Services
+• **Websites, apps, IT support** — Benchog Labs
+• **Contact** — email, LinkedIn and WhatsApp are in the Contact section
+
+What would you like to look at?`;
 
 const SERVICE_CHIPS = [
-  { label: 'Apps', prompt: 'I want to know more about app development with Patrick and what booking looks like.' },
-  { label: 'Websites', prompt: 'Tell me about website projects and how Patrick works with clients.' },
-  { label: 'Dashboards', prompt: 'Explain data analytics and dashboard work — deliverables and typical process.' },
-  { label: 'CAD / CAM', prompt: 'What CAD/CAM and mechanical design support does Patrick offer?' },
-  { label: 'Graphics', prompt: 'Graphics and photo editing — what can Patrick deliver?' },
+  { label: 'Hiring / experience', prompt: 'I am a recruiter or employer. Summarize Patrick\'s current experience and how to contact him.' },
+  { label: 'Data & records', prompt: 'Tell me about Patrick\'s data entry, records and registration support work.' },
+  { label: 'Documents', prompt: 'How does PrimeDraft document support work?' },
+  { label: 'Websites & apps', prompt: 'Tell me about website and software projects Patrick has built.' },
   { label: 'IT support', prompt: 'IT support and computer services — scope and how to get help.' },
-  { label: 'Documents', prompt: 'Document and thesis editing — how does that engagement work?' },
-  { label: 'Hire / general', prompt: 'I want to hire Patrick for something broader — how should I reach out?' },
-  { label: 'Book / contact', prompt: 'I want to book Patrick or discuss a project — take me to contact options.', goToContact: true },
+  { label: 'Contact', prompt: 'I want to contact Patrick — email, LinkedIn and other options.', goToContact: true },
 ];
 
 /** User wants to book, hire, or reach out — scroll main page to #contact */
@@ -60,30 +56,36 @@ function fallbackReply(userText) {
     return 'Email works great: **pat.benchog@gmail.com**. A short note with what you need, your deadline, and budget range (even rough) helps Patrick respond faster.';
   }
   if (/price|cost|budget|how much/.test(t)) {
-    return 'Investment depends on scope, integrations, and timeline. Patrick will give you a clear proposal after a quick understanding of the work — use the Contact section or email **pat.benchog@gmail.com** with your brief.';
+    return 'Starting prices are listed on the Pricing section. The final figure depends on scope and timeline — email **pat.benchog@gmail.com** with what you need.';
+  }
+  if (/margin|ghana card|regist|database|data entry|record/.test(t)) {
+    return 'Patrick currently supports **non-citizen registration in Ghana** through Margins ID Group: client interviews, entering identity information into a national database, checking documents, and helping people through the process. Accuracy and confidentiality matter in that work.';
+  }
+  if (/hire|recruit|job|employ|remote|admin/.test(t)) {
+    return 'For hiring, start with **Experience** and **Projects**. Email **pat.benchog@gmail.com** or use [LinkedIn](https://www.linkedin.com/in/patrick-benchog). He is open to remote data, records, admin, document and client-support roles.';
   }
   if (/app|mobile|product|backend/.test(t)) {
-    return 'Patrick builds **cross-platform, production-minded apps** — real data, sync, and deployments rather than mockups. If you share the problem, users, and must-have features, he can outline a sensible path and next steps.';
+    return 'Patrick has built working apps such as **The Optimist** (personal finance), **StockPulse** (inventory) and **IMS Fee App** (fee management). Share the problem and must-have features if you want something similar.';
   }
   if (/web|site|landing|portfolio/.test(t)) {
-    return 'For **websites**, Patrick focuses on speed, credibility, and clear calls-to-action — deployed hosting, responsive layout, and copy structure that matches your offer.';
+    return 'Website work sits under **Benchog Labs**. Live examples include this portfolio, **PrimeDraft Services** and **BenchTech Support**.';
   }
   if (/data|dashboard|excel|analytics|report/.test(t)) {
-    return '**Dashboards** are about decisions: Patrick turns raw exports into charts and narratives that show what is actually happening — and what to do next.';
+    return 'Patrick works with records and databases in his current role, and has also built **Excel dashboards** from sales and marketing datasets. Those dashboards are analysis projects, not claims about his own revenue.';
   }
   if (/cad|mechanical|autocad|solid|drawing|manufactur/.test(t)) {
-    return 'With a **Mechanical Engineering** background, Patrick delivers disciplined CAD work — from concepts to drawings you can hand to a shop or team.';
+    return 'Patrick has a **BSc in Mechanical Engineering** and uses **Solid Edge** and **AutoCAD**. Engineering is part of his background; his current day-to-day work is data, documents, clients and technology.';
   }
   if (/photo|design|graphic|brand|poster|edit/.test(t)) {
-    return '**Visual work** spans brand-friendly layouts, social creatives, and photo edits with clean hierarchy and a premium finish.';
+    return 'Graphics, photo editing and presentation layout are available. There is a design and photography gallery on the Projects section.';
   }
-  if (/thesis|document|edit|proof|academic/.test(t)) {
-    return '**Document support** includes proofreading, structure, formatting, and clarity — tuned for academic or professional submission.';
+  if (/thesis|document|proof|academic|cv|primedraft/.test(t)) {
+    return '**PrimeDraft Services** covers editing, proofreading, formatting and document preparation. The live site is primedraftservices.vercel.app, or email **pat.benchog@gmail.com**.';
   }
   if (/fix|windows|install|computer|laptop|virus|office/.test(t)) {
-    return '**IT support** covers setup, activation, antivirus, and software fixes — practical help when machines or tools get in the way.';
+    return '**IT support** covers setup, antivirus and software fixes. BenchTech Support is the public site for that offer.';
   }
-  return 'Patrick combines **engineering discipline** with **shipping software and creative work**. Pick a service chip above or say what outcome you need — I will route you to the right conversation and the Contact section when you are ready to book.';
+  return 'Patrick works with **data, records, documents and clients**, and also builds websites and software through Benchog Labs. Ask about hiring, PrimeDraft, or a project — or go to the Contact section.';
 }
 
 const CHAT_URL = import.meta.env.VITE_CHAT_API_URL || '/api/chat';

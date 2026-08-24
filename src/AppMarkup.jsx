@@ -3,14 +3,9 @@ import {
   Menu,
   Cpu,
   Heart,
-  Smartphone,
   Code2,
-  BarChart3,
-  Compass,
   Palette,
-  Monitor,
   FileText,
-  BrainCircuit,
   Lock,
   Github,
   Linkedin,
@@ -38,17 +33,16 @@ export function AppMarkup() {
                       <span className="logo-wordmark">Patrick</span>
                   </a>
                   <ul className="nav-links" id="primaryNavLinks">
-                      <li><a href="#hero">Profile</a></li>
-                      
-                      <li><a href="#skills">Skills</a></li>
+                      <li><a href="#hero">Home</a></li>
+                      <li><a href="#about">About</a></li>
+                      <li><a href="#experience">Experience</a></li>
                       <li><a href="#services">Services</a></li>
                       <li><a href="#projects">Projects</a></li>
-                      <li><a href="#pricing">Pricing</a></li>
                       <li><a href="#contact">Contact</a></li>
-                      <li className="nav-hire-item"><a href="#contact" className="nav-hire-mobile">Hire Patrick</a></li>
+                      <li className="nav-hire-item"><a href="#contact" className="nav-hire-mobile">Contact Patrick</a></li>
                   </ul>
                   <div className="nav-trailing">
-                      <a href="#contact" className="hire-now-btn">Hire Patrick</a>
+                      <a href="#contact" className="hire-now-btn">Contact</a>
                       <button type="button" className="nav-theme-icon" id="themePanelOpen" aria-label="Toggle light and dark mode">
                           <Palette {...iconProps} size={18} aria-hidden="true" />
                       </button>
@@ -71,7 +65,7 @@ export function AppMarkup() {
       
           <main id="mainContent">
           
-          <section id="hero" className="hero hero--premium hero--with-about">
+          <section id="hero" className="hero hero--premium">
               <div className="hero-portrait-bg" aria-hidden="true"></div>
               <div className="hero-grid-glow" aria-hidden="true"></div>
               <div className="hero-vignette" aria-hidden="true"></div>
@@ -80,37 +74,33 @@ export function AppMarkup() {
                   <div className="hero-copy">
                       <p className="hero-kicker">
                           <span className="hero-kicker-pulse" aria-hidden="true"></span>
-                          Mechanical Engineer • Digital Solutions Builder • Ghana
+                          Data • Documents • Client Support • Ghana
                       </p>
                       <h1>Patrick Benchog</h1>
-                      <p className="hero-headline tagline">Building practical digital solutions that help people work smarter.</p>
-                      <p className="hero-lead">I help students, professionals and businesses turn ideas into practical digital solutions. From websites and business systems to academic documents and technical support, my focus is simple: deliver work that is useful, reliable and built around real needs.</p>
-                      <div className="hero-stats" aria-label="Highlights">
+                      <p className="hero-headline tagline">Data, documentation and client support — with a technical edge.</p>
+                      <p className="hero-lead">I work with people, records and systems. That includes entering and verifying information, supporting clients through established processes, preparing documents, and building practical websites and software when the work needs a technical solution.</p>
+                      <div className="hero-stats" aria-label="Areas of work">
                           <div className="hero-stat">
-                              <span className="hero-stat-value">Digital Solutions</span>
-                              <span className="hero-stat-label">Websites, apps &amp; business systems</span>
+                              <span className="hero-stat-value">Data &amp; records</span>
+                              <span className="hero-stat-label">Entry, verification, database work</span>
                           </div>
                           <div className="hero-stat">
-                              <span className="hero-stat-value">Problem Solver</span>
-                              <span className="hero-stat-label">Built around practical needs</span>
+                              <span className="hero-stat-value">Client support</span>
+                              <span className="hero-stat-label">Interviews, guidance, communication</span>
                           </div>
                           <div className="hero-stat">
-                              <span className="hero-stat-value">AI-Assisted Development</span>
-                              <span className="hero-stat-label">Modern tools, thoughtful execution</span>
+                              <span className="hero-stat-value">Documents</span>
+                              <span className="hero-stat-label">Editing, formatting, preparation</span>
                           </div>
                           <div className="hero-stat">
-                              <span className="hero-stat-value">Engineering Mindset</span>
-                              <span className="hero-stat-label">Structured thinking. Reliable delivery.</span>
+                              <span className="hero-stat-value">Technology</span>
+                              <span className="hero-stat-label">Web, software and IT support</span>
                           </div>
                       </div>
-                      <ToolStackIcons />
-                      <p className="caption hero-caption-tight">
-                          Reliable • Detail-Oriented • Solution Focused
-                      </p>
                       <div className="hero-cta-row">
-                          <a href="#contact" className="cta-button cta-button--primary">Let&apos;s Work Together</a>
-                          <a href="#projects" className="cta-button cta-button--ghost">View Projects</a>
-                          <a href="Benchog Patrick_CV.pdf" className="glass-button slide-in-up hero-cv-btn" target="_blank" rel="noopener">Download CV</a>
+                          <a href="#experience" className="cta-button cta-button--primary">View My Experience</a>
+                          <a href="#projects" className="cta-button cta-button--ghost">View My Work</a>
+                          <a href="#contact" className="glass-button slide-in-up hero-cv-btn">Contact Me</a>
                       </div>
                   </div>
                   <div className="hero-visual" aria-hidden="false">
@@ -122,220 +112,180 @@ export function AppMarkup() {
                       </div>
                   </div>
               </div>
-              <div id="heroAbout" className="hero-about-panel" aria-hidden="true">
-                  <div className="hero-about-inner">
-                      <h2 className="hero-about-title">About Patrick</h2>
-                      <div className="about-content hero-about-content">
-                          <div className="about-image">
-                              <img src="1750806398142.jpeg" alt="Patrick Benchog" loading="lazy" />
-                          </div>
-                          <div className="about-text">
-                              <p>I enjoy solving problems that make work easier for people.</p>
-                              <p>My background in Mechanical Engineering taught me how to approach challenges methodically, analyse systems and think beyond the obvious solution. Today, I apply that same mindset to digital products and professional services.</p>
-                              <p>Over the past few years I have built software for personal finance, workplace operations and internal business processes while also helping students and professionals prepare documents that meet high academic and professional standards.</p>
-                              <p>Whether I&apos;m creating a website, improving a workflow, formatting a thesis or supporting a client with technology, my goal is always the same: produce work that is clear, dependable and genuinely useful.</p>
-                              <p>I believe good technology should simplify work rather than complicate it.</p>
-                          </div>
-                      </div>
+          </section>
+
+          <section id="about" className="fade-in">
+              <h2 className="section-title">About</h2>
+              <div className="about-content">
+                  <div className="about-image">
+                      <img src="1750806398142.jpeg" alt="Patrick Benchog" loading="lazy" />
+                  </div>
+                  <div className="about-text">
+                      <p>My work sits where data, people, documentation and technology meet.</p>
+                      <p>I currently support non-citizen registration in Ghana through Margins ID Group. That work involves interviewing clients, collecting and entering identity information into a national database, reviewing supporting documents, and helping people complete the Ghana Card process accurately and confidentially.</p>
+                      <p>Alongside that, I run PrimeDraft Services for academic and professional document support, and Benchog Labs for websites, software and technology help. I also hold a Bachelor of Science in Mechanical Engineering from the University for Development Studies.</p>
+                      <p>I am looking for remote roles in data entry, records and administrative support, document work, operations support and client service — and I remain available for document, web and technology projects.</p>
                   </div>
               </div>
+          </section>
+
+          <section id="experience" className="fade-in">
+              <h2 className="section-title">Experience</h2>
+              <div className="experience-list">
+                  <article className="experience-card">
+                      <p className="experience-kicker">Current</p>
+                      <h3>Margins ID Group</h3>
+                      <p className="experience-role">Identity registration and records support</p>
+                      <p>Supporting the registration of non-citizens in Ghana, including Ghana Card processing. The work depends on accurate data entry, careful document checks and clear client communication.</p>
+                      <ul>
+                          <li>Interview clients and collect identity information</li>
+                          <li>Enter and process information in a national database</li>
+                          <li>Review supporting documentation and verify details</li>
+                          <li>Assist clients through the registration process</li>
+                          <li>Handle sensitive personal and identity information confidentially</li>
+                          <li>Follow established procedures and keep accurate records</li>
+                      </ul>
+                  </article>
+                  <article className="experience-card">
+                      <p className="experience-kicker">Business</p>
+                      <h3>PrimeDraft Services</h3>
+                      <p className="experience-role">Document support</p>
+                      <p>A document-support practice for students and professionals. Requests are managed from first brief through delivery.</p>
+                      <ul>
+                          <li>Editing, proofreading and formatting of academic and professional documents</li>
+                          <li>Document preparation, including CVs and presentation layout</li>
+                          <li>Client communication, request handling and deadline management</li>
+                          <li>Careful handling of confidential files</li>
+                      </ul>
+                      <p className="experience-link"><a href="https://primedraftservices.vercel.app" target="_blank" rel="noopener noreferrer">primedraftservices.vercel.app</a></p>
+                  </article>
+                  <article className="experience-card">
+                      <p className="experience-kicker">Business</p>
+                      <h3>Benchog Labs</h3>
+                      <p className="experience-role">Technology and digital solutions</p>
+                      <p>My technology initiative for websites, software, digital services and technical support. The work is practical: understand the problem, then build or set up something people can actually use.</p>
+                      <ul>
+                          <li>Website and web application development</li>
+                          <li>Software projects for finance, inventory and fee management</li>
+                          <li>IT support, including Windows, Office setup and software fixes</li>
+                          <li>Dashboards and document-ready visuals when the brief calls for them</li>
+                      </ul>
+                  </article>
+              </div>
+          </section>
+
+          <section id="education" className="fade-in">
+              <h2 className="section-title">Education</h2>
+              <article className="education-card">
+                  <h3>Bachelor of Science in Mechanical Engineering</h3>
+                  <p>University for Development Studies</p>
+                  <p className="education-note">Specialization in thermo-fluids and energy. Engineering training still informs how I approach records, systems and problem-solving — it is not the centre of my current professional work.</p>
+              </article>
           </section>
       
           
           <section id="skills" className="fade-in">
               <h2 className="section-title">Skills</h2>
-              <div className="skills-carousel-shell">
-              <button type="button" className="section-carousel-btn section-carousel-btn--prev" data-skills-carousel="prev" aria-label="Previous skill cards">
-                  <ChevronLeft {...iconProps} size={24} aria-hidden="true" />
-              </button>
-              <div className="skills-grid" id="skillsCarouselTrack">
+              <div className="skills-grid skills-grid--grouped">
                   <div className="skill-category">
-                      <h3><Cpu {...iconProps} size={20} aria-hidden="true" /> Hard Skills</h3>
-                      <div className="skill-item">
-                          <span>App Development</span>
-                          <div className="skill-bar">
-                              <div className="skill-progress" style={{"width":"90%"}}></div>
-                          </div>
-                      </div>
-                      <div className="skill-item">
-                          <span>Expert AI workflows</span>
-                          <div className="skill-bar">
-                              <div className="skill-progress" style={{"width":"95%"}}></div>
-                          </div>
-                      </div>
-                      <div className="skill-item">
-                          <span>Web Development</span>
-                          <div className="skill-bar">
-                              <div className="skill-progress" style={{"width":"88%"}}></div>
-                          </div>
-                      </div>
-                      <div className="skill-item">
-                          <span>Data Analysis & Dashboards</span>
-                          <div className="skill-bar">
-                              <div className="skill-progress" style={{"width":"82%"}}></div>
-                          </div>
-                      </div>
-                      <div className="skill-item">
-                          <span>CAD/CAM (Solid Edge & AutoCAD)</span>
-                          <div className="skill-bar">
-                              <div className="skill-progress" style={{"width":"85%"}}></div>
-                          </div>
-                      </div>
-                      <div className="skill-item">
-                          <span>Graphics & Photo Editing</span>
-                          <div className="skill-bar">
-                              <div className="skill-progress" style={{"width":"88%"}}></div>
-                          </div>
-                      </div>
-                      <div className="skill-item">
-                          <span>Prompt Engineering</span>
-                          <div className="skill-bar">
-                              <div className="skill-progress" style={{"width":"94%"}}></div>
-                          </div>
-                      </div>
+                      <h3><FileText {...iconProps} size={20} aria-hidden="true" /> Data &amp; administration</h3>
+                      <ul className="skill-chip-list">
+                          <li>Data entry</li>
+                          <li>Records management</li>
+                          <li>Database work</li>
+                          <li>Information verification</li>
+                          <li>Documentation</li>
+                          <li>Administrative support</li>
+                      </ul>
                   </div>
                   <div className="skill-category">
-                      <h3><Heart {...iconProps} size={20} aria-hidden="true" /> Soft Skills</h3>
-                      <div className="skill-item">
-                          <span>Leadership</span>
-                          <div className="skill-bar">
-                              <div className="skill-progress" style={{"width":"92%"}}></div>
-                          </div>
-                      </div>
-                      <div className="skill-item">
-                          <span>Problem-Solving</span>
-                          <div className="skill-bar">
-                              <div className="skill-progress" style={{"width":"96%"}}></div>
-                          </div>
-                      </div>
-                      <div className="skill-item">
-                          <span>Creativity</span>
-                          <div className="skill-bar">
-                              <div className="skill-progress" style={{"width":"94%"}}></div>
-                          </div>
-                      </div>
-                      <div className="skill-item">
-                          <span>Communication</span>
-                          <div className="skill-bar">
-                              <div className="skill-progress" style={{"width":"89%"}}></div>
-                          </div>
-                      </div>
+                      <h3><Heart {...iconProps} size={20} aria-hidden="true" /> Customer &amp; client support</h3>
+                      <ul className="skill-chip-list">
+                          <li>Customer service</li>
+                          <li>Client communication</li>
+                          <li>Interviewing / intake</li>
+                          <li>Active listening</li>
+                          <li>Problem solving</li>
+                          <li>Professional communication</li>
+                      </ul>
                   </div>
-              </div>
-              <button type="button" className="section-carousel-btn section-carousel-btn--next" data-skills-carousel="next" aria-label="Next skill cards">
-                  <ChevronRight {...iconProps} size={24} aria-hidden="true" />
-              </button>
+                  <div className="skill-category">
+                      <h3><Cpu {...iconProps} size={20} aria-hidden="true" /> Technology</h3>
+                      <ul className="skill-chip-list">
+                          <li>Web development</li>
+                          <li>JavaScript</li>
+                          <li>React</li>
+                          <li>Next.js</li>
+                          <li>Python</li>
+                          <li>Flutter</li>
+                          <li>Supabase</li>
+                          <li>Excel</li>
+                          <li>AutoCAD</li>
+                          <li>Solid Edge</li>
+                          <li>Illustrator</li>
+                          <li>IT support</li>
+                      </ul>
+                      <ToolStackIcons />
+                  </div>
               </div>
           </section>
       
           
           <section id="services" className="fade-in">
-              <h2 className="section-title">How I Change the Game</h2>
-              <div className="services-carousel-shell">
-              <button type="button" className="section-carousel-btn section-carousel-btn--prev" data-services-carousel="prev" aria-label="Previous services cards">
-                  <ChevronLeft {...iconProps} size={24} aria-hidden="true" />
-              </button>
-              <div className="services-grid" id="servicesCarouselTrack">
-                  <div className="service-card">
-                      <div className="service-icon"><Smartphone {...iconProps} size={48} aria-hidden="true" /></div>
-                      <h3>App Development</h3>
-                      <p>Building real, fully functional cross-platform systems and web platforms that solve genuine problems — connected to backends, synced across devices, and ready for real users.</p>
-                  </div>
-                  <div className="service-card">
-                      <div className="service-icon"><Code2 {...iconProps} size={48} aria-hidden="true" /></div>
-                      <h3>Website Development</h3>
-                      <p>Clean, professional websites for businesses and individuals — deployed and live, not just mockups. From portfolios to full service websites.</p>
-                  </div>
-                  <div className="service-card">
-                      <div className="service-icon"><Monitor {...iconProps} size={48} aria-hidden="true" /></div>
-                      <h3>Web Application Development</h3>
-                      <p>Custom web applications shaped around how your team actually works, from intake forms to internal dashboards.</p>
-                  </div>
-                  <div className="service-card">
-                      <div className="service-icon"><Smartphone {...iconProps} size={48} aria-hidden="true" /></div>
-                      <h3>Mobile Application Development</h3>
-                      <p>Mobile apps designed for everyday use — practical interfaces, dependable performance and features that match real workflows.</p>
-                  </div>
-                  <div className="service-card">
-                      <div className="service-icon"><BarChart3 {...iconProps} size={48} aria-hidden="true" /></div>
-                      <h3>Data Analytics &amp; Dashboards</h3>
-                      <p>Turning raw data into clear dashboards that tell the real story behind the numbers — built for decision-makers who need answers, not just charts.</p>
-                  </div>
-                  <div className="service-card">
-                      <div className="service-icon"><BarChart3 {...iconProps} size={48} aria-hidden="true" /></div>
-                      <h3>Business Systems</h3>
-                      <p>Software that helps you record, track and manage the operations that keep your business running day to day.</p>
-                  </div>
-                  <div className="service-card">
-                      <div className="service-icon"><Compass {...iconProps} size={48} aria-hidden="true" /></div>
-                      <h3>CAD/CAM Engineering</h3>
-                      <p>Professional mechanical design and engineering using Solid Edge and AutoCAD — from concept sketches to precise technical drawings ready for manufacturing.</p>
-                  </div>
-                  <div className="service-card">
-                      <div className="service-icon"><Palette {...iconProps} size={48} aria-hidden="true" /></div>
-                      <h3>Graphics &amp; Photo Editing</h3>
-                      <p>High-quality graphics design and photo editing — flyers, branding, visuals, and edits delivered with precision and care.</p>
-                  </div>
-                  <div className="service-card">
-                      <div className="service-icon"><Palette {...iconProps} size={48} aria-hidden="true" /></div>
-                      <h3>Graphic Design</h3>
-                      <p>Visuals for branding, marketing and day-to-day communication — layouts that are clear, balanced and fit for purpose.</p>
-                  </div>
-                  <div className="service-card">
-                      <div className="service-icon"><Compass {...iconProps} size={48} aria-hidden="true" /></div>
-                      <h3>Presentation Design</h3>
-                      <p>Slides structured so your message comes through — professional formatting, readable hierarchy and a polished finish.</p>
-                  </div>
-                  <div className="service-card">
-                      <div className="service-icon"><Monitor {...iconProps} size={48} aria-hidden="true" /></div>
-                      <h3>IT Support &amp; Computer Services</h3>
-                      <p>Windows installation, software setup, system activation, antivirus, and software-related fixes — reliable and professional tech support.</p>
-                  </div>
-                  <div className="service-card">
-                      <div className="service-icon"><FileText {...iconProps} size={48} aria-hidden="true" /></div>
-                      <h3>Document &amp; Thesis Editing</h3>
-                      <p>Proofreading, editing, formatting, and paraphrasing for academic and professional documents — structured, polished, and submission-ready.</p>
-                  </div>
-                  <div className="service-card">
-                      <div className="service-icon"><FileText {...iconProps} size={48} aria-hidden="true" /></div>
-                      <h3>CV Writing</h3>
-                      <p>CVs written and formatted for clarity — so recruiters and hiring managers can quickly see what you bring to a role.</p>
-                  </div>
-                  <div className="service-card">
-                      <div className="service-icon"><FileText {...iconProps} size={48} aria-hidden="true" /></div>
-                      <h3>Proofreading &amp; Editing</h3>
-                      <p>Careful review of grammar, structure and tone so your writing reads cleanly and holds up to professional scrutiny.</p>
-                  </div>
-                  <div className="service-card">
-                      <div className="service-icon"><FileText {...iconProps} size={48} aria-hidden="true" /></div>
-                      <h3>Thesis Formatting</h3>
-                      <p>Academic theses formatted to meet institutional guidelines — margins, headings, references and layout handled with care.</p>
-                  </div>
-                  <div className="service-card">
-                      <div className="service-icon"><FileText {...iconProps} size={48} aria-hidden="true" /></div>
-                      <h3>Document Formatting</h3>
-                      <p>Reports, proposals and formal documents laid out consistently — readable, well-structured and ready to share.</p>
-                  </div>
-                  <div className="service-card">
-                      <div className="service-icon"><BrainCircuit {...iconProps} size={48} aria-hidden="true" /></div>
-                      <h3>Prompt Engineer Systems</h3>
-                      <p>Robust prompt workflows and reusable AI templates that generate production-ready outputs for content, products, automation, and business operations.</p>
-                  </div>
-                  <div className="service-card">
-                      <div className="service-icon"><BrainCircuit {...iconProps} size={48} aria-hidden="true" /></div>
-                      <h3>AI Workflow &amp; Automation</h3>
-                      <p>Thoughtful use of AI tools to speed up repetitive tasks, improve consistency and support better decision-making.</p>
-                  </div>
+              <h2 className="section-title">Services</h2>
+              <p className="section-lead">Work is grouped by the kind of help you need. Document services are delivered through PrimeDraft Services. Technology work is delivered through Benchog Labs.</p>
+              <div className="services-groups">
+                  <article className="service-group">
+                      <h3>Data &amp; administrative support</h3>
+                      <ul>
+                          <li><strong>Data entry</strong> — accurate capture of records into databases and spreadsheets.</li>
+                          <li><strong>Records management</strong> — organizing, reviewing and maintaining files so information stays usable.</li>
+                          <li><strong>Information verification</strong> — checking documents and details before they are processed.</li>
+                          <li><strong>Administrative support</strong> — process-following, documentation and day-to-day operations help.</li>
+                      </ul>
+                  </article>
+                  <article className="service-group">
+                      <h3>Document services <span>PrimeDraft Services</span></h3>
+                      <ul>
+                          <li><strong>Editing &amp; proofreading</strong> — grammar, structure and tone for academic and professional writing.</li>
+                          <li><strong>Formatting</strong> — theses, reports and formal documents laid out to required standards.</li>
+                          <li><strong>Document preparation</strong> — CVs, presentations and submission-ready files.</li>
+                          <li><strong>Client communication</strong> — clear briefs, revisions and deadline handling.</li>
+                      </ul>
+                  </article>
+                  <article className="service-group">
+                      <h3>Technology services <span>Benchog Labs</span></h3>
+                      <ul>
+                          <li><strong>Website development</strong> — business and personal sites that are live and easy to use.</li>
+                          <li><strong>Web &amp; mobile applications</strong> — practical software for workflows, records and operations.</li>
+                          <li><strong>Technical support</strong> — Windows, Office setup, antivirus and software fixes.</li>
+                          <li><strong>Digital solutions</strong> — dashboards, graphics and CAD drawings when the project needs them.</li>
+                      </ul>
+                  </article>
               </div>
-              <button type="button" className="section-carousel-btn section-carousel-btn--next" data-services-carousel="next" aria-label="Next services cards">
-                  <ChevronRight {...iconProps} size={24} aria-hidden="true" />
-              </button>
+          </section>
+
+          <section id="ventures" className="fade-in">
+              <h2 className="section-title">Benchog Labs &amp; PrimeDraft</h2>
+              <div className="ventures-grid">
+                  <article className="venture-card">
+                      <p className="experience-kicker">Technology</p>
+                      <h3>Benchog Labs</h3>
+                      <p>Benchog Labs is my technology and business initiative. I use it to build websites, software and digital services, and to provide technical support. It is a working practice, not a large company — the point is useful tools, not scale claims.</p>
+                      <a href="#projects" className="venture-link">See related projects</a>
+                  </article>
+                  <article className="venture-card">
+                      <p className="experience-kicker">Documents</p>
+                      <h3>PrimeDraft Services</h3>
+                      <p>PrimeDraft Services provides academic and professional document support: editing, proofreading, formatting and document preparation. The live site explains the offer and how to request work.</p>
+                      <a href="https://primedraftservices.vercel.app" className="venture-link" target="_blank" rel="noopener noreferrer">Visit PrimeDraft</a>
+                  </article>
               </div>
           </section>
       
               
           <section id="projects" className="fade-in">
-              <h2 className="section-title">Proof of Impact</h2>
+              <h2 className="section-title">Projects</h2>
               <div className="projects-filter">
                   <button type="button" className="filter-btn active" data-filter="all">All Projects</button>
                   <button type="button" className="filter-btn" data-filter="app">Apps</button>
@@ -358,8 +308,8 @@ export function AppMarkup() {
                       </div>
                       <div className="project-card-body">
                           <h3>The Optimist</h3>
-                          <p className="project-card-excerpt">Personal Finance Manager designed to help individuals manage income, expenses, budgets and savings with greater clarity.</p>
-                          <p className="project-impact">Impact: helps users move from money stress to structured financial control.</p>
+                          <p className="project-card-excerpt">A personal finance manager for tracking income, expenses, budgets and savings in one place.</p>
+                          <p className="project-impact">Built to give individuals a clearer view of their money, including accounts, reports and budgeting tools.</p>
                           <ul className="project-card-highlights">
                               <li>Complete personal finance management system</li>
                               <li>Real-time budgeting and smart alerts</li>
@@ -385,8 +335,8 @@ export function AppMarkup() {
                       </div>
                       <div className="project-card-body">
                           <h3>StockPulse</h3>
-                          <p className="project-card-excerpt">A stock management system built to simplify inventory tracking and improve workplace operations.</p>
-                          <p className="project-impact">Impact: cuts manual stock workload and improves inventory accuracy.</p>
+                          <p className="project-card-excerpt">A stock management system for recording inventory, logging daily usage and producing reports.</p>
+                          <p className="project-impact">Built to reduce repeated manual stock counts and keep workplace inventory easier to follow.</p>
                           <ul className="project-card-highlights">
                               <li>Automated inventory tracking system</li>
                               <li>Daily usage logging with real-time updates</li>
@@ -412,8 +362,8 @@ export function AppMarkup() {
                       </div>
                       <div className="project-card-body">
                           <h3>IMS Fee App</h3>
-                          <p className="project-card-excerpt">A fee management application used to record and manage payment transactions efficiently.</p>
-                          <p className="project-impact">Impact: reduces wasted trips and uncertainty for non-citizen clients.</p>
+                          <p className="project-card-excerpt">A fee management application for recording and managing payment transactions, including live fee information for clients.</p>
+                          <p className="project-impact">Built around a real operational need: helping clients understand fees and requirements before they travel.</p>
                           <ul className="project-card-highlights">
                               <li>Real-time fee calculation system</li>
                               <li>Weekly dollar rate updates</li>
@@ -439,8 +389,8 @@ export function AppMarkup() {
                       </div>
                       <div className="project-card-body">
                           <h3>Furniture Sales Dashboard</h3>
-                          <p className="project-card-excerpt">Uncovering hidden profit leaks in sales performance.</p>
-                          <p className="project-impact">Impact: highlights margin leakage despite strong topline revenue.</p>
+                          <p className="project-card-excerpt">An Excel dashboard built from a furniture sales dataset to compare sales, profit and operational patterns.</p>
+                          <p className="project-impact">The dashboard surfaces findings from the dataset — including a large sales total against a much smaller profit figure — so the numbers are easier to discuss.</p>
                           <ul className="project-card-highlights">
                               <li>$741K+ sales data analyzed</li>
                               <li>Identified low profit margins</li>
@@ -464,8 +414,8 @@ export function AppMarkup() {
                       </div>
                       <div className="project-card-body">
                           <h3>Marketing Campaign Dashboard</h3>
-                          <p className="project-card-excerpt">Massive reach means nothing without conversion.</p>
-                          <p className="project-impact">Impact: pinpoints where campaign spend loses value and where ROI wins.</p>
+                          <p className="project-card-excerpt">An Excel dashboard built from marketing campaign data to review impressions, clicks, conversions and ROI.</p>
+                          <p className="project-impact">The analysis is of the campaign dataset, not a live client account. It shows where reach did and did not convert.</p>
                           <ul className="project-card-highlights">
                               <li>1.1B impressions analyzed</li>
                               <li>Conversion funnel breakdown</li>
@@ -489,8 +439,8 @@ export function AppMarkup() {
                       </div>
                       <div className="project-card-body">
                           <h3>PrimeDraft Services</h3>
-                          <p className="project-card-excerpt">Business site for document editing &amp; proofreading: services, testimonials, and quote flow — deployed and live on Vercel.</p>
-                          <p className="project-impact">Impact: sharper brand credibility and lead-ready service presentation.</p>
+                          <p className="project-card-excerpt">The live website for PrimeDraft Services — document editing, proofreading and quote requests.</p>
+                          <p className="project-impact">Built to present the document-support offer clearly and give clients a way to get in touch.</p>
                           <ul className="project-card-highlights">
                               <li>Service clarity and offer positioning</li>
                               <li>Trust-building reviews and proof points</li>
@@ -515,8 +465,8 @@ export function AppMarkup() {
                       </div>
                       <div className="project-card-body">
                           <h3>BenchTech Support</h3>
-                          <p className="project-card-excerpt">IT support brand site: Windows &amp; Office setup, antivirus, software fixes, and emergency help — live on GitHub Pages.</p>
-                          <p className="project-impact">Impact: converts technical services into a clear trust-first customer journey.</p>
+                          <p className="project-card-excerpt">A live IT support website covering Windows and Office setup, antivirus, software fixes and service booking.</p>
+                          <p className="project-impact">Built so technical help is listed clearly and easy to request.</p>
                           <ul className="project-card-highlights">
                               <li>Clear service catalog for quick trust</li>
                               <li>Simple route to request immediate help</li>
@@ -541,8 +491,8 @@ export function AppMarkup() {
                       </div>
                       <div className="project-card-body">
                           <h3>Design Gallery</h3>
-                          <p className="project-card-excerpt">Posters, social designs, and brand visuals — built with clean hierarchy, strong contrast, and attention to detail.</p>
-                          <p className="project-impact">Impact: turns ideas into visuals that communicate fast and look premium.</p>
+                          <p className="project-card-excerpt">Posters, social designs and brand visuals.</p>
+                          <p className="project-impact">A sample of layout and visual work — not a client case-study gallery.</p>
                           <ul className="project-card-highlights">
                               <li>Posters and social creatives</li>
                               <li>Brand + layout consistency</li>
@@ -566,8 +516,8 @@ export function AppMarkup() {
                       </div>
                       <div className="project-card-body">
                           <h3>Photography Gallery</h3>
-                          <p className="project-card-excerpt">Portraits and real moments — edited for clean tones, strong focus, and a calm, confident look.</p>
-                          <p className="project-impact">Impact: visual work that supports personal brand and professional presentation.</p>
+                          <p className="project-card-excerpt">Portraits and photo edits.</p>
+                          <p className="project-impact">Personal visual work, included because it is part of the skills I actually use.</p>
                           <ul className="project-card-highlights">
                               <li>Portraits and edits</li>
                               <li>Tone and light control</li>
@@ -594,13 +544,13 @@ export function AppMarkup() {
                           </div>
                       </div>
                       <div className="project-card-body">
-                          <h3>Prompt Vault: Elite AI Templates</h3>
-                          <p className="project-card-excerpt">Premium templates for generating high-quality outputs fast across product, marketing, and operations workflows.</p>
-                          <p className="project-impact">Impact: converts hours of drafting into repeatable outputs in minutes.</p>
+                          <h3>Prompt Vault</h3>
+                          <p className="project-card-excerpt">A library of reusable AI prompt templates for product, operations and writing work. Full templates are available after purchase or authorized access.</p>
+                          <p className="project-impact">Shown as a protected preview — not an open public product catalogue.</p>
                           <ul className="project-card-highlights">
-                              <li>Battle-tested prompt architecture blocks</li>
-                              <li>Domain-specific templates (business + technical)</li>
-                              <li>Locked premium sections available after purchase</li>
+                              <li>Reusable prompt frameworks</li>
+                              <li>Templates for business and technical tasks</li>
+                              <li>Locked sections available after purchase</li>
                           </ul>
                           <div className="project-tags">
                               <span className="tag">Prompt Engineering</span>
@@ -648,8 +598,14 @@ export function AppMarkup() {
               <h2 className="section-title">Contact</h2>
               <div className="contact-content">
                   <div className="contact-card">
-                      <p>If you&apos;re looking for someone who approaches problems thoughtfully and delivers practical digital solutions, I&apos;d be glad to hear about your project.</p>
-                      <p>Whether it&apos;s a website, software, business workflow, academic document or technical support, let&apos;s discuss how I can help.</p>
+                      <h3>Let&apos;s talk about the work.</h3>
+                      <p>If you are hiring for data, records, administrative or client-support work, or you need document or technology help, email is the most reliable way to reach me. LinkedIn is the best place to see my professional profile alongside this site.</p>
+                      <div className="contact-actions">
+                          <a href="mailto:pat.benchog@gmail.com" className="cta-button cta-button--primary">Email Patrick</a>
+                          <a href="https://www.linkedin.com/in/patrick-benchog" className="cta-button cta-button--ghost" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                          <a href="Benchog Patrick_CV.pdf" className="glass-button" target="_blank" rel="noopener">Download CV</a>
+                      </div>
+                      <p className="contact-email">pat.benchog@gmail.com</p>
                       
                       <div className="social-links">
                           <a href="https://github.com/Benchog" className="social-link" title="GitHub" target="_blank" rel="noopener noreferrer">
@@ -735,10 +691,10 @@ export function AppMarkup() {
           
           <footer>
               <div className="footer-mantra">
-                  "Built with optimism. Powered by innovation. Driven to leave a mark on this world."
+                  Data, documents, people and practical technology.
               </div>
-              <p style={{"marginBottom":"0.45rem"}}>Recruiting? <a href="mailto:pat.benchog@gmail.com" style={{"color":"var(--accent-gold)","fontWeight":"700","textDecoration":"none"}}>Hire Patrick now</a> — response is fast.</p>
-              <p>&copy; 2026 Patrick Benchog - Optimistic. All rights reserved.</p>
+              <p style={{"marginBottom":"0.45rem"}}><a href="mailto:pat.benchog@gmail.com" style={{"color":"var(--accent-gold)","fontWeight":"700","textDecoration":"none"}}>pat.benchog@gmail.com</a> · <a href="https://www.linkedin.com/in/patrick-benchog" style={{"color":"var(--accent-gold)","fontWeight":"700","textDecoration":"none"}} target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+              <p>&copy; 2026 Patrick Benchog. All rights reserved.</p>
           </footer>
     </>
   );

@@ -184,7 +184,7 @@ export function ToolStackIcons() {
         </div>
       </div>
       <p className="tool-stack-note">
-        I combine engineering thinking with modern digital tools to build solutions that are practical, efficient and easy to use.
+        I use these tools in real work — from records and documents to websites and software.
       </p>
     </div>
   );

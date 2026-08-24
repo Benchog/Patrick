@@ -6,7 +6,7 @@ function createParticles() {
 
     const smallScreen = window.innerWidth < 768;
     const lowPowerDevice = typeof navigator.hardwareConcurrency === 'number' && navigator.hardwareConcurrency <= 4;
-    const particleCount = smallScreen ? 18 : (lowPowerDevice ? 26 : 42);
+    const particleCount = smallScreen ? 10 : (lowPowerDevice ? 16 : 24);
     const frag = document.createDocumentFragment();
 
     for (let i = 0; i < particleCount; i++) {
@@ -768,7 +768,7 @@ const PROJECT_CATALOG = {
         liveLabel: 'Open live app ↗',
         tags: ['Cross-platform', 'Cloud backend', 'Supabase', 'AI-accelerated'],
         detailSections: [
-            { title: 'Summary', body: 'A full-featured personal finance system designed to help users track, manage, and grow their money with complete clarity and control.' },
+            { title: 'Summary', body: 'A personal finance app for tracking income, expenses, savings and related money tasks in one place.' },
             { title: 'The Problem', body: 'Many people struggle with managing their finances, not because they don\'t earn enough, but because they lack visibility into where their money goes. This leads to overspending, poor savings habits, and financial stress.' },
             { title: 'The Solution', body: 'I designed and built a complete personal finance management system that allows users to track income, expenses, savings, and debts in one place, while receiving real-time insights and alerts.' },
             { title: 'Key Features', items: [
@@ -781,9 +781,9 @@ const PROJECT_CATALOG = {
                 'Goal tracking and group savings (Arena & Split features)',
                 'Cross-device data synchronization'
             ]},
-            { title: 'Impact', body: 'This system transforms financial confusion into structured, trackable insights, helping users make better financial decisions and stay in control of their money.' },
-            { title: 'Tech Stack', body: 'Cross-platform product stack · Supabase / Firebase · expert AI-native workflows (Cursor, Claude, modern assistants)' },
-            { title: 'My Role', body: 'Designed the system structure, led AI-accelerated implementation, shipped core features, and owned testing and iteration.' },
+            { title: 'Impact', body: 'Gives users a structured way to see where money is going, rather than relying on scattered notes.' },
+            { title: 'Tech Stack', body: 'Cross-platform product stack · Supabase / Firebase · AI-assisted development (Cursor, Claude, modern assistants)' },
+            { title: 'My Role', body: 'Designed the system structure, implemented core features with AI-assisted development tools, and handled testing and iteration.' },
             { title: 'What I Learned', body: 'Improved my ability to design complex systems, manage multiple financial features, and effectively use AI tools to accelerate development.' }
         ],
         gallery: [
@@ -802,7 +802,7 @@ const PROJECT_CATALOG = {
         liveLabel: 'Open live app ↗',
         tags: ['Cross-platform', 'Automation', 'Inventory systems', 'Reports'],
         detailSections: [
-            { title: 'Summary', body: 'A smart inventory management system built to eliminate repetitive manual stock counting and streamline reporting.' },
+            { title: 'Summary', body: 'An inventory system for recording stock, logging daily usage and generating reports.' },
             { title: 'The Problem', body: 'Manual stock counting is time-consuming, stressful, and prone to human error, especially when dealing with large quantities of items weekly.' },
             { title: 'The Solution', body: 'I built a system that allows one-time stock recording and tracks daily usage automatically, eliminating the need for full recounts every week.' },
             { title: 'Key Features', items: [
@@ -813,8 +813,8 @@ const PROJECT_CATALOG = {
                 'WhatsApp report sharing',
                 'PDF report generation'
             ]},
-            { title: 'Impact', body: 'Reduces hours of manual work, improves accuracy, and simplifies the entire stock management process.' },
-            { title: 'Tech Stack', body: 'Cross-platform product stack · Backend integration · expert AI-native development (Cursor, Claude)' },
+            { title: 'Impact', body: 'Reduces repeated full recounts by keeping usage and remaining stock in one workflow.' },
+            { title: 'Tech Stack', body: 'Cross-platform product stack · Backend integration · AI-assisted development (Cursor, Claude)' },
             { title: 'My Role', body: 'Designed the workflow, built the system using AI tools, and implemented automation for stock tracking and reporting.' },
             { title: 'What I Learned', body: 'Learned how to design efficient tracking systems and automate repetitive real-world tasks.' }
         ],
@@ -836,7 +836,7 @@ const PROJECT_CATALOG = {
         liveLabel: 'Open live app ↗',
         tags: ['Cross-platform', 'Non-citizens Ghana', 'Live fees', 'Client operations'],
         detailSections: [
-            { title: 'Summary', body: 'A dynamic fee management system that helps clients know exactly what to pay before visiting the office.' },
+            { title: 'Summary', body: 'A fee management application for recording payments and showing clients what they need to pay, including live fee information.' },
             { title: 'The Problem', body: 'Clients often travel long distances without knowing the exact fees or requirements, leading to wasted time, money, and frustration.' },
             { title: 'The Solution', body: 'I built a system where the admin updates the weekly dollar rate, and the app automatically calculates service fees while displaying all requirements clearly to clients.' },
             { title: 'Key Features', items: [
@@ -845,9 +845,9 @@ const PROJECT_CATALOG = {
                 'Clear service requirements display',
                 'Simple and user-friendly interface'
             ]},
-            { title: 'Impact', body: 'Eliminates confusion, reduces unnecessary travel, and improves overall client experience and operational efficiency.' },
-            { title: 'Tech Stack', body: 'Cross-platform product stack · Backend logic integration · expert AI-native development (Cursor, Claude)' },
-            { title: 'My Role', body: 'Identified the problem, designed the solution, and shipped the build with expert AI-led engineering workflows.' },
+            { title: 'Impact', body: 'Helps clients see fees and requirements before they travel, which reduces avoidable trips and confusion.' },
+            { title: 'Tech Stack', body: 'Cross-platform product stack · Backend logic integration · AI-assisted development (Cursor, Claude)' },
+            { title: 'My Role', body: 'Identified the operational problem, designed the workflow and built the application.' },
             { title: 'What I Learned', body: 'Improved my ability to build solutions that directly impact real users and solve operational challenges.' }
         ],
         gallery: [
@@ -867,7 +867,7 @@ const PROJECT_CATALOG = {
         liveLabel: '',
         tags: ['Excel', 'Sales analytics', 'Profit insights'],
         detailSections: [
-            { title: 'Summary', body: 'An Excel-based analytics dashboard built to uncover performance insights and profit inefficiencies in furniture sales data.' },
+            { title: 'Summary', body: 'An Excel dashboard built from a furniture sales dataset to review sales, profit and related operational fields.' },
             { title: 'The Problem', body: 'Businesses often generate high sales but struggle to understand why profits remain low due to hidden inefficiencies in operations and pricing.' },
             { title: 'The Solution', body: 'I developed a dashboard that analyzes sales, profit, delivery, and category performance to reveal actionable insights.' },
             { title: 'Key Features', items: [
@@ -884,7 +884,7 @@ const PROJECT_CATALOG = {
                 '59% of orders used standard shipping',
                 'Heavy discounting reduced profitability'
             ]},
-            { title: 'Impact', body: 'Helps decision-makers identify profit leaks, optimize logistics, and improve pricing strategies.' },
+            { title: 'Impact', body: 'Makes the dataset easier to read so a decision-maker can see where sales and profit diverge. Figures shown are from the dataset, not from Patrick\'s own business.' },
             { title: 'Tools Used', body: 'Microsoft Excel · Data visualization techniques' },
             { title: 'My Role', body: 'Followed a guided structure and independently analyzed the dataset to extract insights and build a clear, decision-focused dashboard.' },
             { title: 'What I Learned', body: 'Strengthened my ability to turn raw data into meaningful business insights and tell compelling data stories.' }
@@ -900,7 +900,7 @@ const PROJECT_CATALOG = {
         liveLabel: '',
         tags: ['Excel', 'Campaign analytics', 'ROI'],
         detailSections: [
-            { title: 'Summary', body: 'A data analytics dashboard built to evaluate the effectiveness and ROI of a large-scale marketing campaign.' },
+            { title: 'Summary', body: 'An Excel dashboard built from marketing campaign data to review impressions, clicks, conversions and ROI.' },
             { title: 'The Problem', body: 'Marketing campaigns often generate high visibility but fail to convert that attention into actual value.' },
             { title: 'The Solution', body: 'I analyzed campaign data across multiple cities to understand performance across impressions, clicks, conversions, and ROI.' },
             { title: 'Key Features', items: [
@@ -916,7 +916,7 @@ const PROJECT_CATALOG = {
                 'High acquisition cost (~$12.5K)',
                 'Miami delivered the highest ROI'
             ]},
-            { title: 'Impact', body: 'Reveals where marketing efforts succeed, where value is lost, and where future investment should be focused.' },
+            { title: 'Impact', body: 'Shows where campaign reach did and did not convert, using the figures in the dataset.' },
             { title: 'Tools Used', body: 'Microsoft Excel · Data visualization techniques' },
             { title: 'My Role', body: 'Built the dashboard based on guided learning and independently derived insights from the dataset.' },
             { title: 'What I Learned', body: 'Developed strong skills in analyzing marketing data and identifying performance gaps in conversion funnels.' }
@@ -928,7 +928,7 @@ const PROJECT_CATALOG = {
     primed: {
         title: 'PrimeDraft Services',
         paragraphs: [
-            'A professional website for PrimeDraft — a document editing and proofreading service. Built with clean design, service breakdowns, client testimonials, and a quote request flow. Fully deployed and live.'
+            'A website for PrimeDraft Services — document editing and proofreading. It includes service information, a work process section, reviews, and a quote request flow. Deployed and live.'
         ],
         liveUrl: 'https://primedraftservices.vercel.app',
         liveLabel: 'Visit live site ↗',
@@ -944,7 +944,7 @@ const PROJECT_CATALOG = {
     benchtech: {
         title: 'BenchTech Support',
         paragraphs: [
-            'A professional tech support website for BenchTech — Windows installation, Office setup, antivirus, software configuration, and emergency IT support. Fast, reliable, and remote-friendly. Fully deployed and live.'
+            'A tech support website for BenchTech covering Windows installation, Office setup, antivirus, software configuration and IT support requests. Deployed and live.'
         ],
         liveUrl: 'https://benchog.github.io/BenchTech-Support/',
         liveLabel: 'Visit live site ↗',
@@ -958,8 +958,8 @@ const PROJECT_CATALOG = {
         ]
     },
     promptvault: {
-        title: 'Prompt Vault: Elite AI Templates',
-        subtitle: 'Protected prompt systems for high-output teams',
+        title: 'Prompt Vault',
+        subtitle: 'Protected prompt templates',
         liveUrl: '',
         liveLabel: '',
         tags: ['Prompt Engineering', 'Template Systems', 'AI Ops'],
@@ -1131,7 +1131,7 @@ function initProfileAboutReveal() {
 
 function initActiveNavOnScroll() {
     const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-    const sectionIds = ['hero', 'skills', 'services', 'projects', 'pricing', 'contact'];
+    const sectionIds = ['hero', 'about', 'experience', 'education', 'skills', 'services', 'ventures', 'projects', 'pricing', 'contact'];
     const sections = sectionIds.map(function (id) {
         return document.getElementById(id);
     }).filter(Boolean);
@@ -1320,20 +1320,14 @@ export function initPortfolioRuntime() {
     initProjectFiltering();
     initProjectsCarousel();
     initPricingCarousel();
-    initSectionCarousel('skillsCarouselTrack', '[data-skills-carousel="prev"]', '[data-skills-carousel="next"]');
-    initSectionCarousel('servicesCarouselTrack', '[data-services-carousel="prev"]', '[data-services-carousel="next"]');
     initProjectModal();
     initServiceRequestJumps();
     initGallery();
     initCollectionModal();
     bindImgFallbackChain(document.getElementById('projects'));
     initSmartMediaLoading();
-    initProfileAboutReveal();
     initActiveNavOnScroll();
-    initTypingEffect();
-    initVoiceGreeting();
-    // Chat widget and theme hint intentionally disabled for a cleaner recruiter-first experience.
-    //initCursorTrail();
+    // Chat widget and theme hint intentionally left available; heavy greeting/typing effects stay off for recruiters.
     initParallaxScrolling();
     initPromptVaultProtection();
 
